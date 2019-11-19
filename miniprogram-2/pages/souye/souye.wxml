@@ -1,0 +1,42 @@
+<!--pages/souye/souye.wxml-->
+<view class="cntentes">
+<!--轮播图-->
+<view class="top">
+<swiper class="top1" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+  <block wx:for="{{picList}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" mode="aspectFill"                        bindtap='previewImg' data-previewurl='{{picList}}'
+      data-currenturl='{{item}}'/>
+    </swiper-item>   
+  </block>  
+</swiper>
+</view>
+<!--推荐-->
+<view class="selection">
+    <view class="header">
+      <text>精品推荐</text>
+      <text class="t1" bindtap="allClick">全部精品</text>
+    </view>
+    <view class="content">
+         <view class="content-item" wx:for="{{imgUrl}}" wx:key="name">
+           <image src="{{item}}"></image>
+         </view>
+    </view>
+    </view>
+</view>
+<!--茶楼-->
+<view class="selection_01">
+   <view class="header_01">
+      <text>茶楼包间</text>
+      <text class="t1" bindtap="teaClick">全部包间</text>
+   </view>
+  </view>
+
+<view class="Teahouse">
+        <view class="Teahouse_img" wx:for="{{Teahouse_img}}" wx:key="name">
+           <image src="{{item}}"></image>
+           <text class="title">吊顶装饰 复古风茶楼</text>
+           <text class="price">价格：</text>
+           <text class="Teahouse-Price">150￥</text>
+        </view>
+ </view>

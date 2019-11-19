@@ -1,0 +1,51 @@
+<!--containers-->
+<view class="containers">
+  <!--top头-->
+  <view class="top_title">
+    <text>本茶楼所有茶和小吃，你可以选择喜欢的茶或小吃，喜欢就下单吧！</text>
+  </view>
+  <!--top尾-->
+   <text class="first_title">茶</text>
+   <!--tea头-->
+  <view class="Tea">
+        <view class="Tea_img" wx:for="{{Teaimgurl}}" wx:key="name">
+           <image src="{{item}}"></image>
+           <text class="introduce">乌龙茶</text>
+           <!--<text class="introduce">{{teaInfo}}</text>-->
+           <text class="name">茶名:</text>
+           <text class="tfname">乌龙茶</text>
+          <!--<text class="tfname">{{teaname}}</text>-->
+           <text class="price">价格：</text>
+           <text class="money">50￥</text>
+           <!-- <text class="money">{{teaPrice}}</text>-->
+           <text class="car">加入购物车</text>
+        </view>
+  </view> 
+  <!--tea尾-->
+</view>
+<!--containers-->
+ <!--snack头-->
+  <text class="first_title">小吃</text>
+  <view class="snack">
+        <view class="snack_img" wx:for="{{snackimgurl}}" wx:key="name">
+           <image src="{{item}}"></image>
+           <text class="introduce">瓜子</text>
+           <!--<text class="introduce">{{foodInfo}}</text>-->
+           <text class="name"> 小吃名:</text>
+           <text class="tfname">五香瓜子</text>
+           <!--<text class="tfname">{{foodName}}</text>-->
+           <text class="price">价格：</text>
+           <text class="money">10￥</text>
+           <!--<text class="money">{{foodPrice}}</text>-->
+           <text class="car">加入购物车</text>
+        </view>
+  </view> 
+  <!--snack尾巴-->
+  <!--购物车固定底部-->
+<view class="foot">
+  <view class="foodInfo">
+  <image src="../../image/selectcar.png"></image>
+  <button>加入购物车</button>
+  </view>
+</view>
+

@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/souye/souye",
+    "pages/user/user",
+    "pages/teas/teas",
+    "pages/teaHouse/teaHouse"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "用户中心",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "backgroundColor": "#f9f9f9",
+    "borderStyle": "black",
+    "selectedColor": "#00b38b",
+    "color": "#666666",
+    "list": [
+      {
+        "pagePath": "pages/souye/souye",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  }
+}
