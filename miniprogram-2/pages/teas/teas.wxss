@@ -8,74 +8,82 @@
 }
 .Tea{
   height: auto;
-  width: 100%;
+  width: 99%;
+  margin-top: 30rpx;
 }
 .Tea_img{
-  width: 70%;
-  height: 380rpx;
+  width: 45%;
+  height: 290rpx;
   margin-bottom: 60rpx;
+   border: 2px solid green;
+}
+.info{
+  width: 95%;
+  height: 290rpx;
+  margin-bottom: 60rpx;
+  border: 1px solid black;
+  position: relative;
+  right: -105%;
+  top :-345rpx;
+  margin-top:44rpx;
 }
 .Tea_img image{
    width: 100%;
    height: 100%;
 }
-.introduce{
-  padding-left: 90rpx;
-}
-.price,.money,.car,.name,.tfname{
-  display: flex;
-  position: relative;
-  right: -105%;
-  top :-420rpx;
-}
 .tfname{ 
-  right: -110%;
+  right: -125%;
   color: green;
 }
 .money{ 
-  right: -115%;
-  color: red;}
+  color: red;
+  }
   .car,.name,.price{
-  font-size: 12px;
-  right: -100%;
-   border-left: 3px solid goldenrod;
+   font-size: 15px;
+   padding-bottom: 30rpx;
 }
-  .first_title{
+.first_title{
    font-size: 25px;
    color: mediumseagreen;
    font-weight: 3px;
    padding-left: 250rpx;
-  border-left: 3px solid green;
+   border-left: 3px solid green;
   }
   .snack{
     height: auto;
     width: 100%;
+    margin-top: 30rpx;
   }
-  .snack_img{
-  width: 70%;
-  height: 380rpx;
-  margin-bottom: 60rpx;
-}
-.snack_img image{
-   width: 100%;
-  height: 100%;
-}
+  .bai{
+    width: 100%;
+    height: 100rpx;
+  }
 .foot{
   position:fixed;
   bottom:0;
   font-size: 30rpx;
   height: 130rpx;
   width: 100%;
-  background-color: gray;
+  background-color: gainsboro;
+  border: 1px solid gray;
+   flex-wrap: wrap;
+  justify-content: center;
 }
 .foodInfo image{
   height: 100rpx;
   width: 100rpx;
+  margin-left: 310rpx;
+  margin-top: -65rpx;
 }
 .foodInfo button{
   height: 100rpx;
   width: 320rpx;
-  margin-top: -80rpx;
+  margin-top: -110rpx;
   margin-right: 10rpx;
   background-color: #ff5500;
+}
+.all_price{
+  font-size: 20px;
+  margin-top: 40rpx;
+  margin-left: 35rpx;
 }
