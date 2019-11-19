@@ -3,4 +3,5 @@
         <image src="{{img}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
             </image>
             <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权获取头像昵称 </button>
+			<text>我是流泪</text>
 </view>
