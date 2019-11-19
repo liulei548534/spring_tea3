@@ -1,0 +1,11 @@
+<view class="content">
+    <view class="top">
+        <text class="iconfont icon icon-fankui"></text>
+        <text class="fankui">反馈意见</text>
+    </view>
+    <view class="text">
+        <textarea id="text" cols="30" rows="10" placeholder="请输入您的宝贵的意见或建议。（800字以内）"></textarea>
+    </view>
+    <view class="prompt">欢迎您为我们提出宝贵的意见和建议，您留下的任何信息都将用来改善我们的软件</view>
+    <view class="submit" bindtap="submit">提交</view> 
+</view>

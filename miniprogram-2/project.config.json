@@ -14,7 +14,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.3",
-	"appid": "wxa9bb49bc95809453",
+	"appid": "wx3ec4bbad864bed9b",
 	"projectname": "miniprogram-2",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -39,6 +39,10 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": 0,
 			"list": [
@@ -46,6 +50,34 @@
 					"id": -1,
 					"name": "pages/user/user",
 					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/user",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/aboutUs/aboutUs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/aboutUs/aboutUs",
+					"pathName": "pages/fankui/fankui",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/pingjia/pingjia",
 					"scene": null
 				}
 			]

@@ -1,9 +1,15 @@
 {
-  "pages": [
+  "pages": [ 
     "pages/souye/souye",
     "pages/user/user",
     "pages/teas/teas",
-    "pages/teaHouse/teaHouse"
+    "pages/teaHouse/teaHouse",
+    "pages/order/order",
+    "pages/concat/concat",
+    "pages/collection/collection",
+    "pages/pingjia/pingjia",
+    "pages/fankui/fankui",
+    "pages/aboutUs/aboutUs"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,98 @@
+.box{
+    width: 750rpx;
+    height: ceil(568rpx*2);
+    .box_score{
+        padding: 40rpx 20rpx;
+        height: 260rpx;
+        background-color:rgb(244,244,244);
+        .score_left{
+            float: left;
+            width: 200rpx;
+            height: 250rpx;
+            border: 2px solid rgb(225, 225, 225);
+            background-color: #fff;
+            .left_score_num{
+                color: #f40;
+                view{
+                    margin: 20rpx auto;
+                    font-size: 60rpx;
+                    text-align: center;
+                    width: 160rpx;
+                    border-bottom: 1rpx solid rgb(230, 225, 225);
+                }
+            }
+            .left_score_count{
+                view{
+                    color: #999;
+                    margin: 20rpx auto;
+                    font-size: 30rpx;
+                    text-align: center;
+                    width: 160rpx;
+                    // border-bottom: 1rpx solid rgb(244, 244, 244);
+                }
+            }
+            .left_score_star{
+                padding: 0 20rpx;
+               text{
+                font-size: 30rpx;
+                letter-spacing: 5rpx;
+                color: #f40;
+               }
+            }
+        }
+        .score_right{
+            float: left;
+            margin-left: 40rpx;
+            margin-top: -10rpx;
+            .countScore{
+                margin: 5rpx 0;
+                .star{
+                    margin-right: 20rpx;
+                }
+                .degree{
+                    margin-top: 10rpx;
+                    float: right;
+                    // display: inline-block;
+                    width: 350rpx;
+                    // border: 1px solid #000;
+                    height: 30rpx;
+                    // background-color:#d1d1d1;
+                    text{
+                       margin-left: 50rpx;
+                    }
+                }
+                
+            }
+        }
+    }
+    .box_content{
+        margin: 0;
+        padding: 0;
+        .content_both{
+            letter-spacing: 5rpx;
+            text-align: center;
+            margin:20rpx auto;
+            // border-bottom: 1px solid #46c47f;
+        }
+        .content_nav{
+            border: 1px solid #000;
+            .content_nav_head{
+                // border: 1px solid #000;
+                // text{
+                //     display: inline-block;
+                //     // line-height: 50rpx;
+                //     font-size:30rpx;
+                //     margin-left: 20rpx;
+                //     border: 1px solid #000;
+                // }
+                image{
+                    box-sizing: border-box;
+                    margin: 0;
+                    width: 54rpx;
+                    border: null;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,78 @@
+<view class="box">
+    <view class="box_score">
+        <view class="score_left">
+            <view class="left_score_num">
+                <view>4.3</view>
+            </view>
+            <view class="left_score_count">
+                <view>290</view>
+            </view>
+            <view class="left_score_star">
+                <text class="iconfont icon icon-Mycollection"></text>
+                <text class="iconfont icon icon-Mycollection"></text>
+                <text class="iconfont icon icon-Mycollection"></text>
+                <text class="iconfont icon icon-Mycollection"></text>
+                <text class="iconfont icon icon-Mycollection"></text>
+            </view>
+        </view>
+        <view class="score_right">
+            <view class="one countScore">
+                <text class="star">5星</text>
+                <progress class="degree" percent="40" stroke-width="6" color="#f40" active="true"
+                    backgroundColor="rgb(225, 225, 225)" activeColor="#f40" active-mode="backwards"
+                    stroke-width="35rpx">
+                    <text>73</text>
+                </progress>
+            </view>
+            <view class="two countScore">
+                <text class="star">4星</text>
+                <progress class="degree" percent="40" stroke-width="6" color="#f40" active="true"
+                    backgroundColor="rgb(225, 225, 225))" activeColor="#f40" active-mode="backwards"
+                    stroke-width="35rpx">
+                    <text>73</text>
+                </progress>
+            </view>
+            <view class="three countScore">
+                <text class="star">3星</text>
+                <progress class="degree" percent="40" stroke-width="6" color="#f40" active="true"
+                    backgroundColor="rgb(225, 225, 225))" activeColor="#f40" active-mode="backwards"
+                    stroke-width="35rpx">
+                    <text>73</text>
+                </progress>
+            </view>
+            <view class="four countScore">
+                <text class="star">2星</text>
+                <progress class="degree" percent="40" stroke-width="6" color="#f40" active="true"
+                    backgroundColor="rgb(225, 225, 225))" activeColor="#f40" active-mode="backwards"
+                    stroke-width="35rpx">
+                    <text>73</text>
+                </progress>
+            </view>
+            <view class="five countScore">
+                <text class="star"> 1星</text>
+                <progress class="degree" percent="40" stroke-width="6" color="#f40" active="true"
+                    backgroundColor="rgb(225, 225, 225))" activeColor="#f40" active-mode="backwards"
+                    stroke-width="35rpx">
+                    <text>73</text>
+                </progress>
+            </view>
+        </view>
+    </view>
+    <view class="box_content">
+        <view class="content_both">全部评价</view>
+        <view class="content_nav">
+            <view class="content_nav_head">
+                <image
+                    src="https://wx.qlogo.cn/mmopen/vi_32/12lic3oWibJa9MXzn5bhWuLf9vD1wTJE4XpCXgbWl8icicyEw7Nyicuo8GdAkm2JGia0s3kDqrle0Z3OuYkpkUiczBoVg/132"
+                    mode="widthFix">
+                </image>
+                <!-- <text class="nickName">Rabbi</text> -->
+            </view>
+            <view class="head_data"></view>
+            <view class="context_text">
+                这个项目虽然只是用来测试，但是环境还是不错，服务员也很给力
+            </view>
+        </view>
+    </view>
+
+</view>

@@ -1,0 +1,47 @@
+.content {
+  width: 750rpx;
+  height: 1136rpx;
+}
+.content .top {
+  width: 100%;
+  padding-top: 40rpx;
+}
+.content .top .icon {
+  margin-left: 20rpx;
+  color: #1F88b6;
+  font-size: 60rpx;
+}
+.content .top .fankui {
+  margin-left: 20rpx;
+  font-size: 40rpx;
+  font-weight: 500;
+  letter-spacing: 3rpx;
+}
+.content .text {
+  height: 500rpx;
+}
+.content .text #text {
+  width: 94%;
+  height: 100%;
+  margin: 40rpx 20rpx;
+  border: 2px solid #f4f4f4;
+  border-radius: 10rpx;
+}
+.content .prompt {
+  margin-top: 50rpx;
+  padding: 0 20rpx;
+  letter-spacing: 5rpx;
+  font-size: 30rpx;
+  color: #999;
+  text-align: center;
+}
+.content .submit {
+  text-align: center;
+  width: 80%;
+  height: 80rpx;
+  margin: 40rpx auto;
+  border-radius: 10rpx;
+  color: white;
+  background-color: #46c47d;
+  line-height: 80rpx;
+}

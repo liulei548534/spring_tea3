@@ -30,40 +30,11 @@
     </view>
     <view class="content">
         <view class="item" wx:for="{{order}}" wx:key="id">
-            <text class="icon icon_order iconfont {{item.class}}"></text>
-            <text class="order_text {{item.classCon}}">{{item.name}}</text>
-            <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
+            <navigator url="../{{item.page}}/{{item.page}}" open-type="navigate">
+                <text class="icon icon_order iconfont {{item.class}}"></text>
+                <text class="order_text {{item.classCon}}">{{item.name}}</text>
+                <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
+            </navigator>
         </view>
-
-        <!-- <view class="myOrder item">
-            <text class="iconfont icon-74wodedingdan icon icon_order"></text>
-            <text class="order_text">查看订单</text>
-            <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
-        </view>
-        <view class="connect item">
-            <text class="iconfont icon-lianxikefu icon icon_order"></text>
-            <text class="order_text">联系客服</text>
-            <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
-        </view>
-        <view class="connect item">
-            <text class="iconfont icon-Mycollection icon_order"></text>
-            <text class="order_text icon_conllection ">我的收藏</text>
-            <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
-        </view>
-        <view class="connect item">
-            <text class="iconfont icon-pingjia icon icon_order"></text>
-            <text class="order_text">评价</text>
-            <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
-        </view>
-        <view class="connect item">
-            <text class="iconfont icon-fankui icon icon_order"></text>
-            <text class="order_text">反馈我们</text>
-            <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
-        </view>
-        <view class="connect item">
-            <text class="iconfont icon-guanyuwomen icon icon_order"></text>
-            <text class="order_text">关于我们</text>
-            <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
-        </view> -->
     </view>
 </view>

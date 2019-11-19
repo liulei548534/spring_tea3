@@ -42,27 +42,33 @@ Page({
     order:[
       {
        id:1,
+       page:"order",
        name:"查看订单",
        class:"icon-74wodedingdan",
       },{
         id:2,
+        page:"concat",
         name:"联系客服",
         class:"icon-lianxikefu",
       },{
-        id:1,
+        id:3,
+        page:"collection",
         name:"我的收藏",
         class:"icon-Mycollection",
         classCon:"icon_conllection",
       },{
-        id:1,
-        name:"评价",
+        id:4,
+        page:"pingjia",
+        name:"店铺评价",
         class:"icon-pingjia",
       },{
-        id:1,
+        id:5,
+        page:"fankui",
         name:"反馈我们",
         class:"icon-fankui",
       },{
-        id:1,
+        id:6,
+        page:"aboutUs",
         name:"关于我们",
         class:"icon-guanyuwomen",
       }
