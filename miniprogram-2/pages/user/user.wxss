@@ -1,6 +1,60 @@
-
 /* pages/user/user.wxss */
 .getInfo {
-  background-color: green;
-  height: 10000rpx;
+  width: 750rpx;
+}
+.getInfo .message {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  vertical-align: center;
+  margin: 20px 0;
+}
+.getInfo button {
+  margin: 10rpx auto;
+  background-color: #8e8664;
+  color: white;
+  width: 500rpx;
+  letter-spacing: 20rpx;
+}
+.isHidden .top {
+  background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574145577121&di=150c3a4fbe200de50eded1c245709b51&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F7cf809b85a36d924668b785d6488e8cb53a3037aafc1-MlEofF_fw658");
+  background-size: 750rpx;
+  height: 350rpx;
+  width: 750rpx;
+  position: relative;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.isHidden .top .avatarUrl {
+  margin: 20rpx auto;
+  width: 25%;
+  box-sizing: border-box;
+}
+.isHidden .top .avatarUrl image {
+  width: 100%;
+  height: 30rpx;
+  border-radius: 50%;
+}
+.isHidden .top .nickName {
+  margin-top: 30rpx;
+  box-sizing: border-box;
+  width: 100%;
+  align-content: center;
+  padding-left: 240rpx;
+}
+.isHidden .top .qd {
+  color: gold;
+  position: absolute;
+  right: 40rpx;
+  top: 0;
+}
+.isHidden .content .item {
+  background-color: #f8f8f8;
+  width: 750rpx;
+  height: 120rpx;
+  margin: 10rpx auto;
+  font-size: 16px;
+  font-weight: normal;
+  box-sizing: border-box;
+  padding-top: 30rpx;
 }

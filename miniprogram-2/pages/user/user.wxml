@@ -1,8 +1,39 @@
-
-<view class="getInfo" hover-class="none" hover-stop-propagation="false">
-        <image src="{{img}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+<!-- <view class="getInfo" wx:if="{{isHidden==false}}">
+    <image src="{{img}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <view class="hidden">
+        <view class="message">
+            {{message}}
+        </view>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 立即授权</button>
+    </view>
+</view> -->
+<view class="isHidden" wx:if="{{isHidden==false}}">
+    <view class="top">
+        <!-- <view class="icon">{{info.nickName}}</view>
+        <view class="icon">{{info.gender}}</view>
+        <view class="icon">{{info.language}}</view>
+        <view class="icon">{{info.city}}</view>
+        <view class="icon">{{info.province}}</view>
+        <view class="icon">{{info.country}}</view>
+        <image class="" src="{{info.avatarUrl}}" mode="widthFix">
+            
+        </image> -->
+        <view class="avatarUrl info">
+            <image
+                src="https://wx.qlogo.cn/mmopen/vi_32/12lic3oWibJa9MXzn5bhWuLf9vD1wTJE4XpCXgbWl8icicyEw7Nyicuo8GdAkm2JGia0s3kDqrle0Z3OuYkpkUiczBoVg/132"
+                mode="widthFix">
             </image>
-            <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权获取头像昵称 </button>
-			<text>我是流泪</text>
-			我是临建
+        </view>
+        <view class="nickName info">用户名：Rabbi</view>
+        <!-- <view class="credent info"> 积分：icon1</view> -->
+        <view class="qd"> 签到</view>
+    </view>
+    <view class="content">
+        <view class="myOrder item">查看订单</view>
+        <view class="connect item">联系客服</view>
+        <view class="connect item">我的收藏</view>
+        <view class="connect item">评价</view>
+        <view class="connect item">反馈我们</view>
+        <view class="connect item">关于我们</view>
+    </view>
 </view>

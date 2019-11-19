@@ -4,38 +4,17 @@
 		"ignore": []
 	},
 	"setting": {
-<<<<<<< HEAD
-		"urlCheck": false,
-=======
 		"urlCheck": true,
->>>>>>> 首页+分类页
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-<<<<<<< HEAD
-		"coverView": true,
-		"autoAudits": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		}
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.9.3",
-	"appid": "wx3ec4bbad864bed9b",
-=======
 		"autoAudits": false,
 		"coverView": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.3",
-	"appid": "wxa9bb49bc95809453",
->>>>>>> 首页+分类页
+	"appid": "wx3ec4bbad864bed9b",
 	"projectname": "miniprogram-2",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -52,13 +31,24 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/user/user",
+					"pathName": "pages/user/user",
+					"scene": null
+				}
+			]
 		}
 	}
 }
