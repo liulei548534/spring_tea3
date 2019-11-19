@@ -9,17 +9,23 @@
    <!--tea头-->
   <view class="Tea">
         <view class="Tea_img" wx:for="{{Teaimgurl}}" wx:key="name">
-           <image src="{{item}}"></image>
-           <text class="introduce">乌龙茶</text>
-           <!--<text class="introduce">{{teaInfo}}</text>-->
-           <text class="name">茶名:</text>
-           <text class="tfname">乌龙茶</text>
-          <!--<text class="tfname">{{teaname}}</text>-->
-           <text class="price">价格：</text>
-           <text class="money">50￥</text>
-           <!-- <text class="money">{{teaPrice}}</text>-->
-           <text class="car">加入购物车</text>
-        </view>
+           <image class="img" src="{{item}}"></image>  
+            <view class="info">
+               <view class="t-name">
+                   <text class="name">茶名:</text>
+                   <text class="tfname">乌龙茶</text>
+                 <!--<text class="tfname">{{teaname}}</text>-->
+               </view>
+               <text class="introduce">乌龙茶股份灌砂法阿斯顿撒多撒</text>
+                <!--<text class="introduce">{{teaInfo}}</text>-->
+               <view class="t-price">
+                  <text class="price">价格：</text>
+                  <text class="money">50￥</text>
+                  <!-- <text class="money">{{teaPrice}}</text>-->
+               </view>
+               <text class="car">加入购物车</text>
+            </view>
+        </view>  
   </view> 
   <!--tea尾-->
 </view>
@@ -27,23 +33,37 @@
  <!--snack头-->
   <text class="first_title">小吃</text>
   <view class="snack">
-        <view class="snack_img" wx:for="{{snackimgurl}}" wx:key="name">
+        <view class="Tea_img" wx:for="{{snackimgurl}}" wx:key="name">
            <image src="{{item}}"></image>
-           <text class="introduce">瓜子</text>
-           <!--<text class="introduce">{{foodInfo}}</text>-->
-           <text class="name"> 小吃名:</text>
-           <text class="tfname">五香瓜子</text>
-           <!--<text class="tfname">{{foodName}}</text>-->
-           <text class="price">价格：</text>
-           <text class="money">10￥</text>
-           <!--<text class="money">{{foodPrice}}</text>-->
-           <text class="car">加入购物车</text>
-        </view>
+           <view class="info">
+               <view class="t-name">
+                   <text class="name"> 小吃名:</text>
+                   <text class="tfname">五香瓜子</text>
+                  <!--<text class="tfname">{{foodName}}</text>-->
+               </view>
+               <text class="introduce">挂hi好的腮红电话答复哈</text>
+                <!--<text class="introduce">{{foodInfo}}</text>-->
+               <view class="t-price">
+                 <text class="price">价格：</text>
+                  <text class="money">10$</text>
+                  <!--<text class="money">{{foodPrice}}</text>-->
+               </view>
+               <text class="car">加入购物车</text>
+            </view>
+        </view>  
   </view> 
+  <view class="bai">
+
+  </view>
   <!--snack尾巴-->
   <!--购物车固定底部-->
 <view class="foot">
   <view class="foodInfo">
+ <view class="all_price">
+   <text>共计：</text>
+   <text class="money">10$</text>
+  <!--<text class="money">{{allPrice}}</text>-->
+ </view>
   <image src="../../image/selectcar.png"></image>
   <button>加入购物车</button>
   </view>
