@@ -38,8 +38,35 @@ Page({
     img: "http://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574078958964&di=0e0d2c884be45eef375591f8d26fe321&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F424964918abcd1ef4e2179ef0ecadf544eaf26ce191f7-wKp6h7_fw658",
     message: "需要您的授权才能使用哟",
     info: [],
-    isHidden: false
-
+    isHidden: false,
+    order:[
+      {
+       id:1,
+       name:"查看订单",
+       class:"icon-74wodedingdan",
+      },{
+        id:2,
+        name:"联系客服",
+        class:"icon-lianxikefu",
+      },{
+        id:1,
+        name:"我的收藏",
+        class:"icon-Mycollection",
+        classCon:"icon_conllection",
+      },{
+        id:1,
+        name:"评价",
+        class:"icon-pingjia",
+      },{
+        id:1,
+        name:"反馈我们",
+        class:"icon-fankui",
+      },{
+        id:1,
+        name:"关于我们",
+        class:"icon-guanyuwomen",
+      }
+    ]
   }
 
 })

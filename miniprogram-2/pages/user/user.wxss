@@ -16,6 +16,10 @@
   width: 500rpx;
   letter-spacing: 20rpx;
 }
+.isHidden {
+  height: 1070rpx;
+  background-color: #f8f8f8;
+}
 .isHidden .top {
   background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574145577121&di=150c3a4fbe200de50eded1c245709b51&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F7cf809b85a36d924668b785d6488e8cb53a3037aafc1-MlEofF_fw658");
   background-size: 750rpx;
@@ -50,11 +54,29 @@
 }
 .isHidden .content .item {
   background-color: #f8f8f8;
+  border: 1px solid #fff;
   width: 750rpx;
-  height: 120rpx;
+  height: 100rpx;
   margin: 10rpx auto;
   font-size: 16px;
   font-weight: normal;
   box-sizing: border-box;
-  padding-top: 30rpx;
+  padding: 20rpx 20rpx 0 20rpx;
+}
+.isHidden .content .item .icon_order {
+  color: gold;
+  float: left;
+  font-size: 52rpx;
+}
+.isHidden .content .item .order_text {
+  display: inline-block;
+  margin: 0 16rpx;
+}
+.isHidden .content .item .icon_arrrowRight {
+  float: right;
+  color: #999;
+  font-size: 52rpx;
+}
+.isHidden .content .icon_conllection {
+  padding: 5rpx;
 }
