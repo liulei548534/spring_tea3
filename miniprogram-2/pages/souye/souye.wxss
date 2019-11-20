@@ -11,7 +11,7 @@
   padding: 8px;
 }
 .t1{
-  color: green;
+  color: #36c37d;
   font-size: 15px;
 }
 .content{
