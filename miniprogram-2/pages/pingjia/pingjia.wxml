@@ -66,13 +66,28 @@
                     src="https://wx.qlogo.cn/mmopen/vi_32/12lic3oWibJa9MXzn5bhWuLf9vD1wTJE4XpCXgbWl8icicyEw7Nyicuo8GdAkm2JGia0s3kDqrle0Z3OuYkpkUiczBoVg/132"
                     mode="widthFix">
                 </image>
-                <!-- <text class="nickName">Rabbi</text> -->
+                <text class="nickName">Rabbi</text>
             </view>
-            <view class="head_data"></view>
+            <view class="head_data">
+                <view class="left_score_star">
+                    <text class="iconfont icon icon-Mycollection"></text>
+                    <text class="iconfont icon icon-Mycollection"></text>
+                    <text class="iconfont icon icon-Mycollection"></text>
+                    <text class="iconfont icon icon-Mycollection"></text>
+                    <text class="iconfont icon icon-Mycollection"></text>
+                    <text class="date">2014-03-10 10:23</text>
+                </view>
+            </view>
             <view class="context_text">
-                这个项目虽然只是用来测试，但是环境还是不错，服务员也很给力
+                <text class="neirong">这个项目虽然只是用来测试，但是环境还是不错，服务员也很给力!!!</text>
+                <view class="context_answer">
+                    <view class="s_name">
+                        <text class="answer">商家回复</text>
+                        <text class="date">2014-03-10 10:23</text>
+                    </view>
+                    <view class="content">感谢您的回复，欢迎您下次光临!</view>
+                </view>
             </view>
         </view>
     </view>
-
 </view>

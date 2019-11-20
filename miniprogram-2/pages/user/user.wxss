@@ -79,4 +79,5 @@
 }
 .isHidden .content .icon_conllection {
   padding: 5rpx;
+  float: left;
 }

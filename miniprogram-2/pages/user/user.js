@@ -47,27 +47,22 @@ Page({
        class:"icon-74wodedingdan",
       },{
         id:2,
-        page:"concat",
-        name:"联系客服",
-        class:"icon-lianxikefu",
-      },{
-        id:3,
         page:"collection",
         name:"我的收藏",
         class:"icon-Mycollection",
         classCon:"icon_conllection",
       },{
-        id:4,
+        id:3,
         page:"pingjia",
         name:"店铺评价",
         class:"icon-pingjia",
       },{
-        id:5,
+        id:4,
         page:"fankui",
         name:"反馈我们",
         class:"icon-fankui",
       },{
-        id:6,
+        id:5,
         page:"aboutUs",
         name:"关于我们",
         class:"icon-guanyuwomen",
