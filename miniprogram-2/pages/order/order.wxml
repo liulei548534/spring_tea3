@@ -1,4 +1,12 @@
-<text>
-{{name.name}}
-{{name.content}}
-</text>
+<view class="box">
+    <view class="onloading">
+        <text class="" selectable="false" space="false" decode="false">
+                正在进行的订单            
+        </text>
+    </view>
+    <view class="onloaded">
+        <text class="" selectable="false" space="false" decode="false">
+            历史订单
+        </text>
+    </view>
+</view>

@@ -1,1 +1,14 @@
-/* pages/order/order.wxss */
+.box {
+  display: flex;
+  text-align: center;
+}
+.box .onloading {
+  margin: 10rpx 10rpx;
+  border-bottom: 1px solid #46c47d;
+  flex: 1;
+}
+.box .onloaded {
+  border-bottom: 1px solid #46c47d;
+  margin: 10rpx 10rpx 10rpx 0;
+  flex: 1;
+}

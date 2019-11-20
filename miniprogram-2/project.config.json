@@ -14,7 +14,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.3",
-	"appid": "wxa9bb49bc95809453",
+	"appid": "wx3ec4bbad864bed9b",
 	"projectname": "miniprogram-2",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -85,6 +85,13 @@
 					"id": -1,
 					"name": "pages/collection/collection",
 					"pathName": "pages/collection/collection",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/order/order",
 					"scene": null
 				}
 			]

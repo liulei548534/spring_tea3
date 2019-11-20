@@ -12,13 +12,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-   var listData = JSON.parse(options.listData)
-   console.log(listData)
-    that.setData({
-      name: listData
-    })
-  },
+  //   var that = this
+  //  var listData = JSON.parse(options.listData)
+  //  console.log(listData)
+  //   that.setData({
+  //     name: listData
+  //   })
+   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,5 +1,7 @@
 .box {
-  height: 1136rpx;
+  margin: 0;
+  padding: 0;
+  height: 100%;
   background-color: #e1e1e1;
 }
 .box .no_have {
@@ -16,4 +18,51 @@
   width: 250rpx;
   margin: 50rpx auto;
   align-content: center;
+}
+.box .have {
+  margin: 0;
+}
+.box .have .both {
+  margin: 20rpx 20rpx;
+}
+.box .have .info {
+  display: flex;
+  margin: 10rpx 20rpx;
+  padding: 20rpx 0;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+}
+.box .have .info .img_img {
+  width: 45%;
+  height: 350rpx;
+}
+.box .have .info .img_img image {
+  width: 100%;
+  height: 100%;
+}
+.box .have .info .img_discript {
+  margin-left: 10rpx;
+  width: 500rpx;
+}
+.box .have .info .img_discript .name text {
+  color: green;
+}
+.box .have .info .img_discript .dis {
+  margin: 10rpx 0;
+  font-size: 30rpx;
+  color: #999;
+}
+.box .have .info .img_discript .price {
+  margin: 10rpx 0;
+  color: red;
+}
+.box .have .info .img_discript .Collection {
+  margin: 10rpx 0;
+}
+.box .have .info .img_discript .Collection .iconfont {
+  margin-left: 10rpx;
+  color: red;
+}
+.box .have .info .img_discript .car {
+  margin: 10rpx 0;
 }
