@@ -1,2 +1,17 @@
-<!--pages/collection/collection.wxml-->
-<text>pages/collection/collection.wxml</text>
+<view class="box">
+    <view class="no_have" wx:if="{{isHidden==true}}">
+        <image src="../../image/3.png" mode="widthFix"></image>
+        <view class="click">
+            <navigator class="look" open-type="navigate" url="../teas/teas">
+             点我看看
+            </navigator>
+         </view>
+    </view>
+    <view class="have" wx:if="{{isHidden==false}}">
+        <text class="both">全部宝贝</text>
+        <view class="info">
+             <image class="img"></image>
+             view
+        </view>
+    </view>
+</view>
