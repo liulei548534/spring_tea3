@@ -36,7 +36,6 @@
                 <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
             </navigator>
         </view>
-
         <button open-type="contact" class="item">
             <text class="icon icon_order iconfont icon-lianxikefu"></text>
             <text class="order_text icon_conllection">联系客服</text>

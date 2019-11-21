@@ -4,6 +4,7 @@
 }
 .box .title .onloading {
   margin: 10rpx 10rpx;
+  padding-bottom: 40rpx;
   flex: 1;
 }
 .box .title .is_black {
@@ -11,10 +12,6 @@
 }
 .box .title .on_item {
   border-bottom: 1px solid #46c47d;
-}
-.box .title .onloaded {
-  margin: 10rpx 10rpx;
-  flex: 1;
 }
 .box .item {
   position: relative;
@@ -29,8 +26,12 @@
 .box .item .order-info .order-package {
   margin-bottom: 10rpx;
 }
-.box .item .order-info .order-num .order-status {
+.box .item .order-info .order-num .order_status {
   color: #46c47d;
+  float: right;
+}
+.box .item .order-info .order-num .order_ed {
+  color: red;
   float: right;
 }
 .box .item .order-info .order-date {

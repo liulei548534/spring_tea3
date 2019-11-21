@@ -2,7 +2,7 @@
     <view class="no_have" wx:if="{{isHidden==false}}">
         <image src="../../image/3.png" mode="widthFix"></image>
         <view class="click">
-            <navigator class="look" open-type="navigate" url="../teas/teas">
+            <navigator class="look" open-type="navigate" url="../content/content">
                 点我看看
             </navigator>
         </view>
