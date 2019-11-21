@@ -62,6 +62,7 @@
   font-weight: normal;
   box-sizing: border-box;
   padding: 20rpx 20rpx 0 20rpx;
+  line-height: 100rpx;
 }
 .isHidden .content .item .icon_order {
   color: gold;
@@ -78,6 +79,5 @@
   font-size: 52rpx;
 }
 .isHidden .content .icon_conllection {
-  padding: 5rpx;
   float: left;
 }

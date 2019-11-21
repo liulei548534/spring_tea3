@@ -1,5 +1,5 @@
 <view class="box">
-    <view class="no_have" wx:if="{{isHidden==true}}">
+    <view class="no_have" wx:if="{{isHidden==false}}">
         <image src="../../image/3.png" mode="widthFix"></image>
         <view class="click">
             <navigator class="look" open-type="navigate" url="../teas/teas">
@@ -7,7 +7,7 @@
             </navigator>
         </view>
     </view>
-    <view class="have" wx:if="{{isHidden==false}}">
+    <view class="have" wx:if="{{isHidden==true}}">
         <text class="both">全部宝贝</text>
         <view class="info" wx:for="{{date}}" wx:key="id">
             <view class="img_img">
