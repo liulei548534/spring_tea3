@@ -1,0 +1,21 @@
+<view class="details_content">
+         <image class="details_content_img" src="{{details.image}}"></image>
+          <text class="details_content_name">{{details.name}}</text> 
+       <view class="details_content_message">
+           <text class="introduce">商品介绍：</text>
+           <text class="details_content_introduce">{{details.content}}</text>
+           <text class="details_content_money">价格:￥{{details.price}}</text> 
+      </view>
+</view>   
+<!-- 固定底部 -->
+<view class="cont_bot">      
+        <text catchtap="handleCollection"   wx:if="{{!isClolected}}" class="iconfont icon-shoucang shoucang"></text>  
+        <text catchtap="handleCollection"   wx:if="{{isClolected}}" class="iconfont icon-shoucang shoucang_01"></text>     
+      <button open-type="contact" class="item">
+      <text class="iconfont icon-lianxikefu"></text>
+      </button>
+      <!-- 提交订单 -->
+      <label class="submit" bindtap="btn_submit_car">立即下单</label>
+       <label class="submit_01" bindtap="btn_submit_order">加入购物车</label>
+</view>
+

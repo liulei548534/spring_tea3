@@ -96,7 +96,7 @@ Page({
   },
   allClick:function(){
     wx.navigateTo({
-      url: '../teas/teas',
+      url: '../content/content',
     })
   },
   teaClick:function(){

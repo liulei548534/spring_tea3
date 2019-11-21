@@ -1,0 +1,11 @@
+<view class="J-shopping-cart-empty" hidden="{{iscart}}">
+   <view class="shopping-cart-empty">
+        <view class="bg"></view> 
+        <view class="cart"></view>
+        <text class='empty-text'>购物车空空如也</text>  
+        <p></p>
+        <navigator url="../content/content">
+         <a href="//m.vip.com" class="button button-primary">去抢购</a>
+        </navigator>
+    </view>
+</view>

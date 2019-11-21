@@ -1,0 +1,25 @@
+<!--pages/content/content.wxml-->
+<text class="type_tea">茶</text>
+   <view class="Tea">
+        <view class="Tea_img" wx:for="{{date}}" wx:key="id">
+         <image class="img" src="{{item.image}}" bindtap="img_Click" data-index="{{index}}"></image>
+                  <text class="tfname">{{item.name}}</text> 
+                  <text class="money">￥{{item.price}}</text> 
+        </view>  
+    </view> 
+<text class="type_tea">茶楼包间</text>
+<view class="Tea">
+        <view class="Tea_img" wx:for="{{house}}" wx:key="id">
+         <image class="img" src="{{item.image}}" bindtap="house_Click" data-index="{{index}}"></image>
+                  <text class="tfname">{{item.name}}</text> 
+                  <text class="money">￥{{item.price}}</text> 
+        </view>  
+    </view> 
+<text class="type_tea">小吃</text>
+<view class="Tea">
+        <view class="Tea_img" wx:for="{{snack}}" wx:key="id">
+         <image class="img" src="{{item.image}}" bindtap="snack_Click" data-index="{{index}}"></image>
+                  <text class="tfname">{{item.name}}</text> 
+                  <text class="money">￥{{item.price}}</text> 
+        </view>  
+    </view> 

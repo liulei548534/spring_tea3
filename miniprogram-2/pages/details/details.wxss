@@ -1,0 +1,89 @@
+/* pages/details/details.wxss */
+.details_content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.details_content_img{
+  width: 90%;
+  height: 400rpx;
+  margin: 20rpx 0;
+}
+.details_content_name{
+  color: #36c37d;
+  font-size: 35rpx;
+  }
+.details_content_message{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 20rpx 0;
+}
+.introduce{
+font-size: 35rpx;
+font-weight: 10rpx;
+}
+.details_content_introduce{
+  font-size: 32rpx;
+  color: gray;
+  padding-left: 15rpx;
+}
+.details_content_money{
+  color: red;
+  padding-left:70%;
+  padding-top: 15rpx;
+}
+ /* 固定底部 */
+.cont_bot{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 104rpx;
+    line-height:104rpx;
+    background: gainsboro;
+    border-top: 2rpx solid #ebebeb;
+}
+.shoucang{
+  margin-left: 70rpx;
+}
+.shoucang_01{
+   margin-left: 70rpx;
+   color: orangered;
+   
+}
+.cont_bot button{
+ position: absolute;
+ width: 100rpx;
+ height: 50rpx;
+ right: 470rpx;
+ top: 5rpx;
+ background: gainsboro;
+}
+button::after{
+border: none;
+}
+
+/* 提交 */
+.submit{
+position: absolute;
+width: 200rpx;
+height: 104rpx;
+line-height: 104rpx;
+right: 0rpx;
+font-size: 30rpx;
+text-align: center;
+color:#fff;
+background-color:#495A8F;
+}
+.submit_01{
+  position: absolute;
+width: 200rpx;
+height: 104rpx;
+line-height: 104rpx;
+right: 200rpx;
+font-size: 30rpx;
+text-align: center;
+color:#fff;
+background-color:orangered;
+}
+
