@@ -1,12 +1,62 @@
 <view class="box">
-    <view class="onloading">
-        <text class="" selectable="false" space="false" decode="false">
-                正在进行的订单            
-        </text>
+    <view class="title">
+        <view class="onloading is_black {{isSelect?'on_item':''}}" 
+        wx:for="{{order}}" wx:key="id"
+        >
+            <text bindtap="on_ing" data-index="{{index}}">
+                {{item.name}}            
+            </text>
+        </view>
+</view>
+<view class="content-left item" wx:if="{{true}}">
+        <view class="order-info">
+            <view class="order-package">
+                包间号：天下第一
+            </view>
+            <view class="order-num">
+                <text class="num-info">订单编号:4546712314325</text>
+                <text class="order-status">正在进行</text>
+            </view>
+            <view class="order-date">
+                <text class="date">下单时间:2019-12-24</text>
+            </view>
+            <view class="infomation" wx:for="{{date}}" wx:key="id" wx:if="{{item.id<count&item.num!=0}}">
+                <view class="img">
+                    <image mode="widthFix"
+                src="{{item.image}}"/>
+                </view>
+                <view class="right">
+                    <view class="name">
+                        商品：{{item.name}}
+                    </view>
+                    <view class="price">
+                       价钱： ￥{{item.price}}
+                    </view>
+                    <view class="count">
+                       数量： {{item.num}}
+                    </view>
+                    <view  class="back">
+                        <text>申请售后</text>
+                    </view>
+                </view>
+            </view>
+            <view class="show_both" bindtap="{{bussness[0].functionName}}">
+                {{bussness[0].name}}
+                <text class="iconfont {{bussness[0].icon}}"></text>
+            </view>
+            <view class="payfor">
+               <view class="payfor_count">
+                   <text class="pat_total">总计：</text>
+                   <text class="red">￥<text>{{num}}</text></text>
+               </view>
+               <view class="submit {{isWho}}}">
+                   <text>去结算</text>
+                   <text>({{total}}件)</text>
+               </view>
+            </view>
+        </view>
     </view>
-    <view class="onloaded">
-        <text class="" selectable="false" space="false" decode="false">
-            历史订单
-        </text>
+    <view class="content-right item" wx:if="{{false}}">
+        <text class="iconfont icon-top-s icon2"></text>
     </view>
 </view>

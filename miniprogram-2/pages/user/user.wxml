@@ -30,7 +30,7 @@
     </view>
     <view class="content">
         <view class="item" wx:for="{{order}}" wx:key="id">
-            <navigator url="../{{item.page}}/{{item.page}}" open-type="navigate">
+            <navigator class="link" url="../{{item.page}}/{{item.page}}" open-type="navigate">
                 <text class="icon icon_order iconfont {{item.class}}"></text>
                 <text class="order_text {{item.classCon}}">{{item.name}}</text>
                 <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
