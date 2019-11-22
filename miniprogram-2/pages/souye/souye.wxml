@@ -1,42 +1,46 @@
 <!--pages/souye/souye.wxml-->
 <view class="cntentes">
-<!--轮播图-->
-<view class="top">
-<swiper class="top1" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
-  <block wx:for="{{picList}}" wx:key="index">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" mode="aspectFill"                        bindtap='previewImg' data-previewurl='{{picList}}'
-      data-currenturl='{{item}}'/>
-    </swiper-item>   
-  </block>  
-</swiper>
-</view>
-<!--推荐-->
-<view class="selection">
-    <view class="header">
-      <text>精品推荐</text>
-      <text class="t1" bindtap="allClick">全部精品</text>
-    </view>
-    <view class="content">
-         <view class="content-item" wx:for="{{imgUrl}}" wx:key="name">
-           <image src="{{item}}"></image>
+   <!--轮播图-->
+   <view class="tot_top">
+     <view class="top">
+        <swiper class="top1" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+            <block wx:for="{{picList}}" wx:key="index">
+                <swiper-item>
+                   <image src="{{item}}" class="slide-image" mode="aspectFill" bindtap='previewImg' data-previewurl='{{picList}}' data-currenturl='{{item}}'/>
+                </swiper-item>   
+            </block>  
+        </swiper>
+     </view>
+     <view class="message">
+       <text bindtap="messageClick"> 地址：四川省成都市武侯区商鼎国际A座一单元2302</text>
+       <text>电话：131xxxx8898</text>
+     </view>
+  </view>
+    <!--推荐-->
+    <view class="selection">
+         <view class="header">
+            <text>精品推荐</text>
+            <text class="t1" bindtap="allClick">全部精品</text>
+         </view>
+         <view class="content">
+             <view class="content-item" wx:for="{{imgUrl}}" wx:if="{{index<4}}"  wx:key="name">
+                 <image src="{{item.image}}"></image>
+             </view>
          </view>
     </view>
+    <!--茶楼-->
+    <view class="selection_01">
+         <view class="header_01">
+            <text>茶楼包间</text>
+            <text class="t1" bindtap="teaClick">全部包间</text>
+         </view>
+    </view>
+    <view class="Teahouse">
+         <view class="Teahouse_img" wx:for="{{Teahouse_img}}" wx:if="{{index<3}}" wx:key="name">
+            <image src="{{item.image}}"></image>
+            <text class="title">{{item.content}}</text>
+            <text class="price">价格：</text>
+            <text class="Teahouse-Price">￥{{item.price}}</text>
+         </view>
     </view>
 </view>
-<!--茶楼-->
-<view class="selection_01">
-   <view class="header_01">
-      <text>茶楼包间</text>
-      <text class="t1" bindtap="teaClick">全部包间</text>
-   </view>
-  </view>
-
-<view class="Teahouse">
-        <view class="Teahouse_img" wx:for="{{Teahouse_img}}" wx:key="name">
-           <image src="{{item}}"></image>
-           <text class="title">吊顶装饰 复古风茶楼</text>
-           <text class="price">价格：</text>
-           <text class="Teahouse-Price">150￥</text>
-        </view>
- </view>

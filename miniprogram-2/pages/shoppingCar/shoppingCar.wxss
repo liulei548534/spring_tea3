@@ -9,7 +9,6 @@ page{
      height:35rpx;  
      display:inline-block;  
      overflow:hidden;  
-     float:right;  
      margin-top: -40rpx;  
      margin-left:400rpx;
 } 
