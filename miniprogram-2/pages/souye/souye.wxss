@@ -1,6 +1,22 @@
+.tot_top{
+background: gainsboro;
+margin-bottom: 80rpx;
+}
+.top{
+ padding: 40rpx 20rpx;
+}
 .top image{
    width: 100%;
   height: 100%;
+}
+.message{
+  display: flex;
+  flex-direction: column;
+  font-size: 32rpx;
+  padding-bottom: 30rpx;
+}
+.message text{
+  padding-bottom: 20rpx;
 }
 .header{
   border-left: 3px solid green;

@@ -1,4 +1,4 @@
-<view class="J-shopping-cart-empty" hidden="{{iscart}}">
+<view class="J-shopping-cart-empty" wx:if="{{clolected}}" hidden="{{iscart}}">
    <view class="shopping-cart-empty">
         <view class="bg"></view> 
         <view class="cart"></view>
@@ -9,3 +9,14 @@
         </navigator>
     </view>
 </view>
+<!--购物车商品列表-->
+<view class="details_content" wx:if="{{!clolected}}" wx:for="{{details}}" wx:key="id" data-index="{{index}}">
+        <image class="details_content_img" src="{{item.image}}"></image>
+          <text class="details_content_name">{{item.name}}</text> 
+       <view class="details_content_message">
+           <text class="introduce">商品介绍：</text>
+           <text class="details_content_introduce">{{item.content}}</text>
+           <text class="details_content_money">价格:￥{{item.price}}</text> 
+      </view>
+</view>   
+

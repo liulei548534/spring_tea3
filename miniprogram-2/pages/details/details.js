@@ -1,4 +1,5 @@
 // pages/details/details.js
+const app = getApp();
 Page({
 
   /**
@@ -7,32 +8,28 @@ Page({
   data: {
     details:[], 
     isClolected:false,
-    index:null,
+    index:''
   },
-
+  addCar(){
+    wx.setStorageSync("index",this.data.index)
+    wx.showModal({
+      title: '购物车提示',
+      content: '商品成功添加到购物车',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var listData = JSON.parse(options.listData)
     console.log(listData.id)
-    let index = listData.id
+    var index = listData.id
     this.setData({
       details: listData,
-      index
+      index:index
     });
-    //根据本地缓存数据判断用户是否收藏当前内容
-  let datilStorg = wx.getStorageSync("isClolected")
-    if (!datilStorg){
-      wx.setStorageSync("isClolected", {})
-  }
-  //判读用户是否收藏
-    if (datilStorg[index]){
-      //true
-      this.setData({
-        isClolected: true,
-      });
-   }
+  
+    console.log(index)
   },
   handleCollection(){
     let isClolected = !this.data.isClolected
@@ -45,25 +42,6 @@ Page({
       title,
       icon:"success"
     });
-    //缓存数据到本地
-    let {index} = this.data;
-    console.log(this.data)
-    wx.getStorage({
-      key: 'isClolected',
-      success: function(datas) {      
-        let obj = datas.data;
-        console.log(obj)
-        obj[index] = isClolected;
-        wx.setStorage({
-          key: 'isClolected',
-          data: obj,
-          success: () => {
-
-          }
-        })
-      },
-    });
-    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -112,12 +90,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  btn_submit_order:function(e){
-    let index = e.currentTarget.dataset;
-    var listData = JSON.stringify(this.data.details[index.index])
-    wx: wx.navigateTo({
-      url: '../shoppingCar/shoppingCar?listData=' + listData,
-    })
-  },
+  }
 })

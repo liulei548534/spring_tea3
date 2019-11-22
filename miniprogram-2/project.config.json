@@ -44,7 +44,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -113,6 +113,13 @@
 					"id": -1,
 					"name": "pages/souye/souye",
 					"pathName": "pages/souye/souye",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shoppingCar/shoppingCar",
+					"pathName": "pages/shoppingCar/shoppingCar",
 					"scene": null
 				}
 			]

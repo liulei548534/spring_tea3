@@ -1,4 +1,5 @@
 // pages/souye/souye.js
+var app = getApp()
 Page({
 
   /**
@@ -6,10 +7,9 @@ Page({
    */
   data: {
       TeahousePic:[],
-      content_pic:'http://image.chawenyi.com/201904/2019040471929_b.jpg',
-      imgUrl: []
+      imgUrl: [],
   },
-
+ 
   /**
    * 生命周期函数--监听页面加载
    */
@@ -71,6 +71,7 @@ Page({
     })
   },
   onLoad: function () {
+    // list.forEach((v,i)=>v.hot===true?data.push(v):'')
     var that = this
     var picList = []
     picList.push("http://image.chawenyi.com/201904/2019040364716_b.jpg")
@@ -78,21 +79,12 @@ Page({
     picList.push("http://img.zcool.cn/community/018ef45632ea256ac7259e0f9af769.png")
     picList.push("http://img.zcool.cn/community/019bd25632ea256ac7259e0f8f6840.png") 
     var imgUrl = []
-    imgUrl.push("http://image.chawenyi.com/201904/2019041654428_b.jpg")
-    imgUrl.push("http://image.chawenyi.com/201904/2019040471929_b.jpg")
-    imgUrl.push("http://image.chawenyi.com/201904/2019040364716_b.jpg")
-    imgUrl.push("http://image.chawenyi.com/201904/2019040264724_b.jpg")
-
-    var Teahouse_img = []
-    Teahouse_img.push("http://img.zx123.cn/Resources/zx123cn/uploadfile/2015/0516/e05d6df60f4b9e3bc13dc8b74bf4ff60.jpg")
-    Teahouse_img.push("http://img.zcool.cn/community/019bd25632ea256ac7259e0f8f6840.png")
-    Teahouse_img.push("http://static-xiaoguotu.17house.com/xgt/m/15/1462691135164.jpg")
-    Teahouse_img.push("http://pic1.shejiben.com/case/day_120315/20120315_acac94cab82a06cc129fZevQFXSshyjx.jpg")
+    var Teahouse_img =[] 
     that.setData({
       picList: picList,
-      imgUrl: imgUrl,
-      Teahouse_img: Teahouse_img,
-    })
+      imgUrl: app.globalData.date,
+      Teahouse_img: app.globalData.house,
+    });
   },
   allClick:function(){
     wx.navigateTo({
@@ -103,5 +95,36 @@ Page({
     wx.navigateTo({
       url: '../teaHouse/teaHouse',
     })
-  }
+  },
+  /*messageClick:function(){
+    wx.getLocation({
+      type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
+      success: function (res) {
+        _this.setData({
+          latitude: res.latitude,
+          longitude: res.longitude,
+          markers: [{
+            id: "1",
+            latitude: res.latitude,
+            longitude: res.longitude,
+            width: 50,
+            height: 50,
+            iconPath: "/assests/imgs/my.png",
+            title: "四川省成都市武侯区商鼎国际A座一单元2302"
+
+          }],
+          circles: [{
+            latitude: res.latitude,
+            longitude: res.longitude,
+            color: '#FF0000DD',
+            fillColor: '#7cb5ec88',
+            radius: 3000,
+            strokeWidth: 1
+          }]
+
+        })
+      }
+
+    })
+  }*/
 })

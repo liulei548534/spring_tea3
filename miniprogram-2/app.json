@@ -13,6 +13,11 @@
     "pages/content/content",
     "pages/details/details"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "四川省成都市武侯区商鼎国际A座一单元2302" 
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ADA670",

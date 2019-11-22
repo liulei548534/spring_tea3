@@ -16,6 +16,6 @@
       </button>
       <!-- 提交订单 -->
       <label class="submit" bindtap="btn_submit_car">立即下单</label>
-       <label class="submit_01" bindtap="btn_submit_order">加入购物车</label>
+       <label class="submit_01" catchtap="addCar">加入购物车</label>
 </view>
 
