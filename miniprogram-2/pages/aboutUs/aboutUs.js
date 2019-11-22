@@ -5,14 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    details:[
+      {
+        id:0,
+        name:"宋明杰"
+      },{
+        id:1,
+        name:"网管"
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      var date ={
+          id:3,
+          name:"刘磊"
+        }
+      
+      var liulei = this.data.details
+      console.log(liulei)
+      liulei.push(date)
+      console.log(liulei)
   },
 
   /**

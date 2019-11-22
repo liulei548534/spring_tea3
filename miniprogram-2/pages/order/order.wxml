@@ -1,3 +1,4 @@
+
 <view class="box">
     <view class="title">
         <view class="onloading is_black {{item.isSelect?'on_item':''}}" wx:for="{{order}}" wx:key="id">
@@ -7,32 +8,35 @@
         </view>
     </view>
     <view class="content-left item" wx:if="{{true}}">
-        <view class="order-info">
+        <view class="order-info" wx:for="{{order_list}}" wx:key="id" wx:if="{{item.status==isFinish}}">
             <view class="order-package">
-                包间号：{{order_list[index].order_package}}
+                包间号：{{item.order_package}}
             </view>
             <view class="order-num">
-                <text class="num-info">订单编号:{{order_list[index].orderList}}</text>
-                <text class="{{order_list[index].class}}">{{order_list[index].status}}</text>
+                <text class="num-info">订单编号:{{item.orderList}}</text>
+                <text class="{{order_list[index].class}}">{{item.status}}</text>
             </view>
             <view class="order-date">
-                <text class="date">下单时间:{{order_list[index].date}}</text>
+                <text class="date">下单时间:{{item.date}}</text>
             </view>
-            <view class="infomation" wx:for="{{date}}" wx:key="id" wx:if="{{item.id<count&item.num!=0}}">
+            <view class="infomation" wx:for="{{item.list}}" wx:key="id" 
+            wx:for-item="item1"
+            wx:if="{{item1.id<count&item1.num!=0}}"
+           >
                 <view class="img">
-                    <image mode="widthFix" src="{{item.image}}" />
+                    <image mode="widthFix" src="{{item1.image}}" />
                 </view>
                 <view class="right">
                     <view class="name">
-                        商品：{{item.name}}
+                        商品：{{item1.name}}
                     </view>
                     <view class="price">
-                        价钱： ￥{{item.price}}
+                        价钱： ￥{{item1.price}}
                     </view>
                     <view class="count">
-                        数量： {{item.num}}
+                        数量： {{item1.num}}
                     </view>
-                    <view class="back">
+                    <view class="back"  wx:if="{{item.status=='正在进行'}}">
                         <text>申请售后</text>
                     </view>
                 </view>
@@ -44,11 +48,11 @@
             <view class="payfor">
                 <view class="payfor_count">
                     <text class="pat_total">总计：</text>
-                    <text class="red">￥<text>{{num}}</text></text>
+                    <text class="red">￥<text>{{info[index].num}}</text></text>
                 </view>
-                <view class="submit {{isWho}}}">
+                <view class="submit {{isWho}}}" wx:if="{{!order[1].isSelect}}">
                     <text>去结算</text>
-                    <text>({{total}}件)</text>
+                    <text>({{info[index].total}}件)</text>
                 </view>
             </view>
         </view>

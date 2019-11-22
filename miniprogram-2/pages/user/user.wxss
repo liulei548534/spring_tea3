@@ -1,6 +1,11 @@
 /* pages/user/user.wxss */
+page {
+  width: 100%;
+  height: 100%;
+}
 .getInfo {
-  width: 750rpx;
+  width: 100%;
+  height: 100%;
 }
 .getInfo .message {
   display: flex;
@@ -17,7 +22,7 @@
   letter-spacing: 20rpx;
 }
 .isHidden {
-  height: 1070rpx;
+  height: 100%;
   background-color: #f8f8f8;
 }
 .isHidden .top {
@@ -52,15 +57,44 @@
   right: 40rpx;
   top: 0;
 }
+.isHidden .content .link {
+  display: inline-block;
+}
+.isHidden .content .link .item {
+  background-color: #f8f8f8;
+  border: 1px solid #fff;
+  width: 750rpx;
+  height: 120rpx;
+  font-size: 16px;
+  line-height: 120rpx;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+.isHidden .content .link .item .icon_order {
+  margin-left: 10rpx;
+  color: gold;
+  float: left;
+  font-size: 52rpx;
+}
+.isHidden .content .link .item .order_text {
+  display: inline-block;
+  margin: 0 16rpx;
+}
+.isHidden .content .link .item .icon_arrrowRight {
+  overflow: hidden;
+  float: right;
+  color: #999;
+  font-size: 52rpx;
+}
 .isHidden .content .item {
   background-color: #f8f8f8;
   border: 1px solid #fff;
   width: 750rpx;
-  height: 125rpx;
+  height: 120rpx;
   font-size: 16px;
+  line-height: 120rpx;
   font-weight: normal;
   box-sizing: border-box;
-  line-height: 125rpx;
 }
 .isHidden .content .item .icon_order {
   margin-left: 10rpx;
@@ -73,11 +107,13 @@
   margin: 0 16rpx;
 }
 .isHidden .content .item .icon_arrrowRight {
+  overflow: hidden;
   float: right;
   color: #999;
   font-size: 52rpx;
 }
-.isHidden .content .item .icon_conllection {
+.isHidden .content .item .icon_conllection1 {
+  overflow: hidden;
   float: left;
 }
 .isHidden .content button {

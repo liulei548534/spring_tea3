@@ -29,19 +29,17 @@
         <view class="qd"> 签到</view>
     </view>
     <view class="content">
-        <view class="item" wx:for="{{order}}" wx:key="id">
-            <navigator class="link" url="../{{item.page}}/{{item.page}}" open-type="navigate">
+        <navigator class="link" url="../{{item.page}}/{{item.page}}" open-type="navigate" wx:for="{{order}}" wx:key="id">
+            <view class="item">
                 <text class="icon icon_order iconfont {{item.class}}"></text>
                 <text class="order_text {{item.classCon}}">{{item.name}}</text>
                 <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
-            </navigator>
-        </view>
+            </view>
+        </navigator>
         <button open-type="contact" class="item">
             <text class="icon icon_order iconfont icon-lianxikefu"></text>
-            <text class="order_text icon_conllection">联系客服</text>
+            <text class="order_text icon_conllection1">联系客服</text>
             <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
         </button>
-        
-        
     </view>
 </view>
