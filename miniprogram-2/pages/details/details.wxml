@@ -4,7 +4,7 @@
        <view class="details_content_message">
            <text class="introduce">商品介绍：</text>
            <text class="details_content_introduce">{{details.content}}</text>
-           <text class="details_content_money">价格:￥{{details.price}}</text> 
+           <text class="details_content_money">单价:￥{{details.price}}</text>
       </view>
 </view>   
 <!-- 固定底部 -->

@@ -20,15 +20,15 @@ App({
         name: "功夫红茶",
         content: "工夫红茶原料细嫩,制工精细,外形条索紧直,匀齐,色泽乌润,香气浓郁,滋味醇和而甘浓,汤色,叶底红艳明亮,具有形质兼优的品质特征.,内含物质十分丰富，茶多酚和儿茶素较高，茶芽壮多毫，具有优良的发酵性能和丰富的多酚类物质",
         price: "45",
-        num: 0,
+        num: 1,
         hot:true
       }, {
-        id: 1,
+        id:1,
         image: "http://5b0988e595225.cdn.sohucs.com/images/20180828/82b6e4fe790a4b318de649855cd77003.jpeg",
         name: "绿茶",
         content: "绿茶是不发酵茶,防衰老、防癌、抗癌、杀菌、消炎等均有特殊效果，为发酵类茶等所不及。",
         price: "55",
-        num: 0
+        num: 1
       }, {
         id: 2,
         image: "http://uploads.5068.com/allimg/1809/211-1PZ1160105.jpg",
@@ -65,12 +65,12 @@ App({
     ],
     house: [
       {
-        id: 0,
+        id: 1,
         image: "http://img.zx123.cn/Resources/zx123cn/uploadfile/2015/0516/e05d6df60f4b9e3bc13dc8b74bf4ff60.jpg",
         name: "春华阁",
         content: "吊顶装饰 复古风茶楼",
         price: "130",
-        num: 0
+        num:0
       },
       {
         id: 1,
@@ -86,7 +86,7 @@ App({
         name: "秋实阁",
         content: "吊顶装饰 复古风茶楼",
         price: "110",
-        num: 0
+        num:0
       },
       {
         id: 3,

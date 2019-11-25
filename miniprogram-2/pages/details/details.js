@@ -8,10 +8,10 @@ Page({
   data: {
     details:[], 
     isClolected:false,
-    index:''
   },
   addCar(){
     wx.setStorageSync("index",this.data.index)
+    console.log(this.data.index)
     wx.showModal({
       title: '购物车提示',
       content: '商品成功添加到购物车',
@@ -22,14 +22,11 @@ Page({
    */
   onLoad: function (options) {
     var listData = JSON.parse(options.listData)
-    console.log(listData.id)
     var index = listData.id
     this.setData({
       details: listData,
-      index:index
+     index:index,
     });
-  
-    console.log(index)
   },
   handleCollection(){
     let isClolected = !this.data.isClolected
@@ -90,5 +87,34 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  //小吃
+  delClick: function (event) {
+    let index = event.currentTarget.dataset;
+    var num = this.data.snack[index.index].num;
+    // 商品总数量-1
+    if (num > 0) {
+      this.data.snack[index.index].num--;
+    }
+    // 将数值与状态写回  
+    //拼接
+    var up = "snack[" + index.index + "].num";
+    this.setData({
+      [up]: this.data.snack[index.index].num
+    });
+  },
+  addClick: function (event) {
+    let index = event.currentTarget.dataset;
+    var num = this.data.snack[index.index].num;
+    // 总数量-1  
+    if (num < 50) {
+      this.data.snack[index.index].num++;
+    }
+    // 将数值与状态写回  
+    var up = "snack[" + index.index + "].num";
+    this.setData({
+      [up]: this.data.snack[index.index].num
+
+    });
   }
 })

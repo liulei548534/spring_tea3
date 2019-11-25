@@ -79,3 +79,124 @@ page{
     cursor: pointer;    
     user-select: none;
 } 
+.details_content{
+  height: 200rpx;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  font-size: 32rpx;
+  margin: 20rpx 15rpx;
+  line-height: 200rpx;
+  justify-content: space-between;
+  background: #ebebeb;
+}
+.details_content image{
+  height: 100%;
+  width: 35%;
+}
+.details_content_message{
+  line-height: 60rpx;
+  margin-left: 10rpx;
+  padding-top: 15rpx;
+   width: 55%;
+}
+
+.delimg{
+  width: 170rpx;
+  height: 65rpx;
+}
+.delimg image{
+   padding-left: 55rpx;
+}
+.xuanzhe{
+  display:flex;
+  flex-direction: row;
+  font-size: 13px;
+  padding-top: 20rpx;
+
+}
+.xuanzhe text{
+  width:50rpx;
+  height: 50rpx;
+  background-color:gold;
+  text-align: center;
+}
+.xuanzhe input{
+  width: 60rpx;
+  height: 50rpx;
+  background-color: gainsboro;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  text-align: center; 
+  }
+  .shuliang{
+    width: 100rpx;
+    display: flex;
+    flex-direction: row;
+  }
+  .bottom_total {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  background: white;
+  /* margin-top: 300rpx; */
+  border-top: 1rpx solid #ccc;
+  z-index: 99;
+}
+.button-red {
+  background-color: #f0145a; 
+  position: fixed;
+  right: 0;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 30rpx;
+  border-radius: 0rpx;
+  width: 40%;
+  height: 120rpx;
+  line-height: 120rpx;
+  border: 1rpx solid #ccc;
+}
+.bottom_line{
+    width: 100%;
+  height: 2rpx;
+  background: lightgray;
+}
+
+.item-allselect {
+  width: 40rpx;
+  height: 40rpx; 
+  margin-left: 20rpx;
+   margin-top:25rpx; 
+}
+.small_text {
+  font-size: 28rpx;
+  margin-right: 40rpx;
+}
+.price{
+  color: red;
+}
+ bottom_line {
+  width: 100%;
+  height: 2rpx;
+  background: lightgray;
+} 
+
+.item-allselect {
+  width: 40rpx;
+  height: 40rpx; 
+  margin-left: 20rpx;
+   margin-top:25rpx;
+}
+.row{
+  display: flex;
+  flex-direction: row;}
+  .item-select {
+  width: 40rpx;
+  height: 40rpx;
+  padding-right: 10rpx;
+}
