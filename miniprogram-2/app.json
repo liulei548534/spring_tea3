@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/souye/souye",
+    "pages/search/search", 
     "pages/shoppingCar/shoppingCar",
     "pages/user/user",
     "pages/teas/teas",

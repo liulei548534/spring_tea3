@@ -1,4 +1,5 @@
 <!--pages/content/content.wxml-->
+<search></search>
 <text class="type_tea">茶</text>
    <view class="Tea">
         <view class="Tea_img" wx:for="{{date}}" wx:key="id">

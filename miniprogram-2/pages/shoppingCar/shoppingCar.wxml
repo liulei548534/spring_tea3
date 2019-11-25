@@ -42,7 +42,7 @@
            </view>
        </view>
            <!--删除图标-->
-       <view class="delimg">
+       <view class="delimg" bindtap="delimg" data-index="{{index}}">
            <image src="../../image/del.png"/>
        </view>
 </view>

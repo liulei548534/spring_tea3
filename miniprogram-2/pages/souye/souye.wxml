@@ -1,4 +1,6 @@
 <!--pages/souye/souye.wxml-->
+<search></search>  
+
 <view class="cntentes">
    <!--轮播图-->
    <view class="tot_top">

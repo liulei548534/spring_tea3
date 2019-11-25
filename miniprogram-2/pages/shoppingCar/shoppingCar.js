@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    index:[],
+    // indexs用来 存放传入过来的索引值
+    indexs:[100000],
     details:[],
     iscart: false,
     hidden: null,
@@ -55,30 +56,42 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var index1 = wx.getStorageSync("index");
-    var details  = app.globalData.date[index1] ||[]
-    console.log(details.length)
-    console.log(details )
-    if (details.length !=0) {
+    var index = wx.getStorageSync("index");
+    var detail  = app.globalData.date[index] ||[]
+    // console.log(details.length)
+    //  console.log(detail )
+    if (detail.length !=0) {
       var s = this.data.details
-      s.push(details)
-      var index2 = this.data.index
-      index2.push(index1)
-      index2.forEach((v, i) =>v=== index1 ?"return":function(){
-        this.setData({
-          index: index2,
+      var indexs = this.data.indexs
+      console.log(indexs)
+      var that = this
+      var flag = true;
+      this.data.indexs.forEach((v,i)=>v===index?flag = false:"")
+      if(flag){
+        indexs.push(index)
+        s.push(detail)
+        console.log("false")
+        that.setData({
+          indexs,
           details: s,
           hidden: false,
           iscart: true,
-        })
       })
+      if(this.data.isAllSelect==true){
+          var details = this.data.details;
+          details.forEach((v,i)=>true?v.isSelect=true:"")
+        this.setData({
+          details
+        })
+      }
+      }
     }else{
       this.setData({
         hidden: true,
         iscart: false,
       })
     }
-
+   
   },
 
   /**
@@ -169,34 +182,51 @@ Page({
     else {
       this.data.isAllSelect = false;
     }
+    // var index = e.currentTarget.dataset.index;
+    // var details= this.data.details;
+    // details[index].isSelect=true;
+    // var isAllSelect=this.data.isAllSelect;
+    // var count = 0;
+    // details.forEach((v,i)=>v.isSelect=true?count++:"");
+    // if(count==details.length){
+    //   isAllSelect=true
+    // }
     this.setData({
-      details: this.data.details,
+      details:this.data.details,
       totalMoney: this.data.totalMoney,
-      isAllSelect: this.data.isAllSelect,
+      isAllSelect:this.data.isAllSelect
     })
   },
   //全选
   allSelect: function (e) {
     //处理全选逻辑
-    let i = 0;
-    if (!this.data.isAllSelect) {
-      this.data.totalMoney = 0;
-      for (i = 0; i < this.data.details.length; i++) {
-        this.data.details[i].isSelect = true; 
-        this.data.totalMoney = this.data.totalMoney + (this.data.details[i].price * this.data.details[i].num);
-        console.log(this.data.totalMoney)
-      }
+    var details = this.data.details
+    var isAllSelect = this.data.isAllSelect
+    if(isAllSelect==false){
+      details.forEach((v,i)=>true?(v.isSelect=true)&(isAllSelect=true):"")
+    }else{
+      details.forEach((v,i)=>true?(v.isSelect=false)&(isAllSelect=false):"")
     }
-    else {
-      for (i = 0; i < this.data.details.length; i++) {
-        this.data.details[i].isSelect = false;
-      }
-      this.data.totalMoney = 0;
-    }
+    // let i = 0;
+    // if (!this.data.isAllSelect) {
+    //   this.data.totalMoney = 0;
+    //   for (i = 0; i < this.data.details.length; i++) {
+    //     this.data.details[i].isSelect = true; 
+    //     this.data.totalMoney = this.data.totalMoney + (this.data.details[i].price * this.data.details[i].num);
+    //     console.log(this.data.totalMoney)
+    //   }
+    // }
+    // else {
+    //   for (i = 0; i < this.data.details.length; i++) {
+    //     this.data.details[i].isSelect = false;
+    //   }
+    //   this.data.totalMoney = 0;
+    // }
     this.setData({
-      carts: this.data.details,
-      isAllSelect: !this.data.isAllSelect,
-      totalMoney: this.data.totalMoney,
+      // carts: this.data.details,
+      isAllSelect,
+      details
+      // totalMoney: this.data.totalMoney,
     })
   },
   // 去结算
@@ -209,6 +239,44 @@ Page({
     this.setData({
       showDialog: !this.data.showDialog
     });
+  },
+  delimg(e){
+   var num =  e.currentTarget.dataset.index;
+   var nums = num;
+   var details = this.data.details;
+   console.log("num:"+num)
+   var leng = details.length
+   for(var i = 0;i<leng;i++){
+    console.log("leng:"+leng)
+        if(i===num){
+          // 利用该方法来删除数组中元素（根据数据下标进行删除，1参数为删除几个）
+          details.splice(i,1)
+          num=-1;
+          console.log(num)
+        }
+   }
+   
+  //  details.forEach((v,i)=>i===num?details.splice(num):"")
+    // details.splice(num)
+    var indexs = this.data.indexs;
+    // indexs.forEach((v,i)=>i===num+1?indexs.splice(num+1):"")
+    for(var i = 0;i<indexs.length;i++){
+      if(i===nums+1){
+        indexs.splice(nums+1,1)
+        nums=-1;
+      }
+ }
+    // indexs.splice(num+1)
+    this.setData({
+      details,
+      indexs
+    })
+    if(details.length<=0){
+      this.setData({
+        hidden: true,
+        iscart: false,
+      })
+    }
   }
   
 })

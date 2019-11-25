@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "春茗茶楼"
+  "navigationBarTitleText": "春茗茶楼",
+  "usingComponents": {
+    "search":"../../components/searchInput"
+  }
 }

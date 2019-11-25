@@ -1,0 +1,13 @@
+<view class="search_head" hover-class="none">
+    <view class="left"><input></input></view>
+    <view class="right">取消</view>
+</view>
+<view class="content" hover-class="none" hover-stop-propagation="false">
+    春天的第一杯浓茶
+</view>
+<view class="content" hover-class="none" hover-stop-propagation="false">
+    春天的第一杯浓茶
+</view>
+<view class="content" hover-class="none" hover-stop-propagation="false">
+    春天的第一杯浓茶
+</view>
