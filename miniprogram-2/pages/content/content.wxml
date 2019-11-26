@@ -1,26 +1,70 @@
 <!--pages/content/content.wxml-->
 <search></search>
-<text class="type_tea">茶</text>
-   <view class="Tea">
+
+<scroll-view class="tui-city-scroll" scroll-x="false" scroll-into-view="NAV{{status}}" 
+scroll-top="{{scrollTop}}"
+scroll-with-animation="true">
+    <view class="df">
+        <view class="tui-nav-li {{item.isSelected?'tui-nav-active':''}}" bindtap="ssdf" data-index="{{index}}"
+            wx:for="{{navList}}" wx:key="name">
+            {{item.name}}
+        </view>
+    </view>
+    <scroll-view class="tui-city-scroll-y" scroll-y="true" 
+        scroll-top="{{scrollTop}}"
+        scroll-into-view="NAV{{status}}"
+        scroll-with-animation="true">
+        <!-- <view wx:for="{{navList}}" wx:key="name">
+                <view id="NAV{{index}}" class="tui-list-head">{{item.name}}</view>
+                <view class="tui-list-li">{{item.name}} 列表 {{index}}</view>
+            </view> -->
+        <view class="md" id="NAV0">
+            <text class="type_tea">茶</text>
+            <view class="Tea">
+                <view class="Tea_img" wx:for="{{date}}" wx:key="id">
+                    <image class="img" src="{{item.image}}" bindtap="img_Click" data-index="{{index}}"></image>
+                    <view>
+                        <text class="tfname">{{item.name}}</text>
+                        <text class="money">￥{{item.price}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="md" id="NAV1">
+            <text class="type_tea">茶楼包间</text>
+            <view class="Tea">
+                <view class="Tea_img" wx:for="{{house}}" wx:key="id">
+                    <image class="img" src="{{item.image}}" bindtap="house_Click" data-index="{{index}}"></image>
+                    <view>
+                        <text class="tfname">{{item.name}}</text>
+                        <text class="money">￥{{item.price}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="md" id="NAV2">
+            <text class="type_tea">小吃</text>
+            <view class="Tea">
+                <view class="Tea_img" wx:for="{{snack}}" wx:key="id">
+                    <image class="img" src="{{item.image}}" bindtap="snack_Click" data-index="{{index}}"></image>
+                    <view>
+                        <text class="tfname">{{item.name}}</text>
+                        <text class="money">￥{{item.price}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+
+    </scroll-view>
+</scroll-view>
+<!-- <view class="md" id="NAV0">
+    <text class="type_tea">茶</text>
+    <view class="Tea">
         <view class="Tea_img" wx:for="{{date}}" wx:key="id">
-         <image class="img" src="{{item.image}}" bindtap="img_Click" data-index="{{index}}"></image>
-                  <text class="tfname">{{item.name}}</text> 
-                  <text class="money">￥{{item.price}}</text> 
-        </view>  
-    </view> 
-<text class="type_tea">茶楼包间</text>
-<view class="Tea">
-        <view class="Tea_img" wx:for="{{house}}" wx:key="id">
-         <image class="img" src="{{item.image}}" bindtap="house_Click" data-index="{{index}}"></image>
-                  <text class="tfname">{{item.name}}</text> 
-                  <text class="money">￥{{item.price}}</text> 
-        </view>  
-    </view> 
-<text class="type_tea">小吃</text>
-<view class="Tea">
-        <view class="Tea_img" wx:for="{{snack}}" wx:key="id">
-         <image class="img" src="{{item.image}}" bindtap="snack_Click" data-index="{{index}}"></image>
-                  <text class="tfname">{{item.name}}</text> 
-                  <text class="money">￥{{item.price}}</text> 
-        </view>  
-    </view> 
+            <image class="img" src="{{item.image}}" bindtap="img_Click" data-index="{{index}}"></image>
+            <text class="tfname">{{item.name}}</text>
+            <text class="money">￥{{item.price}}</text>
+        </view>
+    </view>
+</view> -->

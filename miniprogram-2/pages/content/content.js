@@ -6,12 +6,39 @@ Page({
    * 页面的初始数据
    */
   data: {
+    scrollTop:'',
+    status:2,
+    navList:[
+      {
+      id:0,
+      isSelected:true,
+      name:"茶"},
+      {id:1,
+        isSelected:false,
+        name:"包间"},
+        {id:2,
+          isSelected:false,
+          name:"小吃"}
+    ],
     date:[],
     house:[],
     snack:[]
     
   },
-  
+  ssdf:function(e){
+    var index = e.currentTarget.dataset.index;
+    this.liulei(index)
+  },
+liulei:function(index){
+  var date = this.data.navList;
+  date.forEach((v,i)=>i===index?v.isSelected=true:v.isSelected=false)
+  // console.log(e)
+  this.setData(
+    {
+     status:index,
+     navList:date
+    })
+},
   /**
    * 生命周期函数--监听页面加载
    */
@@ -21,6 +48,14 @@ Page({
       house: app.globalData.house,
       snack: app.globalData.snack
     })
+    console.log(options)
+     var name = options.name
+    if(name=="house"){
+      this.liulei(1)
+      this.setData({
+        scrollTop:200
+      })
+    }
   },
 
   /**
@@ -34,7 +69,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+   
   },
 
   /**

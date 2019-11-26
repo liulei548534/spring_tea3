@@ -93,38 +93,14 @@ Page({
   },
   teaClick:function(){
     wx.navigateTo({
-      url: '../teaHouse/teaHouse',
+      url: '../content/content?name=house',
     })
   },
-  /*messageClick:function(){
-    wx.getLocation({
-      type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
-      success: function (res) {
-        _this.setData({
-          latitude: res.latitude,
-          longitude: res.longitude,
-          markers: [{
-            id: "1",
-            latitude: res.latitude,
-            longitude: res.longitude,
-            width: 50,
-            height: 50,
-            iconPath: "/assests/imgs/my.png",
-            title: "四川省成都市武侯区商鼎国际A座一单元2302"
-
-          }],
-          circles: [{
-            latitude: res.latitude,
-            longitude: res.longitude,
-            color: '#FF0000DD',
-            fillColor: '#7cb5ec88',
-            radius: 3000,
-            strokeWidth: 1
-          }]
-
-        })
-      }
-
+  jumpTo:function(e){
+    let index = e.currentTarget.dataset;
+     var listData = JSON.stringify(this.data.imgUrl[index.index])
+    wx.navigateTo({
+      url: '../details/details?listData='+listData,
     })
-  }*/
+  }
 })

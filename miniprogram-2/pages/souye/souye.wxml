@@ -26,7 +26,7 @@
          </view>
          <view class="content">
              <view class="content-item" wx:for="{{imgUrl}}" wx:if="{{index<4}}"  wx:key="name">
-                 <image src="{{item.image}}"></image>
+                  <image class="content-navi" src="{{item.image}}" bindtap="jumpTo" data-index="{{index}}"></image>
              </view>
          </view>
     </view>
