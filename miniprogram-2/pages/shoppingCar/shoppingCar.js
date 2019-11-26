@@ -7,37 +7,64 @@ Page({
    */
   data: {
     // indexs用来 存放传入过来的索引值
-    indexs:[100000],
     details:[],
     iscart: false,
     hidden: null,
     num:'',
-    totalMoney:'',
+    totalMoney:0,
     isAllSelect: false,
   },
   /*获取传入购物车的商品*/
   getPorduct() {
-    var index = wx.getStorageSync("index");
-    var arr = app.globalData.date[index]
+    var details = app.globalData.index
     console.log(details)
-    var num = app.globalData.date[index].num
-    console.log(num)
-    var s = this.data.details
-    s.push( details )
-    this.setData({
-      details:s,
-      num
-    });   
-    console.log(details)
+    if(details.length>0){
+       this.setData({
+         details,
+         hidden: false,
+         iscart: true,
+       })
+    } else {
+      this.setData({
+        hidden: true,
+        iscart: false,
+      })
+    }
+    // var index = wx.getStorageSync("index");
+    // var detail = app.globalData.date[index-1] || []
+    // if (detail.length != 0) {
+    //   var s = this.data.details
+    //   var indexs = this.data.indexs
+    //   console.log(indexs)
+    //   var that = this
+    //   var flag = true;
+    //   this.data.indexs.forEach((v, i) => v === index ? flag = false : "")
+    //   if (flag) {
+    //     indexs.push(index)
+    //     s.push(detail)
+    //     console.log("false")
+    //     that.setData({
+    //       indexs,
+    //       details: s,
+    //       hidden: false,
+    //       iscart: true,
+    //     })
+    //     if (this.data.isAllSelect == true) {
+    //       var details = this.data.details;
+    //       details.forEach((v, i) => true ? v.isSelect = true : "")
+    //       this.setData({
+    //         details
+    //       })
+    //     }
+    //   }
+    // } else {
+    //   this.setData({
+    //     hidden: true,
+    //     iscart: false,
+    //   })
+    // }
+  
   },
- 
- /* 
-     var list = this.data.details
-    var index = id
-    list.forEach((v,i)=>v.id===index?v="")
-  }*/
-  /*console.log(this.data.details);
-},*/
   /**
    * 生命周期函数--监听页面加载
    */
@@ -56,42 +83,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var index = wx.getStorageSync("index");
-    var detail  = app.globalData.date[index] ||[]
-    // console.log(details.length)
-    //  console.log(detail )
-    if (detail.length !=0) {
-      var s = this.data.details
-      var indexs = this.data.indexs
-      console.log(indexs)
-      var that = this
-      var flag = true;
-      this.data.indexs.forEach((v,i)=>v===index?flag = false:"")
-      if(flag){
-        indexs.push(index)
-        s.push(detail)
-        console.log("false")
-        that.setData({
-          indexs,
-          details: s,
-          hidden: false,
-          iscart: true,
-      })
-      if(this.data.isAllSelect==true){
-          var details = this.data.details;
-          details.forEach((v,i)=>true?v.isSelect=true:"")
-        this.setData({
-          details
-        })
-      }
-      }
-    }else{
-      this.setData({
-        hidden: true,
-        iscart: false,
-      })
-    }
-   
+    this.getPorduct();
   },
 
   /**
@@ -175,22 +167,13 @@ Page({
     //是否全选判断
     for (i = 0; i < this.data.details.length; i++) {
       Allprice = Allprice + (this.data.details[index].price * this.data.details[index].num);
-    }
+    } 
     if (Allprice == this.data.totalMoney) {
       this.data.isAllSelect = true;
     }
     else {
       this.data.isAllSelect = false;
     }
-    // var index = e.currentTarget.dataset.index;
-    // var details= this.data.details;
-    // details[index].isSelect=true;
-    // var isAllSelect=this.data.isAllSelect;
-    // var count = 0;
-    // details.forEach((v,i)=>v.isSelect=true?count++:"");
-    // if(count==details.length){
-    //   isAllSelect=true
-    // }
     this.setData({
       details:this.data.details,
       totalMoney: this.data.totalMoney,
@@ -200,33 +183,35 @@ Page({
   //全选
   allSelect: function (e) {
     //处理全选逻辑
-    var details = this.data.details
-    var isAllSelect = this.data.isAllSelect
-    if(isAllSelect==false){
-      details.forEach((v,i)=>true?(v.isSelect=true)&(isAllSelect=true):"")
-    }else{
-      details.forEach((v,i)=>true?(v.isSelect=false)&(isAllSelect=false):"")
+    // var details = this.data.details
+    // var isAllSelect = this.data.isAllSelect
+
+    // if(isAllSelect==false){
+    //   details.forEach((v,i)=>true?(v.isSelect=true)&(isAllSelect=true):"")
+    // }else{
+    //   details.forEach((v,i)=>true?(v.isSelect=false)&(isAllSelect=false):"")
+    //   this.data.totalMoney = 0;
+    // }
+
+    let i = 0;
+    if (!this.data.isAllSelect) {
+      this.data.totalMoney = 0;
+      for (i = 0; i < this.data.details.length; i++) {
+        this.data.details[i].isSelect = true; 
+        this.data.totalMoney = this.data.totalMoney + (this.data.details[i].price * this.data.details[i].num);
+        console.log(this.data.totalMoney)
+      }
     }
-    // let i = 0;
-    // if (!this.data.isAllSelect) {
-    //   this.data.totalMoney = 0;
-    //   for (i = 0; i < this.data.details.length; i++) {
-    //     this.data.details[i].isSelect = true; 
-    //     this.data.totalMoney = this.data.totalMoney + (this.data.details[i].price * this.data.details[i].num);
-    //     console.log(this.data.totalMoney)
-    //   }
-    // }
-    // else {
-    //   for (i = 0; i < this.data.details.length; i++) {
-    //     this.data.details[i].isSelect = false;
-    //   }
-    //   this.data.totalMoney = 0;
-    // }
+    else {
+      for (i = 0; i < this.data.details.length; i++) {
+        this.data.details[i].isSelect = false;
+      }
+      this.data.totalMoney = 0;
+    }
     this.setData({
-      // carts: this.data.details,
-      isAllSelect,
-      details
-      // totalMoney: this.data.totalMoney,
+      details: this.data.details,
+      isAllSelect: !this.data.isAllSelect,
+      totalMoney: this.data.totalMoney,
     })
   },
   // 去结算
@@ -277,6 +262,6 @@ Page({
         iscart: false,
       })
     }
-  }
+  },
   
 })
