@@ -30,17 +30,25 @@ Page({
       details: listData,
      index:index,
     });
-   //判断用户是否收藏过当然内容
+   //判断用户是否收藏过当前内容
    let detailStorage = wx.getStorageSync("isClolected")
     if (!detailStorage){
       //在缓存中初始化空对象
-      wx.setStorageSync("isClolected",{})
+      wx.setStorageSync("isClolected",[])
    }
    //判断用户是否收藏
-    if (detailStorage[index]){//收藏过
-      this.setData({
-        isClolected:true
-      });
+    // if (detailStorage[index]){//收藏过
+    //   this.setData({
+    //     isClolected:true
+    //   });
+    // }
+    if(detailStorage.length!=0){
+      // var isClolected = false;
+      // console.log("detailStorage:"+detailStorage)
+      // detailStorage.forEach((v,i)=>(v.isClolected===true)&&(v.id===index)?isClolected=true:"")
+      // this.setData({isClolected:isClolected})
+      // detailStorage.forEach((v,i)=>true?console.log(v.id+"---"+v.isClolected):"")
+      // console.log(index+"---"+this.data.isClolected)
     }
   },
   handleCollection(){
@@ -56,21 +64,45 @@ Page({
       icon:"success"
     });
     let {index} = this.data
-   wx.getStorage({
-     key: 'isClolected',
-     success: function(datas) {
-      let obj = datas.data;
-      obj[index] = isClolected
-       //缓存数据到本地
+    var colletionData = {
+      id:index
+    }
+    let detailStorage = wx.getStorageSync("isClolected")
+    console.log(isClolected)
+   if(detailStorage.length!=0){
+      if(isClolected){
+        var count =0;
+        detailStorage.forEach((v,i)=>v.id==index?"":count++)
+          // for(var i = 0;i<detailStorage.length;i++){
+          //       if(detailStorage[i].id!=index){
+          //         count++
+          //       }
+          // }
+          if(count==detailStorage.length){
+            detailStorage.push(colletionData)
+          }
+      }else{
+          detailStorage.forEach((v,i)=>v.id==index?detailStorage.splice(i,1):"")
+      }
+   }else{
+     detailStorage.push(colletionData)
+   }
+   console.log("detailStorage:"+detailStorage)
+  //  wx.getStorage({
+  //    key: 'isClolected',
+  //    success: function(datas) {
+  //     let obj = datas.data;
+  //     obj[index] = isClolected
+  //      //缓存数据到本地
        wx.setStorage({
          key: 'isClolected',
-         data: obj,
+         data: detailStorage,
          success: () => {
            console.log("缓存成功")
          }
        })
-     },
-   }) 
+  //    },
+  //  }) 
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

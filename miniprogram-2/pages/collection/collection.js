@@ -34,7 +34,19 @@ Page({
       //获取收藏缓存
     var detailStorage = wx.getStorageSync('isClolected');
     console.log(detailStorage)
-
+    var simpleDate = this.data.date
+    if(detailStorage.length!=0){
+      detailStorage.forEach((v,i)=>true?simpleDate.push(date[v.id]):"")
+      this.setData({
+        isHidden:true,
+        date:simpleDate
+      })
+    }else{
+      this.setData({
+        isHidden:false,
+        date:simpleDate
+      })
+    }
   },
 
   /**
