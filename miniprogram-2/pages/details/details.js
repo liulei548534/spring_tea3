@@ -6,12 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    details:[], 
+    details:{}, 
     isClolected:false,
+    index:null,
   },
   addCar(){
-    wx.setStorageSync("index",this.data.index)
-    console.log(this.data.index)
+    var list = app.globalData.index
+    list.push(this.data.details)
+    //wx.setStorageSync("list", list)
+    console.log(list)
     wx.showModal({
       title: '购物车提示',
       content: '商品成功添加到购物车',
@@ -27,18 +30,47 @@ Page({
       details: listData,
      index:index,
     });
+   //判断用户是否收藏过当然内容
+   let detailStorage = wx.getStorageSync("isClolected")
+    if (!detailStorage){
+      //在缓存中初始化空对象
+      wx.setStorageSync("isClolected",{})
+   }
+   //判断用户是否收藏
+    if (detailStorage[index]){//收藏过
+      this.setData({
+        isClolected:true
+      });
+    }
   },
   handleCollection(){
     let isClolected = !this.data.isClolected
+    //更新状态
     this.setData({
       isClolected
     });
-    // 提示
+    //提示
     let title = isClolected?'收藏成功':'取消收藏';
     wx.showToast({
       title,
       icon:"success"
     });
+    let {index} = this.data
+   wx.getStorage({
+     key: 'isClolected',
+     success: function(datas) {
+      let obj = datas.data;
+      obj[index] = isClolected
+       //缓存数据到本地
+       wx.setStorage({
+         key: 'isClolected',
+         data: obj,
+         success: () => {
+           console.log("缓存成功")
+         }
+       })
+     },
+   }) 
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -51,70 +83,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+   
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+ 
 
-  },
+ 
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-  //小吃
-  delClick: function (event) {
-    let index = event.currentTarget.dataset;
-    var num = this.data.snack[index.index].num;
-    // 商品总数量-1
-    if (num > 0) {
-      this.data.snack[index.index].num--;
-    }
-    // 将数值与状态写回  
-    //拼接
-    var up = "snack[" + index.index + "].num";
-    this.setData({
-      [up]: this.data.snack[index.index].num
-    });
-  },
-  addClick: function (event) {
-    let index = event.currentTarget.dataset;
-    var num = this.data.snack[index.index].num;
-    // 总数量-1  
-    if (num < 50) {
-      this.data.snack[index.index].num++;
-    }
-    // 将数值与状态写回  
-    var up = "snack[" + index.index + "].num";
-    this.setData({
-      [up]: this.data.snack[index.index].num
-
-    });
-  }
+  
 })
