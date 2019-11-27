@@ -20,7 +20,7 @@
                 <view class="Collection" bindtap="coltClick" data-index="{{index}}">
                     <text class="sc">取消收藏<text class="iconfont icon-Mycollection"></text></text>
                 </view>
-                <text class="car" bindtap="addCarClick">加入购物车
+                <text class="car" bindtap="addCarClick" data-index="{{index}}">加入购物车
                     <!-- <text class="iconfont "></text> -->
                 </text>
             </view>

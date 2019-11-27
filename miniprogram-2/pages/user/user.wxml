@@ -1,4 +1,4 @@
-<!-- <view class="getInfo" wx:if="{{isHidden==false}}">
+<view class="getInfo" wx:if="{{isHidden==false}}">
     <image src="{{img}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
     <view class="hidden">
         <view class="message">
@@ -6,8 +6,8 @@
         </view>
         <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 立即授权</button>
     </view>
-</view> -->
-<view class="isHidden" wx:if="{{isHidden==false}}">
+</view>
+<view class="isHidden" wx:if="{{isHidden==true}}">
     <view class="top">
         <!-- <view class="icon">{{info.nickName}}</view>
         <view class="icon">{{info.gender}}</view>
@@ -19,12 +19,15 @@
             
         </image> -->
         <view class="avatarUrl info">
-            <image
+            <!-- <image
                 src="https://wx.qlogo.cn/mmopen/vi_32/12lic3oWibJa9MXzn5bhWuLf9vD1wTJE4XpCXgbWl8icicyEw7Nyicuo8GdAkm2JGia0s3kDqrle0Z3OuYkpkUiczBoVg/132"
                 mode="widthFix">
+            </image> -->
+            <image class="" src="{{info.avatarUrl}}" mode="widthFix">
+                
             </image>
         </view>
-        <view class="nickName info">用户名：Rabbi</view>
+        <view class="nickName info">用户名：{{info.nickName}}</view>
         <!-- <view class="credent info"> 积分：icon1</view> -->
         <view class="qd"> 签到</view>
     </view>
