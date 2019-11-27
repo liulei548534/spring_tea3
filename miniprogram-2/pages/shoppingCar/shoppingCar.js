@@ -7,6 +7,7 @@ Page({
    */
   data: {
     // indexs用来 存放传入过来的索引值
+    indexs: [-4],
     details:[],
     iscart: false,
     hidden: null,

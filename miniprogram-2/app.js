@@ -54,7 +54,7 @@ App({
         num: 1,
         hot: true
       }, {
-        id: 6,
+        id: 5,
         image: 'http://image.chawenyi.com/201903/2019032861550_b.jpg',
         name: "南湖银芽茶",
         content: "外形似月芽，嫩绿披白毫。内质香气清高，滋味清爽，汤色嫩绿清澈，叶底绿明亮。",
