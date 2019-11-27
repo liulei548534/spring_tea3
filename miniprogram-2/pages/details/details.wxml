@@ -4,6 +4,8 @@
        <view class="details_content_message">
            <text class="introduce">商品介绍：</text>
            <text class="details_content_introduce">{{details.content}}</text>
+           <text class="details_content_money" 
+           wx:if="{{details.type=='house'&!details.status}}">该包间正在使用</text>
            <text class="details_content_money">单价:￥{{details.price}}</text>
       </view>
 </view>   
@@ -15,7 +17,7 @@
       <!-- <text class="iconfont icon-lianxikefu"></text> -->
       </button>
       <!-- 提交订单 -->
-      <label class="submit" bindtap="btn_submit_car">立即下单</label>
-       <label class="submit_01" catchtap="addCar">加入购物车</label>
+      <label class="submit" bindtap="{{details.type=='house'&!details.status?'':'btn_submit_car'}}">立即下单</label>
+       <label class="submit_01" catchtap="{{details.type=='house'&!details.status?'':'addCar'}}">加入购物车</label>
 </view>
 

@@ -27,6 +27,7 @@
          <view class="content">
              <view class="content-item" wx:for="{{imgUrl}}" wx:if="{{index<4}}"  wx:key="name">
                   <image class="content-navi" src="{{item.image}}" bindtap="jumpTo" data-index="{{item.type+'/'+index}}"></image>
+                  <text>{{item.name}}</text>
              </view>
          </view>
     </view>
@@ -39,9 +40,10 @@
          <view class="Teahouse">
             <view class="Teahouse_img" wx:for="{{Teahouse_img}}" wx:if="{{index<3}}" wx:key="name">
                <image src="{{item.image}}" bindtap="jumpTo" data-index="{{item.type+'/'+index}}"></image>
+               <view class="cont">
                <text class="title">{{item.content}}</text>
-               <text class="price">价格：</text>
-               <text class="Teahouse-Price">￥{{item.price}}</text>
+               <text class="Teahouse-Price">价格：￥{{item.price}}</text>
+               </view>
             </view>
        </view>
     </view>
@@ -54,6 +56,7 @@
       <view class="content">
           <view class="content-item" wx:for="{{snack}}" wx:key="name">
                <image class="content-navi" src="{{item.image}}" bindtap="jumpTo" data-index="{{item.type+'/'+index}}"></image>
+               <text>{{item.name}}</text>
           </view>
       </view>
  </view>
