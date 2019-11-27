@@ -43,17 +43,43 @@ liulei:function(index){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var imgUrl = []
+    var Teahouse_img =[] 
+    var global = app.globalData.date
+    var snack=[]
+    for(var i = 0;i<global.length;i++){
+        if(global[i].type=="house"){
+          Teahouse_img.push(global[i])
+        }
+        if(global[i].type=="snack"){
+            snack.push(global[i])
+        }
+        if(global[i].type=="tea"){
+          imgUrl.push(global[i])
+        }
+    }
     this.setData({
-      date: app.globalData.date,
-      house: app.globalData.house,
-      snack: app.globalData.snack
+      date: imgUrl,
+      house: Teahouse_img,
+      snack: snack
     })
-    console.log(options)
      var name = options.name
+     if(name=="tea"){
+      this.liulei(0)
+      this.setData({
+        scrollTop:10
+      })
+     }
     if(name=="house"){
       this.liulei(1)
       this.setData({
-        scrollTop:200
+        scrollTop:400
+      })
+    }
+    if(name=="snack"){
+      this.liulei(2)
+      this.setData({
+        scrollTop:800
       })
     }
   },

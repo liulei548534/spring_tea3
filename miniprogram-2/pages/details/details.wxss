@@ -1,4 +1,13 @@
 /* pages/details/details.wxss */
+page{
+  height: 100%;
+  width: 100%;
+  background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574843337551&di=bd0f531f4e4496f4e5a69dd98c77ad18&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F68dddfa591e50e1fde001059d37b9af3f157e4314e75-rbWQAS_fw658);
+  background-position: bottom;
+  background-repeat: repeat-x;
+  /* transition:90;   */
+  /* -webkit-transform:rotate(90deg); */ 
+}
 .details_content{
   display: flex;
   flex-direction: column;
@@ -76,7 +85,8 @@ font-weight: 10rpx;
  width: 100rpx;
  height: 50rpx;
  right: 470rpx;
- top: 5rpx;
+ line-height:50rpx; 
+ top: 22rpx;
  background: gainsboro;
 }
 button::after{

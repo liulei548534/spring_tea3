@@ -11,8 +11,8 @@
 <view class="cont_bot">      
         <text catchtap="handleCollection"   wx:if="{{!isClolected}}" class="iconfont icon-shoucang shoucang"></text>  
         <text catchtap="handleCollection"   wx:if="{{isClolected}}" class="iconfont icon-shoucang shoucang_01"></text>     
-      <button open-type="contact" class="item">
-      <text class="iconfont icon-lianxikefu"></text>
+      <button open-type="contact" class="item iconfont icon-lianxikefu">
+      <!-- <text class="iconfont icon-lianxikefu"></text> -->
       </button>
       <!-- 提交订单 -->
       <label class="submit" bindtap="btn_submit_car">立即下单</label>

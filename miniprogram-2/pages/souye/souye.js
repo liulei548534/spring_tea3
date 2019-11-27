@@ -80,27 +80,47 @@ Page({
     picList.push("http://img.zcool.cn/community/019bd25632ea256ac7259e0f8f6840.png") 
     var imgUrl = []
     var Teahouse_img =[] 
+    var global = app.globalData.date
+    var snack=[]
+    for(var i = 0;i<global.length;i++){
+        if(global[i].type=="house"){
+          Teahouse_img.push(global[i])
+        }
+        if(global[i].type=="snack"){
+            snack.push(global[i])
+        }
+        if(global[i].type=="tea"){
+          imgUrl.push(global[i])
+        }
+    }
     that.setData({
       picList: picList,
-      imgUrl: app.globalData.date,
-      Teahouse_img: app.globalData.house,
+      imgUrl: imgUrl,
+      Teahouse_img: Teahouse_img,
+      snack:snack
     });
   },
-  allClick:function(){
+  teaClick:function(e){
+    var name = e.currentTarget.dataset.index
     wx.navigateTo({
-      url: '../content/content',
-    })
-  },
-  teaClick:function(){
-    wx.navigateTo({
-      url: '../content/content?name=house',
+      url: '../content/content?name='+name
     })
   },
   jumpTo:function(e){
-    let index = e.currentTarget.dataset;
-     var listData = JSON.stringify(this.data.imgUrl[index.index])
+    let index = e.currentTarget.dataset.index.split("/")
+     if(index[0]=="tea"){
+      var listData = JSON.stringify(this.data.imgUrl[index[1]])
+     }
+     if(index[0]=="house"){
+      var listData = JSON.stringify(this.data.Teahouse_img[index[1]])
+      console.log(listData)
+    }
+    if(index[0]=="snack"){
+      var listData = JSON.stringify(this.data.snack[index[1]])
+    }
     wx.navigateTo({
       url: '../details/details?listData='+listData,
     })
+
   }
 })

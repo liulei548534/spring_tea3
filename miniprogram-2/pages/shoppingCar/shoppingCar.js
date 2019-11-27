@@ -7,6 +7,7 @@ Page({
    */
   data: {
     // indexs用来 存放传入过来的索引值
+    indexs:[-4],
     details:[],
     iscart: false,
     hidden: null,
@@ -30,40 +31,6 @@ Page({
         iscart: false,
       })
     }
-    // var index = wx.getStorageSync("index");
-    // var detail = app.globalData.date[index-1] || []
-    // if (detail.length != 0) {
-    //   var s = this.data.details
-    //   var indexs = this.data.indexs
-    //   console.log(indexs)
-    //   var that = this
-    //   var flag = true;
-    //   this.data.indexs.forEach((v, i) => v === index ? flag = false : "")
-    //   if (flag) {
-    //     indexs.push(index)
-    //     s.push(detail)
-    //     console.log("false")
-    //     that.setData({
-    //       indexs,
-    //       details: s,
-    //       hidden: false,
-    //       iscart: true,
-    //     })
-    //     if (this.data.isAllSelect == true) {
-    //       var details = this.data.details;
-    //       details.forEach((v, i) => true ? v.isSelect = true : "")
-    //       this.setData({
-    //         details
-    //       })
-    //     }
-    //   }
-    // } else {
-    //   this.setData({
-    //     hidden: true,
-    //     iscart: false,
-    //   })
-    // }
-  
   },
   /**
    * 生命周期函数--监听页面加载

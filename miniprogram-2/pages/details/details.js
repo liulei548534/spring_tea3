@@ -9,15 +9,34 @@ Page({
     details:{}, 
     isClolected:false,
     index:null,
+    info:"商品成功添加到购物车"
   },
   addCar(){
     var list = app.globalData.index
-    list.push(this.data.details)
+    var index = this.data.index
+    var count =0;
+    if(list.length!=0){
+      for(var i =0;i<list.length;i++){
+          if(list[i].id!=index){
+            count++
+          }
+      }
+      if(count==list.length){
+        list.push(this.data.details)
+      }else{
+        this.setData({
+          info:"该商品您已经加入购物车了"
+        })
+      }
+    }else{
+      list.push(this.data.details)
+    }
+    // list.push(this.data.details)
     //wx.setStorageSync("list", list)
-    console.log(list)
+    console.log("index:"+index+"----list:"+list)
     wx.showModal({
       title: '购物车提示',
-      content: '商品成功添加到购物车',
+      content: this.data.info,
     })
   },
   /**
@@ -43,10 +62,10 @@ Page({
     //   });
     // }
     if(detailStorage.length!=0){
-      // var isClolected = false;
+      var isClolected = false;
       // console.log("detailStorage:"+detailStorage)
-      // detailStorage.forEach((v,i)=>(v.isClolected===true)&&(v.id===index)?isClolected=true:"")
-      // this.setData({isClolected:isClolected})
+      detailStorage.forEach((v,i)=>v.id===index?isClolected=true:"")
+      this.setData({isClolected:isClolected})
       // detailStorage.forEach((v,i)=>true?console.log(v.id+"---"+v.isClolected):"")
       // console.log(index+"---"+this.data.isClolected)
     }
