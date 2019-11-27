@@ -7,14 +7,17 @@ Page({
    */
   data: {
     isHidden:false,
-    date:[]
+    date:[],
+    num:'',
+    indexs:[-4],
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+   
   },
 
   /**
@@ -23,30 +26,31 @@ Page({
   onReady: function () {
 
   },
-
+  getPro(){
+    //获取date
+    var date = app.globalData.date;
+    console.log(date)
+    //获取收藏缓存
+    var detailStorage = wx.getStorageSync('isClolected');
+    console.log(detailStorage)
+    var simpleDate = this.data.date
+    if (detailStorage.length != 0) {
+      detailStorage.forEach((v, i) => true ? simpleDate.push(date[v.id]) : "")
+      this.setData({
+        isHidden: true,
+        date: simpleDate,
+      })
+    } else {
+      this.setData({
+        isHidden:false,
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    //获取date
-      var date = app.globalData.date;
-      console.log(date)
-      //获取收藏缓存
-    var detailStorage = wx.getStorageSync('isClolected');
-    console.log(detailStorage)
-    var simpleDate = this.data.date
-    if(detailStorage.length!=0){
-      detailStorage.forEach((v,i)=>true?simpleDate.push(date[v.id]):"")
-      this.setData({
-        isHidden:true,
-        date:simpleDate
-      })
-    }else{
-      this.setData({
-        isHidden:false,
-        date:simpleDate
-      })
-    }
+    this.getPro();
   },
 
   /**
@@ -82,5 +86,90 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  coltClick(e){
+    console.log("-----取消收藏-----")
+    var date = app.globalData.date;
+    var detailStorage = wx.getStorageSync('isClolected');
+    console.log('----------' + detailStorage)
+    var simpleDate = this.data.date
+    if (detailStorage.length != 0) {
+      detailStorage.forEach((v, i) => true ? simpleDate.push(date[v.id]) : "")
+      console.log(simpleDate.length)
+    }
+    var num = e.currentTarget.dataset.index;
+    var nums = num
+    var dete = this.data.date;
+    console.log("num:" + num)
+    var leng = simpleDate.length
+    console.log("leng:" + leng)
+    for (var i = 0; i < leng; i++) {
+      if (i === num) {
+        // 利用该方法来删除数组中元素（根据数据下标进行删除，1参数为删除几个）
+        console.log(i === num)
+        simpleDate.splice(i, 1)
+        num = -1;
+        console.log(num)
+      }
+    }
+    var indexs = this.data.indexs;
+    for (var i = 0; i < indexs.length; i++) {
+      if (i === nums + 1) {
+        indexs.splice(nums + 1, 1)
+        nums = -1;
+      }
+    }
+    this.setData({
+      dete: simpleDate,
+      indexs
+    })
+    console.log(this.data.date)
+    if (dete.length <= 0) {
+      this.setData({
+        isHidden: true
+      })
+    }
+ },
+  addCarClick: function () {
+    console.log("-----商品加入购物车-----")
   }
 })
+
+
+
+
+/*
+ console.log(e)
+    var num = e.currentTarget.dataset.index;
+    var nums = num
+    var dete = this.data.date;
+    console.log("num:" + num)
+    var leng = dete.length
+    console.log("leng:" + leng)
+    for (var i = 0; i < leng; i++) {
+    if (i === num) {
+      // 利用该方法来删除数组中元素（根据数据下标进行删除，1参数为删除几个）
+      console.log(i === num)
+      dete.splice(i, 1)
+      num = -1;
+      console.log(num)
+      }
+    }
+    var indexs = this.data.indexs;
+         for(var i = 0; i<indexs.length;i++){
+          if (i === nums + 1) {
+           indexs.splice(nums + 1, 1)
+           nums = -1;
+              }
+            }
+        this.setData({
+          dete,
+          indexs
+        })
+        console.log(this.data.date)
+if (dete.length <= 0) {
+  this.setData({
+    isHidden:true
+     })
+   }
+ */
