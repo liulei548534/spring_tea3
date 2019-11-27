@@ -64,6 +64,7 @@ font-weight: 10rpx;
   }
  /* 固定底部 */
 .cont_bot{
+    display: flex;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -72,29 +73,44 @@ font-weight: 10rpx;
     background: gainsboro;
     border-top: 2rpx solid #ebebeb;
 }
+.item{
+  flex:1;
+}
 .shoucang{
+  flex: 1;
   margin-left: 70rpx;
+  color: #6f6f6f;
 }
 .shoucang_01{
+  flex: 1;
    margin-left: 70rpx;
    color: orangered;
    
 }
-.cont_bot button{
- position: absolute;
- width: 100rpx;
- height: 50rpx;
- right: 470rpx;
- line-height:50rpx; 
- top: 22rpx;
- background: gainsboro;
-}
+
+/* .cont_bot .submit_01{ */
+  /* text-align: right; */
+  /* flex:2; */
+ /* position: absolute; */
+ /* width: 100rpx; */
+ /* height: 50rpx; */
+ /* right: 470rpx; */
+ /* line-height:50rpx;  */
+ /* top: 22rpx; */
+ /* background: gainsboro; */
+/* } */
 button::after{
 border: none;
 }
+button{
+  background: gainsboro;
+  padding: 0;
+  line-height: 90rpx;
+}
+
 
 /* 提交 */
-.submit{
+/* .submit{
 position: absolute;
 width: 200rpx;
 height: 104rpx;
@@ -104,13 +120,12 @@ font-size: 30rpx;
 text-align: center;
 color:#fff;
 background-color:#495A8F;
-}
+} */
 .submit_01{
-  position: absolute;
+flex:2;
 width: 200rpx;
 height: 104rpx;
 line-height: 104rpx;
-right: 200rpx;
 font-size: 30rpx;
 text-align: center;
 color:#fff;

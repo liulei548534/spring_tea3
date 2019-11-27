@@ -11,13 +11,9 @@
 </view>   
 <!-- 固定底部 -->
 <view class="cont_bot">      
-        <text catchtap="handleCollection"   wx:if="{{!isClolected}}" class="iconfont icon-shoucang shoucang"></text>  
-        <text catchtap="handleCollection"   wx:if="{{isClolected}}" class="iconfont icon-shoucang shoucang_01"></text>     
-      <button open-type="contact" class="item iconfont icon-lianxikefu">
-      <!-- <text class="iconfont icon-lianxikefu"></text> -->
-      </button>
+      <text catchtap="handleCollection"  class="iconfont icon-Mycollection {{isClolected?'shoucang_01':'shoucang'}}"></text>  
+      <button open-type="contact" class="item iconfont icon-lianxikefu"></button>
       <!-- 提交订单 -->
-      <label class="submit" bindtap="{{details.type=='house'&!details.status?'':'btn_submit_car'}}">立即下单</label>
-       <label class="submit_01" catchtap="{{details.type=='house'&!details.status?'':'addCar'}}">加入购物车</label>
+       <text class="submit_01" catchtap="{{details.type=='house'&!details.status?'':'addCar'}}">加入购物车</text>
 </view>
 
