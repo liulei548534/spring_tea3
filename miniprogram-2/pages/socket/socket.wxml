@@ -6,6 +6,9 @@
 <button bindtap="close">
 断开连接
 </button>
+<button bindtap="text">
+    测试
+</button>
 
 <view>
 {{status}}

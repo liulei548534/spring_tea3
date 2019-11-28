@@ -38,7 +38,7 @@ Page({
     // console.log(detailStorage)
     var simpleDate = this.data.date
     if (detailStorage.length != 0) {
-      detailStorage.forEach((v, i) => true ? simpleDate.push(app.globalData.date[v.id]) : "")
+      detailStorage.forEach((v, i) => true ? simpleDate.push(app.globalData.date[v.id-1]) : "")
       this.setData({
         isHidden: true,
         date: simpleDate,

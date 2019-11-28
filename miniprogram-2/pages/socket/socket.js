@@ -2,7 +2,8 @@ var app = getApp();
 Page({
   data: {
     inputValue: "",
-    status: ""
+    status: "",
+    message:""
   },
   connect() {
     var myThis = this;
@@ -53,6 +54,7 @@ Page({
   onLoad: function (options) {
     var myThis = this;
     wx.onSocketMessage(function (res) {
+      console.log(res)
       myThis.setData({
         message: res.data
       })
@@ -63,4 +65,7 @@ Page({
       })
     })
   },
+  text(){
+    console.log(this.data.message)
+  }
 })

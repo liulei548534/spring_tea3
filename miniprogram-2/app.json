@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/socket/socket",
-    "pages/souye/souye",
     "pages/search/search", 
+    "pages/souye/souye",
+    "pages/socket/socket",
     "pages/shoppingCar/shoppingCar",
     "pages/user/user",
     "pages/teas/teas",

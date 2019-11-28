@@ -5,7 +5,7 @@
            <text class="introduce">商品介绍：</text>
            <text class="details_content_introduce">{{details.content}}</text>
            <text class="details_content_money" 
-           wx:if="{{details.type=='house'&!details.status}}">该包间正在使用</text>
+           wx:if="{{details.type=='house'&details.status=='1'}}">该包间正在使用</text>
            <text class="details_content_money">单价:￥{{details.price}}</text>
       </view>
 </view>   
@@ -14,6 +14,6 @@
       <text catchtap="handleCollection"  class="iconfont icon-Mycollection {{isClolected?'shoucang_01':'shoucang'}}"></text>  
       <button open-type="contact" class="item iconfont icon-lianxikefu"></button>
       <!-- 提交订单 -->
-       <text class="submit_01" catchtap="{{details.type=='house'&!details.status?'':'addCar'}}">加入购物车</text>
+       <text class="submit_01" catchtap="{{details.type=='house'&details.status=='1'?'':'addCar'}}">加入购物车</text>
 </view>
 
