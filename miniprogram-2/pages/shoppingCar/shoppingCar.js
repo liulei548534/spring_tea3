@@ -36,9 +36,46 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.connect()
   },
-
+  connect() {
+    var myThis = this;
+    wx.connectSocket({
+      url: 'ws://localhost:9090/websocket/12'
+    })
+    wx.onSocketOpen(function (res) {
+      console.log("连接服务器成功")
+    })
+  },
+  close() {
+    var myThis = this;
+    wx.closeSocket()
+    wx.onSocketClose(function (res) {
+      myThis.setData({
+        status: "websocket服务器已经断开"
+      })
+    })
+  },
+  send() {
+    var myThis = this;
+    console.log(this.data.details)
+    var date = JSON.stringify(this.data.details)
+    console.log(date)
+    wx.sendSocketMessage({
+      data: date,
+      success: function (res) {
+        console.log("发送信息")
+        wx.showToast({
+          title: '已发送',
+          icon: 'success',
+          duration: 1000
+        })
+      },
+      fail: function (res) {
+        console.log("请连接服务器")
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -133,8 +170,9 @@ Page({
     }
     //是否全选判断
     for (i = 0; i < this.data.details.length; i++) {
-      Allprice = Allprice + (this.data.details[index].price * this.data.details[index].num);
+      Allprice = Allprice + (this.data.details[i].price * this.data.details[i].num);
     } 
+    console.log(Allprice)
     if (Allprice == this.data.totalMoney) {
       this.data.isAllSelect = true;
     }

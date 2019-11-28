@@ -81,7 +81,7 @@ page {
 }
 .details_content {
   height: 200rpx;
-  width: 90%;
+  /* width: 90%; */
   display: flex;
   flex-direction: row;
   font-size: 32rpx;
@@ -183,17 +183,22 @@ bottom_line {
   background: lightgray;
 }
 .item-allselect {
-  width: 40rpx;
-  height: 40rpx;
-  margin-left: 20rpx;
-  margin-top: 25rpx;
+  width: 60rpx;
+  /* margin-left: 20rpx; */
+  /* margin-top: 25rpx; */
+  height: 100%;
+  margin: 30rpx 5rpx 0 20rpx;
+  /* line-height: 150rpx; */
+  /* box-sizing: border-box; */
 }
 .row {
   display: flex;
   flex-direction: row;
 }
 .item-select {
-  width: 40rpx;
-  height: 40rpx;
-  padding-right: 10rpx;
+  text-align: center;
+  width: 60rpx;
+  /* height: 40rpx; */
+  /* padding-right: 10rpx; */
+  padding: 0 10rpx;
 }

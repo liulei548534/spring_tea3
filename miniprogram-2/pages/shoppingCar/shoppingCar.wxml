@@ -14,10 +14,10 @@
 <view class="details_content" hidden="{{hidden}}" wx:for="{{details}}" wx:key="id" data-index="{{index}}">
           <!--选择按钮-->
       <view  wx:if="{{!item.isSelect}}">
-            <icon class="item-select" bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}"  type="circle" size="20"></icon>
+            <icon class="item-select" bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}"  type="circle" size="25"></icon>
       </view>
       <view wx:elif="{{item.isSelect}}">
-            <icon class="item-select" bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}"  type="success" color="#f0145a" size="20"></icon>
+            <icon class="item-select" bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}"  type="success" color="#f0145a" size="25"></icon>
       </view>
       <image class="details_content_img" src="{{item.image}}"></image>
       <view class="details_content_message">
@@ -48,18 +48,18 @@
 </view>
 <!--底部-->
 <view class="bottom_total" hidden="{{hidden}}">
-  <view class="bottom_line"></view>
   <view class="row">
       <!--全选按钮-->
      <view  wx:if="{{!isAllSelect}}">
-         <icon class="item-allselect" bindtap="allSelect" type="circle" size="20"></icon>
+         <icon class="item-allselect" bindtap="allSelect" type="circle" size="25"></icon>
      </view>
      <view wx:elif="{{isAllSelect}}">
-        <icon class="item-allselect" bindtap="allSelect" type="success" color="#f0145a" size="20"></icon>
+        <icon class="item-allselect" bindtap="allSelect" type="success" color="#f0145a" size="25"></icon>
      </view>
      <text class="small_text">全选</text>
     <text>合计:￥ </text>
     <text class="price">{{totalMoney}}</text>
-    <text class="button-red" bindtap="toBuy" formType="submit">去结算</text>
+    <!-- <text class="button-red" bindtap=" toBuy" formType="submit">去结算</text> -->
+    <text class="button-red" bindtap="send" formType="submit">去结算</text>
  </view>
 </view>

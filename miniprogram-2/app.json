@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/socket/socket",
     "pages/souye/souye",
     "pages/search/search", 
     "pages/shoppingCar/shoppingCar",
