@@ -22,7 +22,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.4",
-	"appid": "wx3ec4bbad864bed9b",
+	"appid": "wxa9bb49bc95809453",
 	"projectname": "miniprogram-2",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -52,7 +52,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -128,6 +128,13 @@
 					"id": -1,
 					"name": "pages/shoppingCar/shoppingCar",
 					"pathName": "pages/shoppingCar/shoppingCar",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/map/map",
+					"pathName": "pages/map/map",
 					"scene": null
 				}
 			]

@@ -1,10 +1,10 @@
 //app.js
 App({
   onLaunch: function () {
-  //  console.log("App lauch")
+  //console.log("App lauch")
   var that = this;
   wx.request({
-    url: 'http://localhost:9090/selectOne',
+    url: 'http://10.0.100.3:8080/allcontent/selectOne',
     success(data){
       that.globalData.date = data.data.userList
     }
@@ -20,8 +20,11 @@ App({
     userinfo: null
   },
   globalData: {
-    date: [
-      // {
+    date: [],
+    index: [],
+  },
+})
+ // {
       //   id: 0,
       //   image: "http://image.suning.cn/uimg/sop/commodity/113581741812086093648839_x.jpg",
       //   name: "功夫红茶",
@@ -176,9 +179,3 @@ App({
       //   type:"snack",
       //   status: true,
       // },
-    ],
-    index: [],
-    
-  },
- 
-})

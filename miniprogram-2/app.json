@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/search/search", 
     "pages/souye/souye",
     "pages/socket/socket",
     "pages/shoppingCar/shoppingCar",
@@ -13,13 +12,13 @@
     "pages/fankui/fankui",
     "pages/aboutUs/aboutUs",
     "pages/content/content",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/search/search",
+    "pages/map/map"
   ],
-  "permission": {
-    "scope.userLocation": {
-      "desc": "四川省成都市武侯区商鼎国际A座一单元2302" 
-    }
-  },
+    "permission": {
+      "scope.userLocation": {"desc": "你的位置信息将用于小程序位置接口的效果展示"}
+    },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ADA670",
