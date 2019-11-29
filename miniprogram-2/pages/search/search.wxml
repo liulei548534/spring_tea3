@@ -14,7 +14,8 @@
         <text class="details_content_money" wx:if="{{item.type=='house'&details.status=='1'}}">该包间正在使用</text>
         <text class="details_content_money">单价:￥{{item.price}}</text>
     </view>
-</view>
+    </view>
+
 <!-- <view class="content" hover-class="none" hover-stop-propagation="false">
     春天的第一杯浓茶
 </view>

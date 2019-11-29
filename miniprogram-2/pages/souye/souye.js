@@ -122,5 +122,11 @@ Page({
       url: '../details/details?listData='+listData,
     })
 
+  },
+  messageClick:function(){
+    console.log("------")
+     wx.navigateTo({
+       url: '../map/map',
+     })
   }
 })

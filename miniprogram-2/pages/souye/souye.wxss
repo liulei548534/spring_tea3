@@ -19,15 +19,37 @@ margin-bottom: 80rpx;
   width: 100%;
   height: 100%;
 }
+.top1{
+  height: 350rpx;
+  width: 99%;
+}
+.top1 image{
+  width: 100%;
+  height: 100%;
+}
 .message {
   display: flex;
   flex-direction: column;
   font-size: 32rpx;
   padding-bottom: 30rpx;
 }
+
 .message text {
   padding-bottom: 20rpx;
 }
+
+.message image{
+  height:45rpx;
+  width: 45rpx;
+  padding-left: 30rpx;
+  }
+.mes-del{
+    height: 3rpx;
+    width: 78%;
+    background-color: gray;
+    margin-left: 85rpx;
+    margin-top: 15rpx;
+   }
 .header {
   border-left: 3px solid green;
   margin-top: 20rpx;

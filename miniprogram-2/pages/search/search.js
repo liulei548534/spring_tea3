@@ -11,9 +11,6 @@ Page({
   },
   time:-1,
   handInput:function(e){
-    // e.detail.value
-    // var date = app.globalData.date
-    // var index=this.data.index
     var date = e.detail.value
     if(!date.trim()){
         return
@@ -31,7 +28,6 @@ Page({
         dataType: 'json',
         responseType: 'text',
         success: (result)=>{
-          console.log(result.data.searchInfo)
           that.setData({
             index:result.data.searchInfo
           })
@@ -54,14 +50,13 @@ Page({
         index:[]
       })
   },
-  jumpTo:function(e){
+  jumpTo: function(e){
     let index = e.currentTarget.dataset.index
     var listData = JSON.stringify(this.data.index[index])
-    console.log(index+"-----")
+    console.log(index + "-----")
     console.log(listData)
     wx.navigateTo({
-    url: '../details/details?listData='+encodeURIComponent(listData),
-   })
-      
+      url: '../details/details?listData=' + encodeURIComponent(listData),
+    })
   }
 })

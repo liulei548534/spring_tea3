@@ -22,7 +22,11 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.4",
+<<<<<<< HEAD
 	"appid": "wx3ec4bbad864bed9b",
+=======
+	"appid": "wxa9bb49bc95809453",
+>>>>>>> 093c187588eaadda918ebea70634880e8e588902
 	"projectname": "miniprogram-2",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -52,7 +56,11 @@
 			"list": []
 		},
 		"miniprogram": {
+<<<<<<< HEAD
 			"current": 10,
+=======
+			"current": 11,
+>>>>>>> 093c187588eaadda918ebea70634880e8e588902
 			"list": [
 				{
 					"id": -1,
@@ -128,6 +136,16 @@
 					"id": -1,
 					"name": "pages/shoppingCar/shoppingCar",
 					"pathName": "pages/shoppingCar/shoppingCar",
+<<<<<<< HEAD
+=======
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/map/map",
+					"pathName": "pages/map/map",
+>>>>>>> 093c187588eaadda918ebea70634880e8e588902
 					"scene": null
 				}
 			]

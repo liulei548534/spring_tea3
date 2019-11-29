@@ -14,8 +14,15 @@
         </swiper>
      </view>
      <view class="message">
-       <text bindtap="messageClick"> 地址：四川省成都市武侯区商鼎国际A座一单元2302</text>
-       <text>电话：131xxxx8898</text>
+      <view bindtap="messageClick">
+         <image src="../../image/map.png"></image>
+         <text class="dress">：四川省成都市青羊区西华门街春茗茶楼</text>
+      </view>
+      <text class="mes-del"></text>
+       <view>
+         <image src="../../image/tel.png"></image>
+         <text class="tel">：131xxxx8898</text>
+       </view>
      </view>
   </view>
     <!--推荐-->

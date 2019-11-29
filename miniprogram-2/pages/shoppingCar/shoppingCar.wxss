@@ -22,7 +22,7 @@ page {
 }
 .shopping-cart-empty {
   height: 890rpx;
-  padding-top: 3.2rem;
+  padding-top:300rpx;
   padding-bottom: 1.6rem;
   background-color: #fff;
   text-align: center;
