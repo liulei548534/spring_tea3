@@ -1,0 +1,138 @@
+/* pages/details/details.wxss */
+page{
+  height: 100%;
+  width: 100%;
+  background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574843337551&di=bd0f531f4e4496f4e5a69dd98c77ad18&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F68dddfa591e50e1fde001059d37b9af3f157e4314e75-rbWQAS_fw658);
+  background-position: bottom;
+  background-repeat: repeat-x;
+  /* transition:90;   */
+  /* -webkit-transform:rotate(90deg); */ 
+}
+button{
+  line-height: none;
+  padding: 0;
+  margin: 0;
+}
+.details_content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.details_content_img{
+  width: 90%;
+  height: 400rpx;
+  margin: 20rpx 0;
+}
+.details_content_name{
+  color: #36c37d;
+  font-size: 35rpx;
+  }
+.details_content_message{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 20rpx 0;
+}
+.introduce{
+font-size: 35rpx;
+font-weight: 10rpx;
+}
+.details_content_introduce{
+  font-size: 32rpx;
+  color: gray;
+  padding-left: 15rpx;
+}
+.details_content_money{
+  color: red;
+  padding-left:70%;
+  padding-top: 15rpx;
+}
+.xuanzhe{
+  display:flex;
+  font-size: 13px;
+   padding-left:50%;
+  padding-top: 15rpx;
+}
+.xuanzhe text{
+  width:50rpx;
+  height: 50rpx;
+  background-color:gold;
+  text-align: center;
+}
+.xuanzhe input{
+  width: 60rpx;
+  height: 50rpx;
+  background-color: gainsboro;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  text-align: center; 
+  }
+ /* 固定底部 */
+.cont_bot{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 104rpx;
+    line-height:104rpx;
+    background: gainsboro;
+    border-top: 2rpx solid #ebebeb;
+}
+.item{
+  flex:1;
+}
+.shoucang{
+  flex: 1;
+  margin-left: 70rpx;
+  color: #6f6f6f;
+}
+.shoucang_01{
+  flex: 1;
+   margin-left: 70rpx;
+   color: orangered;
+   
+}
+
+/* .cont_bot .submit_01{ */
+  /* text-align: right; */
+  /* flex:2; */
+ /* position: absolute; */
+ /* width: 100rpx; */
+ /* height: 50rpx; */
+ /* right: 470rpx; */
+ /* line-height:50rpx;  */
+ /* top: 22rpx; */
+ /* background: gainsboro; */
+/* } */
+/* button::after{
+border: none;
+} */
+button{
+  background: gainsboro;
+  line-height: 88rpx;
+}
+
+
+/* 提交 */
+/* .submit{
+position: absolute;
+width: 200rpx;
+height: 104rpx;
+line-height: 104rpx;
+right: 0rpx;
+font-size: 30rpx;
+text-align: center;
+color:#fff;
+background-color:#495A8F;
+} */
+.submit_01{
+flex:2;
+width: 200rpx;
+height: 104rpx;
+line-height: 104rpx;
+font-size: 30rpx;
+text-align: center;
+color:#fff;
+background-color:orangered;
+}
+

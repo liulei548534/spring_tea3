@@ -1,0 +1,152 @@
+.box{
+    width: 750rpx;
+    height: ceil(568rpx*2);
+    .box_score{
+        padding: 40rpx 20rpx;
+        height: 260rpx;
+        background-color:rgb(244,244,244);
+        .score_left{
+            float: left;
+            width: 200rpx;
+            height: 250rpx;
+            border: 2px solid rgb(225, 225, 225);
+            background-color: #fff;
+            .left_score_num{
+                color: #f40;
+                view{
+                    margin: 20rpx auto;
+                    font-size: 60rpx;
+                    text-align: center;
+                    width: 160rpx;
+                    border-bottom: 1rpx solid rgb(230, 225, 225);
+                }
+            }
+            .left_score_count{
+                view{
+                    color: #999;
+                    margin: 20rpx auto;
+                    font-size: 30rpx;
+                    text-align: center;
+                    width: 160rpx;
+                    // border-bottom: 1rpx solid rgb(244, 244, 244);
+                }
+            }
+            .left_score_star{
+                padding: 0 20rpx;
+               text{
+                font-size: 30rpx;
+                letter-spacing: 5rpx;
+                color: #f40;
+               }
+            }
+        }
+        .score_right{
+            float: left;
+            margin-left: 40rpx;
+            margin-top: -10rpx;
+            .countScore{
+                margin: 5rpx 0;
+                .star{
+                    margin-right: 20rpx;
+                }
+                .degree{
+                    margin-top: 10rpx;
+                    float: right;
+                    // display: inline-block;
+                    width: 350rpx;
+                    // border: 1px solid #000;
+                    height: 30rpx;
+                    // background-color:#d1d1d1;
+                    text{
+                       margin-left: 50rpx;
+                    }
+                }
+                
+            }
+        }
+    }
+    .box_content{
+        .content_both{
+            letter-spacing: 5rpx;
+            text-align: center;
+            margin:20rpx auto;
+            border-bottom: 1px solid #46c47f;
+        }
+        .content_nav{
+            // border: 1px solid #000;
+            .content_nav_head{
+                position: relative;
+                text{
+                    position: absolute;
+                    top: 15rpx;
+                    display: inline-block;
+                    line-height: 25rpx;
+                    font-size:30rpx;
+                    margin-left: 20rpx;
+                }
+                image{
+                    margin: 0 0 0 20rpx;
+                    box-sizing: border-box;
+                    width: 54rpx;
+                }
+                .nickName{
+                    color: #999;
+                }
+            }
+            .head_data{
+                .left_score_star{
+                    padding: 0 20rpx;
+                    position: relative;
+                   .icon{
+                    font-size: 30rpx;
+                    letter-spacing: 5rpx;
+                    color: #f40;
+                   }
+                   .date{
+                        position: absolute;
+                        right: 4%;
+                        color: #999;
+                        font-size: 24rpx;
+                   }
+                }
+            }
+            .context_text{
+                margin: 10rpx 20rpx;
+                font-size: 30rpx;
+                border-bottom: 1px solid #999;
+                .context_answer{
+                    margin: 20rpx 0;
+                    width: 98%;
+                    height: 200rpx;
+                    background-color: rgb(244,244,244);
+                    .s_name{
+                        height:70rpx;
+                        position: relative;
+                        margin: 20rpx;
+                        border-bottom: 1px solid rgb(225,225,225);
+                        .answer{
+                            line-height: 70rpx;
+                            color: #36c37d;
+                            font-size: 30rpx;
+                            font-weight: bold;
+                        }
+                        .date{
+                            line-height: 70rpx;
+                            position:absolute;
+                            right: 2%;
+                            color: #999;
+                            font-size: 24rpx;
+                        }
+                    }
+                    .content{
+                        margin: 20rpx;
+                    }
+                }
+                .neirong{
+                    margin-right: 10rpx;
+                }
+            }
+        }
+    }
+
+}

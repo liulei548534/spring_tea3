@@ -1,0 +1,23 @@
+<view class="containers">
+<view class="top_title"><text>本茶楼所有包间，你可以选择合适的包间，喜欢就下单吧！</text></view>
+ <view class="Teahouse">
+        <view class="Teahouse_img" wx:for="{{Teahouse_img}}" wx:key="name">
+           <image src="{{item}}"></image>
+           <text class="title">吊顶装饰 复古风茶楼</text>
+           <!--<text class="title">{{houseInfo}}</text>-->
+           <text class="hname">包间名:</text>
+           <text class="housename">天字一号</text>
+           <!--<text class="housename">{{houseName}}</text>-->
+           <text class="price">价格：</text>
+           <text class="money">150￥</text>
+           <!--<text class="money">{{housPrice}}</text>-->
+           <text class="car">加入购物车</text>
+        </view>
+ </view>      
+</view>
+<view class="foot">
+  <view class="">
+   你好 仅仅
+  <image src=""></image>
+  </view>
+</view>

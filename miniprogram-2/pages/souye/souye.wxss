@@ -1,0 +1,114 @@
+
+page {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+.tot_top{
+background: gainsboro;
+margin-bottom: 80rpx;
+}
+.tot_top {
+  background: gainsboro;
+  margin-bottom: 80rpx;
+}
+.top {
+  padding: 40rpx 20rpx;
+}
+.top image {
+  width: 100%;
+  height: 100%;
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  font-size: 32rpx;
+  padding-bottom: 30rpx;
+}
+.message text {
+  padding-bottom: 20rpx;
+}
+.header {
+  border-left: 3px solid green;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+.t1 {
+  color: #36c37d;
+  font-size: 15px;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  padding: 0 2%;
+  font-size: 28rpx;
+}
+.content text{
+ margin-left: 80rpx;
+}
+.content-item{
+  width: 35%;
+  height: 200rpx;
+  margin: 20rpx 30rpx 50rpx 50rpx; 
+}
+.content-navi {
+  width: 100%;
+  height: 100%;
+}
+.header_01 {
+  border-left: 2px solid green;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.Teahouse_img {
+  width: 100%;
+  height: 350rpx;
+  font-size: 15px;
+}
+.header_01 {
+  border-left: 3px solid green;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+.Teahouse_img {
+  width: 100%;
+  height: 380rpx;
+  margin-bottom: 100rpx;
+}
+.Teahouse_img image {
+  width: 100%;
+  height: 100%;
+}
+
+.title{
+  padding-left: 10rpx;
+  font-size: 28rpx;
+  flex: 3;
+  display: -webkit-box;     
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;            
+  -webkit-box-orient: vertical;    
+   -webkit-line-clamp: 1
+}
+
+.Teahouse-Price{
+  color: red;
+  padding-right: 20rpx;
+  flex: 1;
+  text-align: right;
+  font-size: 28rpx;
+}
+.cont{
+  display: flex;
+  width: 100%;
+}

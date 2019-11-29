@@ -1,0 +1,146 @@
+.containers{
+  height: 100%;
+  width: 100%;
+}
+.top_title{
+  background-color: beige;
+  padding-left: 20rpx;
+}
+.Tea_img{
+  width: 45%;
+  height: 290rpx;
+  margin-bottom: 60rpx;
+  margin-left: 20rpx;
+  border: 2px solid green;
+}
+.info{
+  width: 95%;
+  height: 305rpx;
+  margin-bottom: 60rpx;
+  position: relative;
+  right: -115%;
+  top :-345rpx;
+  margin-top:44rpx;
+}
+ .img{
+   width: 100%;
+   height: 100%;
+}
+.tfname{ 
+  right: -125%;
+  color: #36c37d;
+  font-size: 13px;
+}
+.money{ 
+  color: red;
+  }
+  .car,.name,.price{
+   font-size: 13px;
+   padding-bottom: 30rpx;
+}
+.introduce{
+  display: flex;
+  font-size: 25rpx;
+  color: gray;
+  padding-bottom: 2px;
+}
+.first_title{
+   font-size: 25px;
+   color: mediumseagreen;
+   font-weight: 3px;
+   padding-left: 310rpx;
+   border-left: 3px solid green;
+  }
+  .snack{
+    height: auto;
+    width: 100%;
+    margin-top: 30rpx;
+  }
+  .bai{
+    width: 100%;
+    height: 100rpx;
+  }
+
+.xuanzhe{
+  display:flex;
+  font-size: 13px;
+}
+.xuanzhe text{
+  width:50rpx;
+  height: 50rpx;
+  background-color:gold;
+  text-align: center;
+}
+.xuanzhe input{
+  width: 60rpx;
+  height: 50rpx;
+  background-color: gainsboro;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  text-align: center; 
+  }
+.car{
+    color: green;
+    margin-left: 145rpx;
+    margin-top: -40rpx;
+    padding-top: -40rpx;
+    background-color:rgb(244, 244, 244);
+    border: 1px solid burlywood;
+    display: flex;
+    height: 20rpx;
+    width: 147rpx;
+    font-size: 27rpx;
+  }
+  .Collection{
+     display: flex;
+     font-size: 27rpx;
+     margin-top: 25rpx;
+  }
+   .iconfont{
+   margin-left: 20rpx;
+  }
+  /* 固定底部 */
+.cont_bot{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 104rpx;
+    line-height:104rpx;
+    background: #fff;
+    border-top: 2rpx solid #ebebeb;
+}
+/* 全选ICON */
+.total-select{
+    position: absolute;
+    left: 30rpx;
+    top: 34rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+/* 合计金额 */
+.count_price{
+ position: absolute;
+ font-size:35rpx;
+ left: 200rpx;
+ color: #aaa;
+}
+.count_price text{
+  font-size: 34rpx;
+  color: #D66058;
+}
+/* 提交 */
+.submit{
+position: absolute;
+width: 232rpx;
+height: 104rpx;
+line-height: 104rpx;
+right: 0rpx;
+font-size: 30rpx;
+text-align: center;
+color:#fff;
+background-color:#495A8F;
+}
+.navigator-hover{
+    background: none;
+}
+ 

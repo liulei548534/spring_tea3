@@ -1,0 +1,30 @@
+<view class="box">
+    <view class="no_have" wx:if="{{!isHidden}}">
+        <image src="../../image/3.png" mode="widthFix"></image>
+        <view class="click">
+            <navigator class="look" open-type="navigate" url="../content/content">
+                点我看看
+            </navigator>
+        </view>
+    </view>
+    <view class="have" wx:if="{{isHidden}}">
+        <text class="both">全部宝贝</text>
+        <view class="info" wx:for="{{date}}" wx:key="id">
+            <view class="img_img">
+                <image src="{{item.image}}"></image>
+            </view>
+            <view class="img_discript">
+                <view class="name"><text>茶名：</text>{{item.name}}</view>
+                <view class="dis">{{item.content}}</view>
+                <view class="price"><text>价格:</text>￥{{item.price}}</view>
+                <view class="Collection" bindtap="coltClick" data-index="{{index}}">
+                    <text class="sc">取消收藏<text class="iconfont icon-Mycollection"></text></text>
+                </view>
+                <text class="car" bindtap="addCarClick" data-index="{{index}}">加入购物车
+                    <!-- <text class="iconfont "></text> -->
+                </text>
+            </view>
+        </view>
+
+    </view>
+</view>

@@ -1,0 +1,11 @@
+<view class="detail">
+    <view class="image">
+        <image 
+        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574174543593&di=598a1b19016a7037eb8bfe6403197948&imgtype=0&src=http%3A%2F%2Fspider.nosdn.127.net%2F37b116bfc2636730a38bd53e6129f4da.jpeg" mode="widthFix">
+        </image>
+    </view>
+    <view class="function">版本号：v.535(测试版)</view>
+    <view class="checkNewVersion" bindtap="check">点击检查新版本</view>
+    <view class="checkNewVersion">开发团队：spring_team2</view>
+    <view class="content">一切解释归属于spring_team2团队</view>
+</view>

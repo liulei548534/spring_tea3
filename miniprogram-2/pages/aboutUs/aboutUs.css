@@ -1,0 +1,15 @@
+/* pages/aboutUs/aboutUs.wxss */
+.detail {
+  height: 1136rpx;
+  width: 750rpx;
+  background-color: #f4f4f4;
+}
+.detail .image image {
+  width: 100%;
+}
+.detail .function {
+  margin: 10px 10px;
+}
+.detail .checkNewVersion {
+  margin: 10px 10px;
+}

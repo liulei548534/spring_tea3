@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/search/search", 
+    "pages/souye/souye",
+    "pages/socket/socket",
+    "pages/shoppingCar/shoppingCar",
+    "pages/user/user",
+    "pages/teas/teas",
+    "pages/teaHouse/teaHouse",
+    "pages/order/order",
+    "pages/collection/collection",
+    "pages/pingjia/pingjia",
+    "pages/fankui/fankui",
+    "pages/aboutUs/aboutUs",
+    "pages/content/content",
+    "pages/details/details"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "四川省成都市武侯区商鼎国际A座一单元2302" 
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ADA670",
+    "navigationBarTitleText": "用户中心",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "backgroundColor": "#f9f9f9",
+    "borderStyle": "black",
+    "selectedColor": "#00b38b",
+    "color": "#666666",
+    "list": [
+      {
+        "pagePath": "pages/souye/souye",
+        "iconPath": "image/house.png",
+        "selectedIconPath": "image/selecthouse.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shoppingCar/shoppingCar",
+        "iconPath": "image/car.png",
+        "selectedIconPath": "image/selectcar.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "image/my.png",
+        "selectedIconPath": "image/selectmy.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

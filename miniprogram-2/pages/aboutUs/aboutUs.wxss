@@ -1,0 +1,19 @@
+/* pages/aboutUs/aboutUs.wxss */
+page {
+  height: 100%;
+  width: 100%;
+}
+.detail {
+  height: 100%;
+  width: 750rpx;
+  background-color: #f4f4f4;
+}
+.detail .image image {
+  width: 100%;
+}
+.detail .function {
+  margin: 10px 10px;
+}
+.detail .checkNewVersion {
+  margin: 10px 10px;
+}

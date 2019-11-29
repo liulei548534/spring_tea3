@@ -1,0 +1,48 @@
+<view class="getInfo" wx:if="{{isHidden==false}}">
+    <image src="{{img}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <view class="hidden">
+        <view class="message">
+            {{message}}
+        </view>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 立即授权</button>
+    </view>
+</view>
+<view class="isHidden" wx:if="{{isHidden==true}}">
+    <view class="top">
+        <!-- <view class="icon">{{info.nickName}}</view>
+        <view class="icon">{{info.gender}}</view>
+        <view class="icon">{{info.language}}</view>
+        <view class="icon">{{info.city}}</view>
+        <view class="icon">{{info.province}}</view>
+        <view class="icon">{{info.country}}</view>
+        <image class="" src="{{info.avatarUrl}}" mode="widthFix">
+            
+        </image> -->
+        <view class="avatarUrl info">
+            <!-- <image
+                src="https://wx.qlogo.cn/mmopen/vi_32/12lic3oWibJa9MXzn5bhWuLf9vD1wTJE4XpCXgbWl8icicyEw7Nyicuo8GdAkm2JGia0s3kDqrle0Z3OuYkpkUiczBoVg/132"
+                mode="widthFix">
+            </image> -->
+            <image class="" src="{{info.avatarUrl}}" mode="widthFix">
+                
+            </image>
+        </view>
+        <view class="nickName info">用户名：{{info.nickName}}</view>
+        <!-- <view class="credent info"> 积分：icon1</view> -->
+        <view class="qd"> 签到</view>
+    </view>
+    <view class="content">
+        <navigator class="link" url="../{{item.page}}/{{item.page}}" open-type="navigate" wx:for="{{order}}" wx:key="id">
+            <view class="item">
+                <text class="icon icon_order iconfont {{item.class}}"></text>
+                <text class="order_text {{item.classCon}}">{{item.name}}</text>
+                <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
+            </view>
+        </navigator>
+        <button open-type="contact" class="item">
+            <text class="icon icon_order iconfont icon-lianxikefu"></text>
+            <text class="order_text icon_conllection1">联系客服</text>
+            <text class="iconfont icon-arrowRight icon icon_arrrowRight"></text>
+        </button>
+    </view>
+</view>

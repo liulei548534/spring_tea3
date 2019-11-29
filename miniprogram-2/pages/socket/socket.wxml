@@ -1,0 +1,17 @@
+<button bindtap="connect">
+开启连接
+</button>
+
+<button bindtap="send">发送消息</button>
+<button bindtap="close">
+断开连接
+</button>
+<button bindtap="text">
+    测试
+</button>
+
+<view>
+{{status}}
+{{message}}
+</view>
+<input class="input" bindblur="input"></input>
