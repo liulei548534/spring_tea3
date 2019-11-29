@@ -14,14 +14,17 @@
         </swiper>
      </view>
      <view class="message">
+     <!--地址-->
       <view bindtap="messageClick">
          <image src="../../image/map.png"></image>
          <text class="dress">：四川省成都市青羊区西华门街春茗茶楼</text>
       </view>
-      <text class="mes-del"></text>
-       <view>
+     <!--分割线-->
+      <view class="mes-del"></view>
+      <!--电话-->
+       <view bindtap="telClick">
          <image src="../../image/tel.png"></image>
-         <text class="tel">：131xxxx8898</text>
+         <text class="tel">：138xxxx5120</text>
        </view>
      </view>
   </view>

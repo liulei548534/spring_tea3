@@ -128,5 +128,11 @@ Page({
      wx.navigateTo({
        url: '../map/map',
      })
+  },
+  telClick:function(){
+    wx.makePhoneCall({
+      phoneNumber: '13882305120',
+    })
   }
+
 })
