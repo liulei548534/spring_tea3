@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "全部商品",
   "usingComponents": {
-    "search": "../../components/searchInput"
+    "search": "../../components/search/searchInput"
   }
 }

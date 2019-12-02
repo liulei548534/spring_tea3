@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "calendar":"../../components/calendar/calendar"
+  },
   "navigationBarTitleText": "我的中心"
 
 }

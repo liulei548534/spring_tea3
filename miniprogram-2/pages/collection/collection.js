@@ -35,7 +35,6 @@ Page({
     // console.log(date)
     //获取收藏缓存
     var detailStorage = wx.getStorageSync('isClolected');
-    // console.log(detailStorage)
     var simpleDate = this.data.date
     if (detailStorage.length != 0) {
       detailStorage.forEach((v, i) => true ? simpleDate.push(app.globalData.date[v.id-1]) : "")
@@ -48,6 +47,7 @@ Page({
         isHidden:false,
       })
     }
+    console.log(this.data.date)
   },
 
   /**
@@ -85,8 +85,6 @@ Page({
 
   },
   coltClick(e){
-    // e.currentDa
-    // this.data.date[e.curre]
    var index =  e.currentTarget.dataset.index
    var date = this.data.date
     date.splice(index,1)
@@ -106,7 +104,6 @@ Page({
     var index =  e.currentTarget.dataset.index
     var list = app.globalData.index
     var date = this.data.date
-    // var count =0;
     list.push(date[index])
     date.splice(index,1)
     this.setData({

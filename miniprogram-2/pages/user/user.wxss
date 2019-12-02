@@ -59,6 +59,7 @@ page {
   position: absolute;
   right: 40rpx;
   top: 0;
+  width: 100%;
 }
 .isHidden .content .link {
   display: inline-block;

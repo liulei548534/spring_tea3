@@ -29,7 +29,7 @@
         </view>
         <view class="nickName info">用户名：{{info.nickName}}</view>
         <!-- <view class="credent info"> 积分：icon1</view> -->
-        <view class="qd"> 签到</view>
+        <view class="qd"><calendar></calendar></view>
     </view>
     <view class="content">
         <navigator class="link" url="../{{item.page}}/{{item.page}}" open-type="navigate" wx:for="{{order}}" wx:key="id">

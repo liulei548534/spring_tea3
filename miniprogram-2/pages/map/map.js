@@ -6,8 +6,10 @@ Page({
     markers: [{
       iconPath: "../../image/map.png",
       id: 0,
+      // latitude: 30.64242,
+      // longitude: 104.04311,
       latitude: 30.662438,
-      longitude: 104.062443,
+     longitude: 104.062443,
       width: 40,
       height: 40
     }],
@@ -29,6 +31,7 @@ Page({
     var that = this
     //获取当前位置
     wx.getLocation({
+      type:'gcj02',
       success: function(res) {
         //把位置经纬度写回去
         that.setData({

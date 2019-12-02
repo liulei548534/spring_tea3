@@ -21,13 +21,9 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.4",
-<<<<<<< HEAD
-	"appid": "wx3ec4bbad864bed9b",
-=======
+	"libVersion": "2.0.4",
 	"appid": "wxa9bb49bc95809453",
->>>>>>> 093c187588eaadda918ebea70634880e8e588902
-	"projectname": "miniprogram-2",
+	"projectname": "miniprogram-1",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -43,112 +39,13 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
-		"gamePlugin": {
+		"miniprogram": {
 			"current": -1,
 			"list": []
-		},
-		"miniprogram": {
-<<<<<<< HEAD
-			"current": 10,
-=======
-			"current": 11,
->>>>>>> 093c187588eaadda918ebea70634880e8e588902
-			"list": [
-				{
-					"id": -1,
-					"name": "pages/user/user",
-					"pathName": "pages/user/user",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/user/user",
-					"pathName": "pages/user/user",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "关于我们",
-					"pathName": "pages/aboutUs/aboutUs",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/aboutUs/aboutUs",
-					"pathName": "pages/fankui/fankui",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "评价",
-					"pathName": "pages/pingjia/pingjia",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/collection/collection",
-					"pathName": "pages/collection/collection",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "我的订单",
-					"pathName": "pages/order/order",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/content/content",
-					"pathName": "pages/content/content",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/details/details",
-					"pathName": "pages/details/details",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/souye/souye",
-					"pathName": "pages/souye/souye",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/shoppingCar/shoppingCar",
-					"pathName": "pages/shoppingCar/shoppingCar",
-<<<<<<< HEAD
-=======
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/map/map",
-					"pathName": "pages/map/map",
->>>>>>> 093c187588eaadda918ebea70634880e8e588902
-					"scene": null
-				}
-			]
 		}
 	}
 }
