@@ -1,6 +1,8 @@
 <!--pages/souye/souye.wxml-->
 <search></search>  
-
+<view>
+  <button bindtap="getopenId">获取openId</button>
+</view>
 <view class="cntentes">
    <!--轮播图-->
    <view class="tot_top">

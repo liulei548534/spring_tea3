@@ -17,7 +17,28 @@ Page({
                 info: res.userInfo,
                 isHidden: true
               })
+              wx.login({
+                success(re){
+                  console.log(re.code)
+                  wx.request({
+                    url: 'https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code',
+                    data:{
+                      appid: 'wx3ec4bbad864bed9b',
+
+                      secret: '91655393e7d3eebe9af569fb0932a907',
+
+                      js_code: res.code,
+
+                      grant_type: 'authorization_code'
+                    },
+                    success:function(ree){
+                         console.log(ree.data)
+                    }
+                  })
+                }
+              })
             },
+          
             fail(res) {
               console.log("获取用户信息失败")
             }

@@ -3,7 +3,7 @@ App({
   onLaunch: function () {
   var that = this;
   wx.request({
-    url: 'http://localhost:8080/allcontent/selectOne',
+    url: 'http://localhost:8081/allcontent/selectOne',
     success(data){
       that.globalData.date = data.data.userList
     }

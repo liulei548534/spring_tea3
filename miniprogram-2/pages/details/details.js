@@ -31,12 +31,23 @@ Page({
     }else{
       list.push(this.data.details)
     }
-    // list.push(this.data.details)
-    //wx.setStorageSync("list", list)
     console.log("index:"+index+"----list:"+list)
     wx.showModal({
       title: '购物车提示',
       content: this.data.info,
+    })
+
+   //加入购物车 数据发送到后端
+    wx.request({
+      url: 'http://localhost:8082/ShoppingCar', 
+      data: {
+        shangping: this.data.details
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+      }
     })
   },
   /**
