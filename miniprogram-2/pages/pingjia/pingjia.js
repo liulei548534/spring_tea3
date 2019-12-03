@@ -5,14 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+      wx:wx.request({
+        url: 'http://localhost:8080/teaPj/selectAll',
+        success: function(res) {
+          that.setData({
+            list:res.data.list
+          })
+          console.log(that.data.list)
+        },
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+      
   },
 
   /**
@@ -26,7 +38,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
@@ -56,7 +68,10 @@ Page({
   onReachBottom: function () {
 
   },
-
+  jisuan:function(){
+    var star = this.data.list
+    
+  },
   /**
    * 用户点击右上角分享
    */

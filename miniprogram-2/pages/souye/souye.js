@@ -119,7 +119,7 @@ Page({
       var listData = JSON.stringify(this.data.snack[index[1]])
     }
     wx.navigateTo({
-      url: '../details/details?listData='+listData,
+      url: '../details/details?listData=' + encodeURIComponent(listData),
     })
 
   },
