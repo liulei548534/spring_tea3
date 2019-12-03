@@ -1,5 +1,6 @@
 // pages/shoppingCar/shoppingCar.js
 const app = getApp();
+var myData = new Date();
 Page({
 
   /**
@@ -60,9 +61,12 @@ Page({
     var myThis = this;
     console.log(this.data.details)
     var date = JSON.stringify(this.data.details)
-    console.log(date)
+    var hour = myData.getHours()
+    var min = myData.getMinutes()
+    var second = myData.getSeconds()
+    var time = hour+":"+min+":"+second 
     wx.sendSocketMessage({
-      data: date,
+      data: date+time,
       success: function (res) {
         console.log("发送信息")
         wx.showToast({

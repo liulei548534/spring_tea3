@@ -60,13 +60,13 @@
     </view>
     <view class="box_content">
         <view class="content_both">全部评价</view>
-        <view class="content_nav">
+        <view class="content_nav" wx:for="{{list}}" wx:key="name">
             <view class="content_nav_head">
                 <image
-                    src="https://wx.qlogo.cn/mmopen/vi_32/12lic3oWibJa9MXzn5bhWuLf9vD1wTJE4XpCXgbWl8icicyEw7Nyicuo8GdAkm2JGia0s3kDqrle0Z3OuYkpkUiczBoVg/132"
+                    src="{{item.pjIcon}}"
                     mode="widthFix">
                 </image>
-                <text class="nickName">Rabbi</text>
+                <text class="nickName">{{item.pj_name}}</text>
             </view>
             <view class="head_data">
                 <view class="left_score_star">
@@ -74,18 +74,18 @@
                     <text class="iconfont icon icon-Mycollection"></text>
                     <text class="iconfont icon icon-Mycollection"></text>
                     <text class="iconfont icon icon-Mycollection"></text>
-                    <text class="iconfont icon icon-Mycollection"></text>
-                    <text class="date">2014-03-10 10:23</text>
+                    <text class="iconfont icon icon-Mycollection" style="color:gray"></text>
+                    <text class="date">{{item.pjDate}}</text>
                 </view>
             </view>
             <view class="context_text">
-                <text class="neirong">这个项目虽然只是用来测试，但是环境还是不错，服务员也很给力!!!</text>
+                <text class="neirong">{{item.pjContent}}</text>
                 <view class="context_answer">
                     <view class="s_name">
                         <text class="answer">商家回复</text>
-                        <text class="date">2014-03-10 10:23</text>
+                        <text class="date">{{item.pjAnsdate}}</text>
                     </view>
-                    <view class="content">感谢您的回复，欢迎您下次光临!</view>
+                    <view class="content">{{item.pjAnscontent}}</view>
                 </view>
             </view>
         </view>

@@ -137,7 +137,7 @@ liulei:function(index){
     let index = e.currentTarget.dataset;
     var listData = JSON.stringify(this.data.date[index.index])
     wx: wx.navigateTo({
-      url: '../details/details?listData=' + listData,
+      url: '../details/details?listData=' + encodeURIComponent(listData),
     })
   },
   //包间
@@ -145,7 +145,7 @@ liulei:function(index){
     let index = e.currentTarget.dataset;
     var listData = JSON.stringify(this.data.house[index.index])
     wx: wx.navigateTo({
-      url: '../details/details?listData=' + listData,
+      url: '../details/details?listData=' + encodeURIComponent(listData),
     })
   },
   //小吃
@@ -153,7 +153,7 @@ liulei:function(index){
     let index = e.currentTarget.dataset;
     var listData = JSON.stringify(this.data.snack[index.index])
     wx: wx.navigateTo({
-      url: '../details/details?listData=' + listData,
+      url: '../details/details?listData=' + encodeURIComponent(listData),
     })
   }
 })
