@@ -3,52 +3,122 @@ var app = getApp();
 Page({
   getUserInfo: function (e) {
     let that = this;
-    // console.log(e)
+    var logs = wx.getStorageSync('logs') || []
+    logs.unshift(Date.now())
+    wx.setStorageSync('logs', logs)
+
+    // 登录
+    wx.login({
+      success: function (res) {
+        that.setData({
+          info: res.userInfo,
+          isHidden: true
+        })
+        console.log(res)
+
+        if (res.code) {
+
+          //发起网络请求
+
+          wx.request({
+            // 获取用户的openid
+
+            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code',
+
+            data: {
+
+              appid: 'wx3ec4bbad864bed9b',
+
+              secret: '91655393e7d3eebe9af569fb0932a907',
+
+              js_code: res.code,
+
+              grant_type: 'authorization_code' 
+
+            },
+
+            success(v) {
+              // console.log(v.data)
+              console.log(v.data.openid)
+
+            }
+
+          })
+
+        } else {
+
+          console.log('登录失败！' + res.errMsg)
+
+        }
+
+      }
+    })
     // 获取用户信息
     wx.getSetting({
-      success(res) {
-      //console.log("res", res)
+      success: res => {
         if (res.authSetting['scope.userInfo']) {
-          console.log("已授权=====")
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
-            success(res) {
-              that.setData({
-                info: res.userInfo,
-                isHidden: true
-              })
-              wx.login({
-                success(re){
-                  console.log(re.code)
-                  wx.request({
-                    url: 'https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code',
-                    data:{
-                      appid: 'wx3ec4bbad864bed9b',
+            success: res => {
+              // 可以将 res 发送给后台解码出 unionId
+              // this.globalData.userInfo = res.userInfo
 
-                      secret: '91655393e7d3eebe9af569fb0932a907',
-
-                      js_code: res.code,
-
-                      grant_type: 'authorization_code'
-                    },
-                    success:function(ree){
-                         console.log(ree.data)
-                    }
-                  })
-                }
-              })
-            },
-          
-            fail(res) {
-              console.log("获取用户信息失败")
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(res)
+              }
             }
           })
-        } else {
-          console.log("未授权=====")
-          // that.showSettingToast("请授权")
         }
       }
     })
+    // console.log(e)
+    // 获取用户信息
+    // wx.getSetting({
+    //   success(res) {
+    //   //console.log("res", res)
+    //     if (res.authSetting['scope.userInfo']) {
+    //       console.log("已授权=====")
+    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+    //       wx.getUserInfo({
+    //         success(res) {
+    //           that.setData({
+    //             info: res.userInfo,
+    //             isHidden: true
+    //           })
+    //           wx.login({
+    //             success(re){
+    //               console.log(re.code)
+    //               wx.request({
+    //                 url: 'https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code',
+    //                 data:{
+    //                   appid: 'wx3ec4bbad864bed9b',
+
+    //                   secret: '91655393e7d3eebe9af569fb0932a907',
+
+    //                   js_code: res.code,
+
+    //                   grant_type: 'authorization_code'
+    //                 },
+    //                 success:function(ree){
+    //                      console.log(ree.data)
+    //                 }
+    //               })
+    //             }
+    //           })
+    //         },
+          
+    //         fail(res) {
+    //           console.log("获取用户信息失败")
+    //         }
+    //       })
+    //     } else {
+    //       console.log("未授权=====")
+    //       // that.showSettingToast("请授权")
+    //     }
+    //   }
+    // })
   },
   // onload:function(e){
   //   getUserInfo(opption);

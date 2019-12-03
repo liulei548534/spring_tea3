@@ -37,7 +37,7 @@
 .box .box_score .score_left .left_score_star text {
   font-size: 30rpx;
   letter-spacing: 5rpx;
-  color: #f40;
+  /* color: #f40; */
 }
 .box .box_score .score_right {
   float: left;
@@ -91,7 +91,12 @@
 .box .box_content .content_nav .head_data .left_score_star .icon {
   font-size: 30rpx;
   letter-spacing: 5rpx;
+}
+.f40{
   color: #f40;
+}
+.gray{
+  color: gray;
 }
 .box .box_content .content_nav .head_data .left_score_star .date {
   position: absolute;

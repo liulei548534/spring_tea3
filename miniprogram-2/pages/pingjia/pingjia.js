@@ -5,7 +5,59 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[]
+    list:[],
+    score:'',
+    user_score:[],
+    star:[
+      {
+      id:0,
+      isSelect:true
+    },
+      {
+        id: 1,
+        isSelect: true
+      },
+      {
+        id: 2,
+        isSelect: true
+      },
+      {
+        id: 3,
+        isSelect: true
+      },
+      {
+        id: 4,
+        isSelect: true
+      },
+    ],
+    count:'',
+    score_right:[
+      {
+        name:'5星',
+        count:73,
+        percent:40,
+      },
+      {
+        name: '4星',
+        count: 53,
+        percent: 10
+      },
+      {
+        name: '3星',
+        count:43,
+        percent: 10
+      },
+      {
+        name: '2星',
+        count: 53,
+        percent: 20
+      },
+      {
+        name: '1星',
+        count: 63,
+        percent: 20
+      }
+    ],
   },
 
   /**
@@ -16,6 +68,7 @@ Page({
       wx:wx.request({
         url: 'http://localhost:8080/teaPj/selectAll',
         success: function(res) {
+          console.log(res.data.list[0].pjScore)
           that.setData({
             list:res.data.list
           })
@@ -24,7 +77,6 @@ Page({
         fail: function(res) {},
         complete: function(res) {},
       })
-      
   },
 
   /**
@@ -38,7 +90,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    var date = this.data.score_right
+    var num = 0
+    var score=0
+    date.forEach((v, i) => true ?num = num + v.count:"")
+    date.forEach((v, i) => true ?score = (5 - i) * v.count + score:"")
+    console.log(num)
+    score=Math.floor(score / num)
+    var star = this.data.star
+    for(var i=0;i<score;i++){
+        star[i].isSelect=false
+    }
+    this.setData({
+      count: num,
+      score,
+      star
+    })
   },
 
   /**

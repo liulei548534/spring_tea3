@@ -3,7 +3,7 @@
   background: #ADA670;
   padding: 0 20rpx;
 }
-.search navigator {
+.search .navigator {
   background-color: white;
   height: 60rpx;
   line-height: 60rpx;
