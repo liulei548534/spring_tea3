@@ -40,7 +40,10 @@ Page({
             success(v) {
               // console.log(v.data)
               console.log(v.data.openid)
-
+               wx.setStorage({
+                 key: 'openid',
+                 data: v.data.openid,
+               })
             }
 
           })

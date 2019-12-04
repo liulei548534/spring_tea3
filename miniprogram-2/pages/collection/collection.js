@@ -30,9 +30,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    //获取date
-    // var date = app.globalData.date;
-    // console.log(date)
+    var that = this
+      wx.request({
+        url: 'http://10.0.100.3:8080/teaSc/findByOpenId',
+        data:{
+          openid: wx.getStorageSync("openid")
+        },
+        header: {
+          'content-type': 'application/json'
+        },
+        success(res) {
+          console.log(res.data.list)
+          if(res.data.list.length>0){
+            that.setData({
+              date: res.data.list,
+              isHidden: true
+            })
+          }else{
+            that.setData({
+              isHidden:false
+            })
+          }
+        }
+      })
+
     //获取收藏缓存
     var detailStorage = wx.getStorageSync('isClolected');
     var simpleDate = this.data.date
@@ -87,6 +108,7 @@ Page({
   coltClick(e){
    var index =  e.currentTarget.dataset.index
    var date = this.data.date
+    this.delect(wx.getStorageSync("openid"), date[index].name)
     date.splice(index,1)
     console.log("-----取消收藏-----")
     this.setData({
@@ -104,6 +126,20 @@ Page({
     var index =  e.currentTarget.dataset.index
     var list = app.globalData.index
     var date = this.data.date
+    console.log(date[index])
+    wx.request({
+      url: 'http://localhost:8082/ShoppingCar',
+      data: {
+        shangping: date[index],
+        openid: wx.getStorageSync("openid")
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+      }
+    })
+    this.delect(wx.getStorageSync("openid"), date[index].name)
     list.push(date[index])
     date.splice(index,1)
     this.setData({
@@ -116,44 +152,16 @@ Page({
       })
   }
   },
- 
+  delect:function(openid,name){
+      wx.request({
+        url: 'http://10.0.100.3:8080/teaSc/delect',
+        data:{
+          openid:openid,
+          name:name
+        },
+        success(res){
+            console.log(res.data)
+        }
+      })
+  }
 })
-
-
-
-
-/*
- console.log(e)
-    var num = e.currentTarget.dataset.index;
-    var nums = num
-    var dete = this.data.date;
-    console.log("num:" + num)
-    var leng = dete.length
-    console.log("leng:" + leng)
-    for (var i = 0; i < leng; i++) {
-    if (i === num) {
-      // 利用该方法来删除数组中元素（根据数据下标进行删除，1参数为删除几个）
-      console.log(i === num)
-      dete.splice(i, 1)
-      num = -1;
-      console.log(num)
-      }
-    }
-    var indexs = this.data.indexs;
-         for(var i = 0; i<indexs.length;i++){
-          if (i === nums + 1) {
-           indexs.splice(nums + 1, 1)
-           nums = -1;
-              }
-            }
-        this.setData({
-          dete,
-          indexs
-        })
-        console.log(this.data.date)
-if (dete.length <= 0) {
-  this.setData({
-    isHidden:true
-     })
-   }
- */

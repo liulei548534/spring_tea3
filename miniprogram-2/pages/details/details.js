@@ -9,6 +9,7 @@ Page({
     details:{}, 
     isClolected:false,
     index:null,
+    openid:null,
     info:"商品成功添加到购物车"
   },
   addCar(){
@@ -36,12 +37,12 @@ Page({
       title: '购物车提示',
       content: this.data.info,
     })
-
    //加入购物车 数据发送到后端
     wx.request({
       url: 'http://localhost:8082/ShoppingCar', 
       data: {
-        shangping: this.data.details
+        shangping: this.data.details,
+         openid:this.data.openid
       },
       header: {
         'content-type': 'application/json'
@@ -66,12 +67,6 @@ Page({
       //在缓存中初始化空对象
       wx.setStorageSync("isClolected",[])
    }
-   //判断用户是否收藏
-    // if (detailStorage[index]){//收藏过
-    //   this.setData({
-    //     isClolected:true
-    //   });
-    // }
     if(detailStorage.length!=0){
       var isClolected = false;
       // console.log("detailStorage:"+detailStorage)
@@ -83,6 +78,34 @@ Page({
   },
   handleCollection(){
     let isClolected = !this.data.isClolected
+    if (!this.data.isClolected){
+        // 搜藏
+        wx.request({
+          url: 'http://10.0.100.3:8080/teaSc/insert',
+          data:{
+            date: this.data.details,
+            openid: this.data.openid
+          },
+          header:{
+            'content-type': 'application/json'
+          },
+          success:function(res){
+          console.log(res)
+          }
+        })
+    }else{
+      // 删除 
+        wx.request({
+          url: 'http://10.0.100.3:8080/teaSc/delect',
+          data: {
+            openid:  this.data.openid,
+            name: this.data.details.name,
+          },
+          success(res) {
+            console.log(res.data)
+          }
+        })
+      }
     //更新状态
     this.setData({
       isClolected
@@ -103,11 +126,6 @@ Page({
       if(isClolected){
         var count =0;
         detailStorage.forEach((v,i)=>v.id==index?"":count++)
-          // for(var i = 0;i<detailStorage.length;i++){
-          //       if(detailStorage[i].id!=index){
-          //         count++
-          //       }
-          // }
           if(count==detailStorage.length){
             detailStorage.push(colletionData)
           }
@@ -117,22 +135,13 @@ Page({
    }else{
      detailStorage.push(colletionData)
    }
-   console.log("detailStorage:"+detailStorage)
-  //  wx.getStorage({
-  //    key: 'isClolected',
-  //    success: function(datas) {
-  //     let obj = datas.data;
-  //     obj[index] = isClolected
-  //      //缓存数据到本地
        wx.setStorage({
          key: 'isClolected',
          data: detailStorage,
          success: () => {
            console.log("缓存成功")
          }
-       })
-  //    },
-  //  }) 
+       }) 
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -146,6 +155,12 @@ Page({
    */
   onShow: function () {
    
+  let opid = wx.getStorageSync("openid")
+  console.log(opid)
+  this.setData({
+    openid:opid
+  })
+  console.log(this.data.openid)
   },
 
  
