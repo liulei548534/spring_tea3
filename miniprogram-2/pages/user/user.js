@@ -10,10 +10,10 @@ Page({
     // 登录
     wx.login({
       success: function (res) {
-        that.setData({
-          info: res.userInfo,
-          isHidden: true
-        })
+        // that.setData({
+        //   info: res.userInfo,
+        //   isHidden: true
+        // })
         console.log(res)
 
         if (res.code) {
@@ -63,6 +63,10 @@ Page({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              that.setData({
+                 info: res.userInfo,
+                  isHidden: true
+              })
               // 可以将 res 发送给后台解码出 unionId
               // this.globalData.userInfo = res.userInfo
 

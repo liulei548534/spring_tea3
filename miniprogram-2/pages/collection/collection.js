@@ -141,6 +141,7 @@ Page({
     })
     this.delect(wx.getStorageSync("openid"), date[index].name)
     list.push(date[index])
+    console.log(date[index])
     date.splice(index,1)
     this.setData({
         date

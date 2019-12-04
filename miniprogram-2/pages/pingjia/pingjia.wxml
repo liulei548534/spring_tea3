@@ -34,7 +34,7 @@
             </view>
             <view class="head_data">
                 <view class="left_score_star">
-                    <text class="iconfont icon icon-Mycollection"  wx:for="{{star}}" wx:key="name"></text>
+                    <text class="iconfont icon icon-Mycollection {{item1.id<item.pjScore?'f40':'gray'}}" wx:for="{{star1[index].list2}}" wx:key="name" wx:for-item="item1"></text>
                     <!-- <text class="iconfont icon icon-Mycollection"></text>
                     <text class="iconfont icon icon-Mycollection"></text>
                     <text class="iconfont icon icon-Mycollection"></text> -->
