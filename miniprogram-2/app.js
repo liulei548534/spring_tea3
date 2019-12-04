@@ -1,8 +1,7 @@
 //app.js
 App({
-  onLaunch: function () {
-  },
-  onShow:function(){
+  onLaunch: function() {},
+  onShow: function() {
     var that = this;
     wx.request({
       url: 'http://localhost:8080/allcontent/selectOne',
@@ -11,7 +10,7 @@ App({
       }
     })
   },
-  onHide:function(){
+  onHide: function() {
     console.log("App Hide")
   },
   appData: {

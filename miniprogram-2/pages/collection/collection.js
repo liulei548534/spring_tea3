@@ -105,6 +105,7 @@ Page({
     var list = app.globalData.index
     var date = this.data.date
     list.push(date[index])
+    console.log(date[index])
     date.splice(index,1)
     this.setData({
         date
