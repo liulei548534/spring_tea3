@@ -18,9 +18,13 @@ button{
   flex-direction: column;
   align-items: center;
 }
+.details_content image{
+   width: 90%;
+   height: 500rpx;
+}
 .details_content_img{
-  width: 90%;
-  height: 400rpx;
+  width: 100%;
+  height: 100%;
   margin: 20rpx 0;
 }
 .details_content_name{
@@ -80,59 +84,68 @@ font-weight: 10rpx;
 }
 .item{
   flex:1;
+   height: 30rpx;
+  width: 40rpx;
+  z-index: -1
 }
 .shoucang{
   flex: 1;
-  margin-left: 70rpx;
+  margin-left: 50rpx;
   color: #6f6f6f;
-}
-.shoucang_01{
-  flex: 1;
-   margin-left: 70rpx;
-   color: orangered;
+    margin-top: -20rpx;
    
 }
-
-/* .cont_bot .submit_01{ */
-  /* text-align: right; */
-  /* flex:2; */
- /* position: absolute; */
- /* width: 100rpx; */
- /* height: 50rpx; */
- /* right: 470rpx; */
- /* line-height:50rpx;  */
- /* top: 22rpx; */
- /* background: gainsboro; */
-/* } */
-/* button::after{
-border: none;
-} */
+.shoucang_01{
+   flex: 1;
+  margin-left: 50rpx;
+   color: orangered;
+     margin-top: -20rpx;
+}
 button{
   background: gainsboro;
-  line-height: 88rpx;
+  line-height: 70rpx;
+ text-align: left;
+ padding-left:70rpx;
+ 
 }
 
-
-/* 提交 */
-/* .submit{
-position: absolute;
-width: 200rpx;
-height: 104rpx;
-line-height: 104rpx;
-right: 0rpx;
-font-size: 30rpx;
-text-align: center;
-color:#fff;
-background-color:#495A8F;
-} */
 .submit_01{
-flex:2;
-width: 200rpx;
+flex:1;
+width: 100rpx;
 height: 104rpx;
 line-height: 104rpx;
 font-size: 30rpx;
 text-align: center;
 color:#fff;
 background-color:orangered;
+ margin-left: 180rpx;
 }
-
+.sc{
+  display: flex;
+  flex-direction: column;
+   margin-left: 40rpx;
+}
+.scc{
+  font-size: 24rpx;
+  margin-top: 20rpx;
+   margin-left: 40rpx;
+}
+.kff{
+   font-size: 24rpx;
+  margin-top: 30rpx;
+   margin-left: 70rpx;
+   z-index: 1;
+    position:absolute;
+    top:-2rpx;
+}
+.iconfont{
+  height: 30rpx;
+  width: 40rpx;
+}
+.kf{
+   display: flex;
+  flex-direction: column;
+   height: 40rpx;
+  width: 30rpx;
+  margin-left: 40rpx;
+}

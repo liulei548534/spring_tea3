@@ -1,13 +1,13 @@
 <!--pages/souye/souye.wxml-->
 <search></search>  
 <view class="cntentes">
-   <!--轮播图-->
+   <!--轮播图   data-currenturl='{{item.image}}' bindtap='previewImg'-->
    <view class="tot_top">
      <view class="top">
         <swiper class="top1" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
-            <block wx:for="{{picList}}" wx:key="index">
+            <block wx:for="{{picList}}" wx:key="name">
                 <swiper-item>
-                   <image src="{{item}}" class="slide-image" mode="aspectFill" bindtap='previewImg' data-previewurl='{{picList}}' data-currenturl='{{item}}'/>
+                   <image src="{{item.image}}" bindtap="jumpTo" data-index="{{item.lunbo+'/'+index}}" class="slide-image" mode="aspectFill"  data-previewurl='{{picList}}'/>
                 </swiper-item>   
             </block>  
         </swiper>

@@ -16,23 +16,6 @@ Page({
     totalMoney: 0,
     isAllSelect: false,
   },
-  /*获取传入购物车的商品*/
-  getPorduct() {
-    var details = app.globalData.index
-    console.log(details)
-    if (details.length>0){
-       this.setData({
-         details,
-         hidden: false,
-         iscart: true,
-       })
-    } else {
-      this.setData({
-        hidden: true,
-        iscart: false,
-      })
-    }
-  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -99,7 +82,7 @@ Page({
   onShow: function() {
     var that = this
     if (wx.getStorageSync("openid")==null){
-      thst.setData({
+      that.setData({
         hidden: true,
         iscart: false,
       })
@@ -117,12 +100,14 @@ Page({
         that.data.details = res.data.shoppingCarList
         //判断是否有值
         if (that.data.details.length > 0) {
+          //有值
           that.setData({
             details: res.data.shoppingCarList,
             hidden: false,
             iscart: true,
           })
         } else {
+           //无值
           that.setData({
             hidden: true,
             iscart: false,
@@ -228,17 +213,6 @@ Page({
   },
   //全选
   allSelect: function(e) {
-    //处理全选逻辑
-    // var details = this.data.details
-    // var isAllSelect = this.data.isAllSelect
-
-    // if(isAllSelect==false){
-    //   details.forEach((v,i)=>true?(v.isSelect=true)&(isAllSelect=true):"")
-    // }else{
-    //   details.forEach((v,i)=>true?(v.isSelect=false)&(isAllSelect=false):"")
-    //   this.data.totalMoney = 0;
-    // }
-
     let i = 0;
     if (!this.data.isAllSelect) {
       this.data.totalMoney = 0;
@@ -270,6 +244,7 @@ Page({
       showDialog: !this.data.showDialog
     });
   },
+  //删除商品
   delimg(e) {
     var num = e.currentTarget.dataset.index;
     var nums = num;
@@ -317,25 +292,16 @@ Page({
       })
     }
   },
-  // delimg:function(e){
-  //   var that = this
-  //   console.log("-----删除商品-----")
-  //   var num = e.currentTarget.dataset.index;
-  //   console.log(num)
-  //   console.log(that.data.details[num].name)
-  //   wx.request({
-  //     url: 'http://localhost:8082/delShoppingCar',
-  //     data: {
-  //       name: that.data.details[num].name
-  //     },
-  //     header: {
-  //       'content-type': 'application/json'
-  //     },
-  //     success(res) {
-  //         that.setData({
-  //           details:
-  //         })
-  //     }
-  //   })
-  // }
+  qianggou:function(){
+    if (app.globalData.flag){
+     wx.navigateTo({
+       url: '../content/content',
+     })
+    }else{
+      wx.showModal({
+        title: '购物车提示',
+        content: '需要授权登录才能去抢购',
+      })
+    }
+  }
 })
