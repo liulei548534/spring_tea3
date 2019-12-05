@@ -27,9 +27,9 @@ Page({
 
             data: {
 
-              appid: 'wx3ec4bbad864bed9b',
+              appid: 'wx59f5a417f04da1ed',
 
-              secret: '91655393e7d3eebe9af569fb0932a907',
+              secret: 'ca3d9bac310addd2938c0ed83fd90ecd',
 
               js_code: res.code,
 
@@ -39,7 +39,8 @@ Page({
 
             success(v) {
               // console.log(v.data)
-              console.log(v.data.openid)
+              // console.log(v.data.openid)
+              app.globalData.flag=true;
                wx.setStorage({
                  key: 'openid',
                  data: v.data.openid,

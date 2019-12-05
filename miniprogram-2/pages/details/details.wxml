@@ -1,3 +1,4 @@
+<!--商品详情-->
 <view class="details_content">
          <image class="details_content_img" src="{{details.image}}"></image>
           <text class="details_content_name">{{details.name}}</text> 
@@ -11,8 +12,16 @@
 </view>   
 <!-- 固定底部 -->
 <view class="cont_bot">      
-      <text catchtap="handleCollection"  class="iconfont icon-Mycollection {{isClolected?'shoucang_01':'shoucang'}}"></text>  
+    <view class="sc" catchtap="handleCollection">
+      <text  class="iconfont icon-Mycollection {{isClolected?'shoucang_01':'shoucang'}}"></text> 
+      <text class="scc">收藏</text>
+    </view> 
+    <label>
+     <view class="kf">
       <button open-type="contact" class="item iconfont icon-lianxikefu"></button>
+        <text class="kff">客服</text>
+     </view>
+     </label>
       <!-- 提交订单 -->
        <text class="submit_01" catchtap="{{details.type=='house'&details.status=='1'?'':'addCar'}}">加入购物车</text>
 </view>

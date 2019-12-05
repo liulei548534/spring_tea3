@@ -1,16 +1,15 @@
+<!--1.购物车为空页面-->
 <view class="J-shopping-cart-empty"  hidden="{{iscart}}" >
    <view class="shopping-cart-empty">
         <view class="bg"></view> 
         <view class="cart"></view>
         <text class='empty-text'>购物车空空如也</text>  
         <p></p>
-        <navigator url="../content/content">
-         <a href="//m.vip.com" class="button button-primary">去抢购</a>
-        </navigator>
+        <a href="//m.vip.com" bindtap="qianggou" class="button button-primary">去抢购</a> 
     </view>
 </view>
 
-<!--购物车商品列表   hidden="{{hidden}}"-->
+<!--2.购物车商品列表 -->
 <view class="details_content" hidden="{{hidden}}" wx:for="{{details}}" wx:key="id" data-index="{{index}}">
           <!--选择按钮-->
       <view  wx:if="{{!item.isSelect}}">
@@ -32,12 +31,12 @@
             <!--商品数量-->
            <view class="xuanzhe">
               <view class="shuliang"> 数量：</view>
-                  <!--del-->
+                  <!--del减少商品数量-->
               <text bindtap="delClick" data-index="{{index}}">-</text>
               <!--disabled='disabled'  input 只读-->
-                  <!--num-->
+                  <!--num商品数量-->
               <input class="shuliang_inp" disabled='disabled'  value="{{item.num}}"></input>
-                  <!--add-->
+                  <!--add添加商品数量-->
               <text bindtap="addClick" data-index="{{index}}">+</text>
            </view>
        </view>
@@ -46,7 +45,7 @@
            <image src="../../image/del.png"/>
        </view>
 </view>
-<!--底部-->
+<!--3.底部-->
 <view class="bottom_total" hidden="{{hidden}}">
   <view class="row">
       <!--全选按钮-->
@@ -57,9 +56,10 @@
         <icon class="item-allselect" bindtap="allSelect" type="success" color="#f0145a" size="25"></icon>
      </view>
      <text class="small_text">全选</text>
+     <!--合计价格-->
     <text>合计:￥ </text>
     <text class="price">{{totalMoney}}</text>
-    <!-- <text class="button-red" bindtap=" toBuy" formType="submit">去结算</text> -->
+    <!--结算按钮 -->
     <text class="button-red" bindtap="send" formType="submit">去结算</text>
  </view>
 </view>

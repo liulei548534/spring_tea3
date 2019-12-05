@@ -4,7 +4,7 @@ App({
   onShow: function() {
     var that = this;
     wx.request({
-      url: 'http://10.0.100.3:8080/allcontent/selectOne',
+      url: 'http://10.0.100.30:8080/allcontent/selectOne',
       success(data) {
         that.globalData.date = data.data.userList
       }
@@ -19,5 +19,6 @@ App({
   globalData: {
     date: [],
     index: [],
+    flag:false
   }
 })
