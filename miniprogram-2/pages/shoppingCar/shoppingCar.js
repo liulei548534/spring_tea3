@@ -46,7 +46,7 @@ Page({
   connect() {
     var myThis = this;
     wx.connectSocket({
-      url: 'ws://localhost:8080/websocket/12'
+      url: 'ws://10.0.100.30:8080/websocket/12'
     })
     wx.onSocketOpen(function(res) {
       console.log("连接服务器成功")
@@ -106,7 +106,7 @@ Page({
     }
     //请求后台查询购物车表中数据
     wx.request({
-      url: 'http://localhost:8082/selectShoppingCar',
+      url: 'http://10.0.100.30:8082/selectShoppingCar',
       data: {
         openid: wx.getStorageSync("openid")
       },
@@ -281,7 +281,7 @@ Page({
       if (i === num) {
         console.log(details[i].name)
         wx.request({
-          url: 'http://localhost:8082/delShoppingCar',
+          url: 'http://10.0.100.30:8082/delShoppingCar',
           data: {
             name: details[i].name,
             openid: wx.getStorageSync("openid")

@@ -39,7 +39,7 @@ Page({
     })
    //加入购物车 数据发送到后端
     wx.request({
-      url: 'http://localhost:8082/ShoppingCar', 
+      url: 'http://10.0.100.30:8082/ShoppingCar', 
       data: {
         shangping: this.data.details,
          openid:this.data.openid
@@ -81,7 +81,7 @@ Page({
     if (!this.data.isClolected){
         // 搜藏
         wx.request({
-          url: 'http://10.0.100.3:8080/teaSc/insert',
+          url: 'http://10.0.100.30:8080/teaSc/insert',
           data:{
             date: this.data.details,
             openid: this.data.openid

@@ -45,7 +45,7 @@ liulei:function(index){
   onLoad: function (options) {
     var imgUrl = []
     var Teahouse_img =[] 
-    var global = app.globalData.date
+    var global = wx.getStorageSync("orderList")
     var snack=[]
     for(var i = 0;i<global.length;i++){
         if(global[i].type=="house"){

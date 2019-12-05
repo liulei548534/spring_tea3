@@ -1,24 +1,18 @@
 <view class="search_head" hover-class="none">
-    <view class="left">
-        <input bindinput="handInput" value="{{quxiao}}">
-        </input>
-    </view>
-    <view class="right" bindtap="quxiao">取消</view>
+  <view class="left">
+    <input bindinput="handInput" value="{{quxiao}}">
+    </input>
+  </view>
+  <view class="right" bindtap="quxiao">取消</view>
 </view>
-<view class="details_content" wx:for="{{index}}" wx:key="name">
-    <image class="details_content_img" src="{{item.image}}" bindtap="jumpTo" data-index="{{index}}"></image>
-    <text class="details_content_name">{{item.name}}</text>
-    <view class="details_content_message">
-        <text class="introduce">商品介绍：</text>
-        <text class="details_content_introduce">{{item.content}}</text>
-        <text class="details_content_money" wx:if="{{item.type=='house'&details.status=='1'}}">该包间正在使用</text>
-        <text class="details_content_money">单价:￥{{item.price}}</text>
-    </view>
-    </view>
-
-<!-- <view class="content" hover-class="none" hover-stop-propagation="false">
-    春天的第一杯浓茶
+<view class="details_content" wx:for="{{index}}" wx:if="{{info=='songmingjie'}}" wx:key="name">
+  <image class="details_content_img" src="{{item.image}}" bindtap="jumpTo" data-index="{{index}}"></image>
+  <text class="details_content_name">{{item.name}}</text>
+  <view class="details_content_message">
+    <text class="introduce">商品介绍：</text>
+    <text class="details_content_introduce">{{item.content}}</text>
+    <text class="details_content_money" wx:if="{{item.type=='house'&details.status=='1'}}">该包间正在使用</text>
+    <text class="details_content_money">单价:￥{{item.price}}</text>
+  </view>
 </view>
-<view class="content" hover-class="none" hover-stop-propagation="false">
-    春天的第一杯浓茶
-</view> -->
+<view wx:if="{{info!='songmingjie'}}">{{info}}</view>
