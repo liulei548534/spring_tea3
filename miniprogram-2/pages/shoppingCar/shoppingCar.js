@@ -22,8 +22,6 @@ Page({
   onLoad: function(options) {
     var that = this;
     that.connect();
-  
-   
   },
   //连接websocket
   connect() {
@@ -67,11 +65,28 @@ Page({
           myThis.setData({
             totalMoney: 0,
             isAllSelect: false
-          })
-          wx.showToast({
-            title: '下单成功',
-            icon: 'success',
-            duration: 1000
+          }),
+          // wx.showToast({
+          //   title: '下单成功',
+          //   icon: 'success',
+          //   duration: 1000
+          // })
+          wx.showModal({
+            title: '下单提示',
+            content: '商品下单成功，点击确定前往结算，点击取消返回主页',
+            success(res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+                wx.navigateTo({
+                  url: '../order/order',
+                })
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+                wx.switchTab({
+                  url: '../souye/souye',
+                })
+              }
+            }
           })
         },
         fail: function (res) {
