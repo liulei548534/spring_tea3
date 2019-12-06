@@ -125,3 +125,13 @@
 .box .item .order-info .payfor .one {
   background-color: #e1e1e1;
 }
+.haveNoOrder{
+  width: 100%;
+  text-align: center;
+  color: #999;
+}
+.qg{
+  display: inline-block;
+  color: #f40;
+  font-size: 40rpx;
+}

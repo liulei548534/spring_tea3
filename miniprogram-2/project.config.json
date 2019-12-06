@@ -21,8 +21,13 @@
 		}
 	},
 	"compileType": "miniprogram",
+<<<<<<< HEAD
 	"libVersion": "2.0.4",
 	"appid": "wx59f5a417f04da1ed",
+=======
+	"libVersion": "2.9.4",
+	"appid": "wx3ec4bbad864bed9b",
+>>>>>>> e86f891b6a01529c33fccbc48fbff0a65bed5417
 	"projectname": "miniprogram-1",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -44,8 +49,20 @@
 			"list": []
 		},
 		"miniprogram": {
+<<<<<<< HEAD
 			"current": -1,
 			"list": []
+=======
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"scene": null
+				}
+			]
+>>>>>>> e86f891b6a01529c33fccbc48fbff0a65bed5417
 		}
 	}
 }
