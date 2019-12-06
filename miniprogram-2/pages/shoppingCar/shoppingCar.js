@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    time:'',
     // indexs用来 存放传入过来的索引值
     indexs: [-4],
     details: [],
@@ -53,18 +54,27 @@ Page({
       food.forEach((v, i) => v.isSelect ? app.globalData.order.push(v) : "")
       // console.log(this.data.details)
       var date = JSON.stringify(this.data.details)
+      var year = myData.getFullYear() 
+      var month = myData.getMonth() 
+      var date = myData.getDate() 
+      if(month<10){
+        month="0"+month
+      }
+      if(date<10){
+        date="0"+date
+      }
       var hour = myData.getHours()
       var min = myData.getMinutes()
       var second = myData.getSeconds()
-      var time = hour + ":" + min + ":" + second
-      wx.setStorageSync("time",time)
+      var time =year+"-"+month+"-"+date+"  "+ hour + ":" + min + ":" + second
       wx.sendSocketMessage({
         data: date + time,
         success: function (res) {
           // console.log("发送信息")
           myThis.setData({
             totalMoney: 0,
-            isAllSelect: false
+            isAllSelect: false,
+            time:time
           }),
           // wx.showToast({
           //   title: '下单成功',
@@ -78,7 +88,7 @@ Page({
               if (res.confirm) {
                 console.log('用户点击确定')
                 wx.navigateTo({
-                  url: '../order/order',
+                  url: '../order/order?' + 'time=' + time,
                 })
               } else if (res.cancel) {
                 console.log('用户点击取消')

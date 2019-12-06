@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    array:[],
+    time:"",
     array: "",
     isFinish: "正在进行",
     order: [{
@@ -41,7 +43,27 @@ Page({
     var orderL = 1974084011450001
     var house = "大厅"
     var appData = app.globalData.order
-    appData.forEach((v, i) => v.type == "house" ? house = v.type : "")
+    appData.forEach((v, i) => v.type == "house" ? house = v.name : "")
+    var array = [];
+    var date = this.data.array
+    for (var i = 0; i < date.length;i++){
+      var lily = appData.filter((p)=>{
+        return p.name = date[i].name
+      })
+      if(lily.length<2){
+        array.push(appData[i])
+      }else{
+        for(var j =0;j<lily.length-1;j++){
+          lily[0].num = lily[0].num+lily[j+1].num
+        }
+        if(array.forEach((v,i)=>v.name==date[i].name)){
+          continue
+        }else{
+          array.push(lily[0])
+        }
+      }
+    }
+    console.log(array)
     if (appData.length > 0) {
       list2.push(
         ({
@@ -50,11 +72,12 @@ Page({
           orderList: orderL,
           status: "正在进行",
           class: 'order_status',
-          date: '2018-09-10',
+          date: this.data.time,
           list: app.globalData.order
         })
       )
       this.setData({
+        array:list2,
         order_list: list2
       })
       this.jisuan("正在进行")
@@ -65,14 +88,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(45454)
     this.orderRequest("正在进行")
     var up = "order[0].isSelect";
     this.setData({
-      [up]: true
+      [up]: true,
+      time:options.time
     })
   },
-
   showAll(e) {
     var that = this;
     var newTotal = [{
@@ -168,6 +190,7 @@ Page({
               })
             )
             that.setData({
+              array:list2,
               order_list: list2
             })
           }
