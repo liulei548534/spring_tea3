@@ -59,6 +59,7 @@ Page({
       var min = myData.getMinutes()
       var second = myData.getSeconds()
       var time = hour + ":" + min + ":" + second
+      wx.setStorageSync("time",time)
       wx.sendSocketMessage({
         data: date + time,
         success: function (res) {
