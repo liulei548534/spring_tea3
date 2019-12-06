@@ -1,17 +1,13 @@
 //app.js
 App({
-  onLaunch: function() {},
+  onLaunch: function() {
+     console.log("App Launch")
+  },
   onShow: function() {
-    var that = this;
-    wx.request({
-      url: 'http://10.0.100.30:8080/allcontent/selectOne',
-      success(data) {
-        that.globalData.date = data.data.userList
-      }
-    })
+     console.log("App Show")
   },
   onHide: function() {
-    // console.log("App Hide")
+     console.log("App Hide")
   },
   appData: {
     userinfo: null

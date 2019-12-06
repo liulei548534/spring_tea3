@@ -22,8 +22,6 @@ Page({
   onLoad: function(options) {
     var that = this;
     that.connect();
-  
-   
   },
   //连接websocket
   connect() {
