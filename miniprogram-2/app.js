@@ -19,6 +19,7 @@ App({
   globalData: {
     date: [],
     index: [],
-    flag:false
+    flag:false,
+    order:[]
   }
 })

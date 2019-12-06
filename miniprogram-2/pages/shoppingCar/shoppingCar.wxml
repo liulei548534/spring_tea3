@@ -60,6 +60,6 @@
     <text>合计:￥ </text>
     <text class="price">{{totalMoney}}</text>
     <!--结算按钮 -->
-    <text class="button-red" bindtap="send" formType="submit">去结算</text>
+    <text class="button-red" bindtap="send" formType="submit">点击下单</text>
  </view>
 </view>

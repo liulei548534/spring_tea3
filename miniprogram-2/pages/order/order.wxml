@@ -20,8 +20,8 @@
                 <text class="date">下单时间:{{item.date}}</text>
             </view>
             <view class="infomation" wx:for="{{item.list}}" wx:key="id" 
-            wx:for-item="item1"
-            wx:if="{{item1.id<count&item1.num!=0}}"
+            wx:for-item="item1" wx:for-index="index1"
+            wx:if="{{index1<count&item1.num!=0}}"
            >
                 <view class="img">
                     <image mode="widthFix" src="{{item1.image}}" />
@@ -56,6 +56,9 @@
                 </view>
             </view>
         </view>
+        <view wx:if="{{order_list.length===0}}" class="haveNoOrder">没有订单哟，快去
+        <navigator class="qg" open-type="navigate" url="../content/content">抢购</navigator>
+        吧</view>
     </view>
     <view class="content-right item" wx:if="{{false}}">
         <text class="iconfont icon-top-s icon2"></text>

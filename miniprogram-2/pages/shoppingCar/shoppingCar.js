@@ -47,27 +47,59 @@ Page({
   },
   //websocket发送信息
   send() {
-    var myThis = this;
-    console.log(this.data.details)
-    var date = JSON.stringify(this.data.details)
-    var hour = myData.getHours()
-    var min = myData.getMinutes()
-    var second = myData.getSeconds()
-    var time = hour + ":" + min + ":" + second
-    wx.sendSocketMessage({
-      data: date + time,
-      success: function(res) {
-        console.log("发送信息")
-        wx.showToast({
-          title: '已发送',
-          icon: 'success',
-          duration: 1000
-        })
-      },
-      fail: function(res) {
-        console.log("请连接服务器")
-      }
-    })
+    var count = 0;
+    this.data.details.forEach((v, i) => v.isSelect ?count++ :"")
+    if(count>0){
+      var myThis = this;
+      var food = this.data.details
+      food.forEach((v, i) => v.isSelect ? app.globalData.order.push(v) : "")
+      // console.log(this.data.details)
+      var date = JSON.stringify(this.data.details)
+      var hour = myData.getHours()
+      var min = myData.getMinutes()
+      var second = myData.getSeconds()
+      var time = hour + ":" + min + ":" + second
+      wx.sendSocketMessage({
+        data: date + time,
+        success: function (res) {
+          // console.log("发送信息")
+          myThis.setData({
+            totalMoney: 0,
+            isAllSelect: false
+          })
+          wx.showToast({
+            title: '下单成功',
+            icon: 'success',
+            duration: 1000
+          })
+        },
+        fail: function (res) {
+          console.log("请连接服务器")
+        }
+      })
+      wx.request({
+        url: 'http://10.0.100.30:8082/delAll',
+        data: {
+          openid: wx.getStorageSync("openid"),
+          date: app.globalData.order
+        },
+        success: function (res) {
+          food.forEach((v, i) => v.isSelect ? food.splice(i, 1) : "")
+          //  console.log(food)
+          myThis.setData({
+            details: food
+          })
+        },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+    }else{
+      wx.showToast({
+        title: '请选择您想要购买的商品',
+        icon:"none",
+        duration: 1500
+      });
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -232,17 +264,6 @@ Page({
       isAllSelect: !this.data.isAllSelect,
       totalMoney: this.data.totalMoney,
     })
-  },
-  // 去结算
-  toBuy() {
-    wx.showToast({
-      title: '去结算',
-      icon: 'success',
-      duration: 1500
-    });
-    this.setData({
-      showDialog: !this.data.showDialog
-    });
   },
   //删除商品
   delimg(e) {
