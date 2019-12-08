@@ -32,7 +32,7 @@ Page({
   onShow: function () {
     var that = this
       wx.request({
-        url: 'http://10.0.100.30:8080/teaSc/findByOpenId',
+        url: 'http://localhost:8080/teaSc/findByOpenId',
         data:{
           openid: wx.getStorageSync("openid")
         },
@@ -128,7 +128,7 @@ Page({
     var date = this.data.date
     console.log(date[index])
     wx.request({
-      url: 'http://10.0.100.30:8082/ShoppingCar',
+      url: 'http://localhost:8082/ShoppingCar',
       data: {
         shangping: date[index],
         openid: wx.getStorageSync("openid")
@@ -155,7 +155,7 @@ Page({
   },
   delect:function(openid,name){
       wx.request({
-        url: 'http://10.0.100.30:8080/teaSc/delect',
+        url: 'http://localhost:8080/teaSc/delect',
         data:{
           openid:openid,
           name:name

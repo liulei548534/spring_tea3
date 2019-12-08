@@ -88,7 +88,7 @@ Page({
       ]
     }
     wx.request({
-      url: 'http://10.0.100.30:8080/teaPj/selectAll',
+      url: 'http://localhost:8080/teaPj/selectAll',
       success: function(res) {
         // console.log(res.data.list[0].pjScore)
         var star1 = that.data.star1

@@ -28,7 +28,7 @@ Page({
   connect() {
     var myThis = this;
     wx.connectSocket({
-      url: 'ws://10.0.100.30:8080/websocket/12'
+      url: 'ws://localhost:8080/websocket/12'
     })
     wx.onSocketOpen(function(res) {
       console.log("连接服务器成功")
@@ -48,6 +48,8 @@ Page({
   send() {
     var count = 0;
     this.data.details.forEach((v, i) => v.isSelect ?count++ :"")
+    console.log("send:")
+    console.log(app.globalData.order)
     if(count>0){
       var myThis = this;
       var food = this.data.details
@@ -75,45 +77,47 @@ Page({
             totalMoney: 0,
             isAllSelect: false,
             time:time
-          }),
-          // wx.showToast({
-          //   title: '下单成功',
-          //   icon: 'success',
-          //   duration: 1000
-          // })
+          }), 
           wx.showModal({
-            title: '下单提示',
-            content: '商品下单成功，点击确定前往结算，点击取消返回主页',
-            success(res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-                wx.navigateTo({
-                  url: '../order/order?' + 'time=' + time,
-                })
-              } else if (res.cancel) {
-                console.log('用户点击取消')
-                wx.switchTab({
-                  url: '../souye/souye',
-                })
+              title: '下单提示',
+              content: '商品下单成功，点击确定前往结算，点击取消返回主页',
+              success(res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                  wx.navigateTo({
+                    url: '../order/order?' + 'time=' + time,
+                  })
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                  wx.switchTab({
+                    url: '../souye/souye',
+                  })
+                }
               }
-            }
-          })
+            })
+          
         },
         fail: function (res) {
           console.log("请连接服务器")
         }
       })
       wx.request({
-        url: 'http://10.0.100.30:8082/delAll',
+        url: 'http://localhost:8082/delAll',
         data: {
           openid: wx.getStorageSync("openid"),
           date: app.globalData.order
         },
         success: function (res) {
-          food.forEach((v, i) => v.isSelect ? food.splice(i, 1) : "")
-          //  console.log(food)
+          var foods = [];
+          food.forEach((v, i) => v.isSelect ? "":foods.push(v))
+          // for(var i =0;i<food.length;i++){
+          //   if(food[i].isSelect){
+          //     food.splice(i,1)
+          //     i--;
+          //   }
+          // }
           myThis.setData({
-            details: food
+            details: foods
           })
         },
         fail: function (res) { },
@@ -147,7 +151,7 @@ Page({
     }
     //请求后台查询购物车表中数据
     wx.request({
-      url: 'http://10.0.100.30:8082/selectShoppingCar',
+      url: 'http://localhost:8082/selectShoppingCar',
       data: {
         openid: wx.getStorageSync("openid")
       },
@@ -303,7 +307,7 @@ Page({
       if (i === num) {
         console.log(details[i].name)
         wx.request({
-          url: 'http://10.0.100.30:8082/delShoppingCar',
+          url: 'http://localhost:8082/delShoppingCar',
           data: {
             name: details[i].name,
             openid: wx.getStorageSync("openid")

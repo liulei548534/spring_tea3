@@ -6,8 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array:[],
-    time:"",
+    array: [],
+    time: "",
     array: "",
     isFinish: "正在进行",
     order: [{
@@ -43,23 +43,50 @@ Page({
     var orderL = 1974084011450001
     var house = "大厅"
     var appData = app.globalData.order
+    console.log(appData)
     appData.forEach((v, i) => v.type == "house" ? house = v.name : "")
     var array = [];
-    var date = this.data.array
-    for (var i = 0; i < date.length;i++){
-      var lily = appData.filter((p)=>{
-        return p.name = date[i].name
+    for (var i = 0; i < appData.length; i++) {
+      var lily = appData.filter((p) => {
+        return p.name === appData[i].name
       })
       if(lily.length<2){
-        array.push(appData[i])
-      }else{
-        for(var j =0;j<lily.length-1;j++){
-          lily[0].num = lily[0].num+lily[j+1].num
+        var count = 0
+        for (var j = 0; j < array.length; j++) {
+          if (lily[0].name === array[j].name) {
+            count++
+          }
         }
-        if(array.forEach((v,i)=>v.name==date[i].name)){
-          continue
-        }else{
+        if (count === 0) {
           array.push(lily[0])
+        }
+      }else{
+        var count=0
+        for(var j=0;j<array.length;j++){
+          if (lily[0].name===array[j].name){
+            count++
+          }
+        }
+        var obj=""
+        var nums=0
+        if (count === 0){
+          for (var k = 0; k < lily.length;k++){
+            nums = lily[k].num+nums
+          }
+          obj = {
+            content:lily[0].content,
+            id:lily[0].id,
+            image:lily[0].image,
+            isSelect:true,
+            name:lily[0].name,
+            num:nums,
+            openid:lily[0].openid,
+            price:lily[0].price,
+            type:lily[0].type
+          }
+          obj.num=nums
+          console.log(obj)
+          array.push(obj)
         }
       }
     }
@@ -73,11 +100,10 @@ Page({
           status: "正在进行",
           class: 'order_status',
           date: this.data.time,
-          list: app.globalData.order
+          list: array
         })
       )
       this.setData({
-        array:list2,
         order_list: list2
       })
       this.jisuan("正在进行")
@@ -92,7 +118,7 @@ Page({
     var up = "order[0].isSelect";
     this.setData({
       [up]: true,
-      time:options.time
+      time: options.time
     })
   },
   showAll(e) {
@@ -152,10 +178,13 @@ Page({
     this.orderRequest("已完成")
   },
   orderRequest: function(index) {
+    this.setData({
+      order_list: []
+    })
     var that = this
     var mythis = that
     wx.request({
-      url: 'http://10.0.100.30:8080/orderList/findAll',
+      url: 'http://localhost:8080/orderList/findAll',
       data: {
         date: index,
         // openid: wx.getStorageSync("openid")
@@ -190,7 +219,6 @@ Page({
               })
             )
             that.setData({
-              array:list2,
               order_list: list2
             })
           }
