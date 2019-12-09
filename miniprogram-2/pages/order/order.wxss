@@ -135,3 +135,33 @@
   color: #f40;
   font-size: 40rpx;
 }
+.shabi{
+  background-color: white;
+  position: absolute;
+  top: 128rpx;
+  left: -10rpx;
+  width: 700rpx;
+  height: 600rpx;
+  margin: 0 20rpx;
+  box-sizing: border-box;
+}
+.saomiao{
+  width: 100%;
+  text-align: center;
+  padding-bottom: 50rpx;
+  color: black;
+  font-size: 38rpx;
+}
+.chacha{
+  text-align: center;
+  /* line-height: 50rpx; */
+  position: absolute;
+  top: -1rpx;
+  width: 50rpx;
+  height: 50rpx;
+  right:0;
+  padding: 0;
+  margin: 0;
+  color: #999;
+  font-size: 60rpx;
+}

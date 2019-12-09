@@ -8,7 +8,7 @@ Page({
   data: {
    
   },
-
+ 
   /**
    * 生命周期函数--监听页面加载
    */
@@ -20,22 +20,49 @@ Page({
 
   },
 
+  // showTime:function(){
+  //   if (app.globalData.onshowTime-- === 0) {
+  //     app.globalData.onshowTime = 1000
+  //     console.log(app.globalData.onshowTime)
+  //     wx.request({
+  //       url: 'http://10.0.100.30:8080/allcontent/selectOne',
+  //       success(data) {
+  //         console.log(data)
+  //         wx.setStorageSync("orderList", data.data.userList)
+  //       }
+  //     })
+  //   }
+  // },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    var that = this;
-    //判断是否有缓存
-    if (!wx.getStorageSync("orderList")) {
-      console.log(wx.getStorageSync("orderList"))
-      //没有则向后台请求数据
+    var time =5
+    var inter = setInterval(function(){
+     time = time-1
+    if(time===0){
       wx.request({
-        url: 'http://localhost:8080/allcontent/selectOne',
+        url: 'http://10.0.100.30:8083/customer/food/findAll',
         success(data) {
-          wx.setStorageSync("orderList", data.data.userList)
+          console.log(data)
+          wx.setStorageSync("orderList", data.data)
         }
       })
-    }
+    }      
+    },1000)
+    var that = this;
+    //判断是否有缓存
+    // if (!wx.getStorageSync("orderList")) {
+    //   //没有则向后台请求数据
+    //   wx.request({
+    //     url: 'http://10.0.100.30:8080/allcontent/selectOne',
+    //     success(data) {
+    //       console.log(data)
+    //       wx.setStorageSync("orderList", data.data.userList)
+    //     }
+    //   })
+    //   console.log(wx.getStorageSync("orderList"))
+    // }
     //茶
     var imgUrl = []
      //包间

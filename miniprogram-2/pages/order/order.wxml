@@ -1,66 +1,67 @@
-
 <view class="box">
-    <view class="title">
-        <view class="onloading is_black {{item.isSelect?'on_item':''}}" wx:for="{{order}}" wx:key="id">
-            <text bindtap="{{item.funName}}" data-index="{{index}}">
+  <view class="title">
+    <view class="onloading is_black {{item.isSelect?'on_item':''}}" wx:for="{{order}}" wx:key="id">
+      <text bindtap="{{item.funName}}" data-index="{{index}}">
                 {{item.name}}
             </text>
+    </view>
+  </view>
+  <view class="content-left item" wx:if="{{true}}">
+    <view class="order-info" wx:for="{{order_list}}" wx:key="id" wx:if="{{item.status==isFinish}}">
+      <view class="order-package">
+        包间号：{{item.order_package}}
+      </view>
+      <view class="order-num">
+        <text class="num-info">订单编号:{{item.orderList}}</text>
+        <text class="{{order_list[index].class}}">{{item.status}}</text>
+      </view>
+      <view class="order-date">
+        <text class="date">下单时间:{{item.date}}</text>
+      </view>
+      <view class="infomation" wx:for="{{item.list}}" wx:key="id" wx:for-item="item1" wx:for-index="index1" wx:if="{{index1<count&item1.num!=0}}">
+        <view class="img">
+          <image mode="widthFix" src="{{item1.image}}" />
         </view>
-    </view>
-    <view class="content-left item" wx:if="{{true}}">
-        <view class="order-info" wx:for="{{order_list}}" wx:key="id" wx:if="{{item.status==isFinish}}">
-            <view class="order-package">
-                包间号：{{item.order_package}}
-            </view>
-            <view class="order-num">
-                <text class="num-info">订单编号:{{item.orderList}}</text>
-                <text class="{{order_list[index].class}}">{{item.status}}</text>
-            </view>
-            <view class="order-date">
-                <text class="date">下单时间:{{item.date}}</text>
-            </view>
-            <view class="infomation" wx:for="{{item.list}}" wx:key="id" 
-            wx:for-item="item1" wx:for-index="index1"
-            wx:if="{{index1<count&item1.num!=0}}"
-           >
-                <view class="img">
-                    <image mode="widthFix" src="{{item1.image}}" />
-                </view>
-                <view class="right">
-                    <view class="name">
-                        商品：{{item1.name}}
-                    </view>
-                    <view class="price">
-                        价钱： ￥{{item1.price}}
-                    </view>
-                    <view class="count">
-                        数量： {{item1.num}}
-                    </view>
-                    <view class="back"  wx:if="{{item.status=='正在进行'}}">
-                        <text>申请售后</text>
-                    </view>
-                </view>
-            </view>
-            <view class="show_both" bindtap="{{bussness[0].functionName}}">
-                {{bussness[0].name}}
-                <text class="iconfont {{bussness[0].icon}}"></text>
-            </view>
-            <view class="payfor">
-                <view class="payfor_count">
-                    <text class="pat_total">总计：</text>
-                    <text class="red">￥<text>{{info[index].num}}</text></text>
-                </view>
-                <view class="submit {{isWho}}}" wx:if="{{!order[1].isSelect}}">
-                    <text>去结算</text>
-                    <text>({{info[index].total}}件)</text>
-                </view>
-            </view>
+        <view class="right">
+          <view class="name">
+            商品：{{item1.name}}
+          </view>
+          <view class="price">
+            价钱： ￥{{item1.price}}
+          </view>
+          <view class="count">
+            数量： {{item1.num}}
+          </view>
+          <view class="back" wx:if="{{item.status=='正在进行'}}">
+            <text>申请售后</text>
+          </view>
         </view>
-        <view wx:if="{{order_list.length===0}}" class="haveNoOrder">没有订单哟，快去
-        <navigator class="qg" open-type="navigate" url="../content/content">抢购</navigator>
-        吧</view>
+      </view>
+      <view class="show_both" bindtap="{{bussness[0].functionName}}">
+        {{bussness[0].name}}
+        <text class="iconfont {{bussness[0].icon}}"></text>
+      </view>
+      <view class="payfor">
+        <view class="payfor_count">
+          <text class="pat_total">总计：</text>
+          <text class="red">￥<text>{{info[index].num}}</text></text>
+        </view>
+        <view class="submit {{isWho}}}" wx:if="{{!order[1].isSelect}}">
+          <text bindtap="erweima">去结算</text>
+          <text>({{info[index].total}}件)</text>
+          <view class="shabi" hidden="{{!status1}}">
+            <view class="saomiao">扫描下方的二维码进行支付</view>
+            <view class="chacha" bindtap="quxiao">x</view>
+            <canvas class="canvas-code" canvas-id="myQrcode" style="background:#fff;width: 200px;height: 200px;margin:0 auto" />
+          </view>
+        </view>
+      </view>
     </view>
-    <view class="content-right item" wx:if="{{false}}">
-        <text class="iconfont icon-top-s icon2"></text>
-    </view>
+    <view wx:if="{{order_list.length===0}}" class="haveNoOrder">没有订单哟，快去
+      <navigator class="qg" open-type="navigate" url="../content/content">抢购</navigator>
+      吧</view>
+  </view>
+  <view class="content-right item" wx:if="{{false}}">
+    <text class="iconfont icon-top-s icon2"></text>
+  </view>
 </view>

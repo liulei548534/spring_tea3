@@ -20,9 +20,9 @@ Page({
     var that = this
     this.time = setTimeout(function() {
       wx.request({
-        url: 'http://localhost:8080/allcontent/search',
+        url: 'http://10.0.100.30:8083/customer/food/search/'+date,
         data: {
-          name: date
+          // name: date
         },
         header: {
           'content-type': 'application/json'
@@ -31,8 +31,9 @@ Page({
         dataType: 'json',
         responseType: 'text',
         success: (result) => {
+          console.log(result)
           // if(result.data.searchInfo==null){}
-          var date = result.data.searchInfo
+          var date = result.data
           var info="songmingjie"
           if (date.length === 0) {
             info = "抱歉亲，本店还没有该商品"

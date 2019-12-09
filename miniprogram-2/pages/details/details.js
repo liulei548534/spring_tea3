@@ -14,7 +14,7 @@ Page({
         if (app.globalData.flag) {
       //加入购物车 数据发送到后端,发送请求
       wx.request({
-        url: 'http://localhost:8082/ShoppingCar',
+        url: 'http://10.0.100.30:8082/ShoppingCar',
         data: {
           shangping: this.data.details,
           openid: wx.getStorageSync("openid")
@@ -65,7 +65,7 @@ Page({
       if (!this.data.isClolected) {
         // 收藏
         wx.request({
-          url: 'http://localhost:8080/teaSc/insert',
+          url: 'http://10.0.100.30:8080/teaSc/insert',
           data: {
             date: this.data.details,
             openid: wx.getStorageSync("openid")
@@ -80,7 +80,7 @@ Page({
       } else {
         // 删除 
         wx.request({
-          url: 'http://localhost:8080/teaSc/delect',
+          url: 'http://10.0.100.30:8080/teaSc/delect',
           data: {
             openid: wx.getStorageSync("openid"),
             name: this.data.details.name,

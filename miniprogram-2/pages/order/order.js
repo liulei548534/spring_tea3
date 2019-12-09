@@ -1,4 +1,5 @@
 // pages/order/order.js
+import QRCode from '../../utils/weapp-qrcode.js'
 var app = getApp()
 Page({
 
@@ -6,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    status: false,
+    status1: false,
     array: [],
     time: "",
     array: "",
@@ -38,6 +41,43 @@ Page({
     }],
     order_list: []
   },
+  quxiao: function() {
+    this.setData({
+      status1: false,
+      status: false
+    })
+  },
+  erweima: function() {
+    if (!this.data.status) {
+      this.data.status = true
+      this.setData({
+        status1: true
+      })
+      var array = []
+      this.data.order_list.forEach((v,i)=>true?array.push(v.name):"")
+      new QRCode('myQrcode', {
+        text: JSON.stringify(array),
+        width: 200,
+        height: 200,
+        padding: 0, // 生成二维码四周自动留边宽度，不传入默认为0
+        correctLevel: QRCode.CorrectLevel.L, // 二维码可辨识度
+        callback: (res) => {}
+      })
+    } else {
+      this.data.status = false
+      this.setData({
+        status1: false
+      })
+      new QRCode('myQrcode', {
+        text: this.data.order_list,
+        width: 0,
+        height: 0,
+        padding: 0, // 生成二维码四周自动留边宽度，不传入默认为0
+        correctLevel: QRCode.CorrectLevel.L, // 二维码可辨识度
+        callback: (res) => {}
+      })
+    }
+  },
   addOrder: function() {
     var list2 = this.data.order_list
     var orderL = 1974084011450001
@@ -50,7 +90,7 @@ Page({
       var lily = appData.filter((p) => {
         return p.name === appData[i].name
       })
-      if(lily.length<2){
+      if (lily.length < 2) {
         var count = 0
         for (var j = 0; j < array.length; j++) {
           if (lily[0].name === array[j].name) {
@@ -60,31 +100,31 @@ Page({
         if (count === 0) {
           array.push(lily[0])
         }
-      }else{
-        var count=0
-        for(var j=0;j<array.length;j++){
-          if (lily[0].name===array[j].name){
+      } else {
+        var count = 0
+        for (var j = 0; j < array.length; j++) {
+          if (lily[0].name === array[j].name) {
             count++
           }
         }
-        var obj=""
-        var nums=0
-        if (count === 0){
-          for (var k = 0; k < lily.length;k++){
-            nums = lily[k].num+nums
+        var obj = ""
+        var nums = 0
+        if (count === 0) {
+          for (var k = 0; k < lily.length; k++) {
+            nums = lily[k].num + nums
           }
           obj = {
-            content:lily[0].content,
-            id:lily[0].id,
-            image:lily[0].image,
-            isSelect:true,
-            name:lily[0].name,
-            num:nums,
-            openid:lily[0].openid,
-            price:lily[0].price,
-            type:lily[0].type
+            content: lily[0].content,
+            id: lily[0].id,
+            image: lily[0].image,
+            isSelect: true,
+            name: lily[0].name,
+            num: nums,
+            openid: lily[0].openid,
+            price: lily[0].price,
+            type: lily[0].type
           }
-          obj.num=nums
+          obj.num = nums
           console.log(obj)
           array.push(obj)
         }
@@ -184,11 +224,11 @@ Page({
     var that = this
     var mythis = that
     wx.request({
-      url: 'http://localhost:8080/orderList/findAll',
+      url: 'http://10.0.100.30:8080/orderList/findAll',
       data: {
         date: index,
-        // openid: wx.getStorageSync("openid")
-        openid: "owcCm5PNHntgDyI3XxZazbv1Hkgc"
+        openid: wx.getStorageSync("openid")
+        // openid: "owcCm5PNHntgDyI3XxZazbv1Hkgc"
       },
       header: {
         'content-type': 'application/json'
