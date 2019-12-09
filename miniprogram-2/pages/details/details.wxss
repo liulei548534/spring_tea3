@@ -99,10 +99,12 @@ font-weight: 10rpx;
 }
 button{
   background: gainsboro;
-  line-height: 70rpx;
+  line-height: 30rpx;
  text-align: left;
  padding-left:70rpx;
- margin-top: 5rpx;
+padding-top: -20rpx;
+padding-bottom: 15rpx;
+
 }
 button::after{
   border: none;
