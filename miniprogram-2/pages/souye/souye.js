@@ -30,7 +30,7 @@ Page({
       console.log(wx.getStorageSync("orderList"))
       //没有则向后台请求数据
       wx.request({
-        url: 'http://localhost:8080/allcontent/selectOne',
+        url: 'http://10.0.100.30:8080/allcontent/selectOne',
         success(data) {
           wx.setStorageSync("orderList", data.data.userList)
         }

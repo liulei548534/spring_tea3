@@ -184,11 +184,11 @@ Page({
     var that = this
     var mythis = that
     wx.request({
-      url: 'http://localhost:8080/orderList/findAll',
+      url: 'http://10.0.100.30:8080/orderList/findAll',
       data: {
         date: index,
-        // openid: wx.getStorageSync("openid")
-        openid: "owcCm5PNHntgDyI3XxZazbv1Hkgc"
+        openid: wx.getStorageSync("openid")
+        //openid: "owcCm5PNHntgDyI3XxZazbv1Hkgc"
       },
       header: {
         'content-type': 'application/json'

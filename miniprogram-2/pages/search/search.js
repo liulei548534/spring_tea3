@@ -20,7 +20,7 @@ Page({
     var that = this
     this.time = setTimeout(function() {
       wx.request({
-        url: 'http://localhost:8080/allcontent/search',
+        url: 'http://10.0.100.30:8080/allcontent/search',
         data: {
           name: date
         },
