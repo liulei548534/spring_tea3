@@ -28,7 +28,7 @@ Page({
   connect() {
     var myThis = this;
     wx.connectSocket({
-      url: 'ws://10.0.100.30:8080/websocket/12'
+      url: 'ws://10.0.100.30:8090/websocket/12'
     })
     wx.onSocketOpen(function(res) {
       console.log("连接服务器成功")
@@ -101,11 +101,16 @@ Page({
           console.log("请连接服务器")
         }
       })
+      console.log("linjian")
       wx.request({
-        url: 'http://10.0.100.30:8082/delAll',
+        url: 'http://10.0.100.30:8089/spCar/delAll',
         data: {
           openid: wx.getStorageSync("openid"),
-          date: app.globalData.order
+          date: JSON.stringify(app.globalData.order)
+        },
+        method: 'POST',
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
         },
         success: function (res) {
           var foods = [];
@@ -151,14 +156,16 @@ Page({
     }
     //请求后台查询购物车表中数据
     wx.request({
-      url: 'http://10.0.100.30:8082/selectShoppingCar',
+      url: 'http://10.0.100.30:8089/spCar/selectShoppingCar',
       data: {
         openid: wx.getStorageSync("openid")
       },
+      method: 'POST',
       header: {
-        'content-type': 'application/json'
+        "Content-Type": "application/x-www-form-urlencoded"
       },
       success(res) {
+        console.log(res)
         that.data.details = res.data.shoppingCarList
         //判断是否有值
         if (that.data.details.length > 0) {
@@ -307,13 +314,14 @@ Page({
       if (i === num) {
         console.log(details[i].name)
         wx.request({
-          url: 'http://10.0.100.30:8082/delShoppingCar',
+          url: 'http://10.0.100.30:8089/spCar/delShoppingCar',
           data: {
             name: details[i].name,
             openid: wx.getStorageSync("openid")
           },
+          method: 'POST',
           header: {
-            'content-type': 'application/json'
+            "Content-Type": "application/x-www-form-urlencoded"
           },
           success(res) {
 

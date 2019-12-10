@@ -88,9 +88,9 @@ Page({
       ]
     }
     wx.request({
-      url: 'http://10.0.100.30:8080/teaPj/selectAll',
+      url: 'http://10.0.100.30:8090/client/teaPj/selectAll',
       success: function(res) {
-        // console.log(res.data.list[0].pjScore)
+        console.log(res)
         var star1 = that.data.star1
         for (var j = 0; j < res.data.list.length; j++) {
           star1.push(obj)

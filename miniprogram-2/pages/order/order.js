@@ -224,19 +224,20 @@ Page({
     var that = this
     var mythis = that
     wx.request({
-      url: 'http://10.0.100.30:8080/orderList/findAll',
+      url: 'http://10.0.100.30:8083/client/orderList/findAll',
       data: {
         date: index,
         openid: wx.getStorageSync("openid")
         // openid: "owcCm5PNHntgDyI3XxZazbv1Hkgc"
       },
+      method: 'POST',
       header: {
-        'content-type': 'application/json'
+        "Content-Type": "application/x-www-form-urlencoded"
       },
-      method: 'GET',
       dataType: 'json',
       responseType: 'text',
       success: function(res) {
+        console.log(res)
         if (res.data.list.length != 0) {
           for (var i = 0; i < res.data.list.length; i++) {
             var list = JSON.parse(res.data.list[i].orderinfo)

@@ -32,12 +32,13 @@ Page({
   onShow: function () {
     var that = this
       wx.request({
-        url: 'http://10.0.100.30:8080/teaSc/findByOpenId',
+        url: 'http://10.0.100.30:8090/client/teaSc/findByOpenId',
         data:{
           openid: wx.getStorageSync("openid")
         },
+        method: 'POST',
         header: {
-          'content-type': 'application/json'
+          "Content-Type": "application/x-www-form-urlencoded"
         },
         success(res) {
           console.log(res.data.list)
@@ -128,13 +129,14 @@ Page({
     var date = this.data.date
     console.log(date[index])
     wx.request({
-      url: 'http://10.0.100.30:8082/ShoppingCar',
+      url: 'http://10.0.100.30:8089/spCar/ShoppingCar',
       data: {
-        shangping: date[index],
+        shangping: JSON.stringify(date[index]),
         openid: wx.getStorageSync("openid")
       },
+      method: 'POST',
       header: {
-        'content-type': 'application/json'
+        "Content-Type": "application/x-www-form-urlencoded"
       },
       success(res) {
       }
@@ -155,10 +157,14 @@ Page({
   },
   delect:function(openid,name){
       wx.request({
-        url: 'http://10.0.100.30:8080/teaSc/delect',
+        url: 'http://10.0.100.30:8090/client/teaSc/delect',
         data:{
           openid:openid,
           name:name
+        },
+        method: 'POST',
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
         },
         success(res){
             console.log(res.data)

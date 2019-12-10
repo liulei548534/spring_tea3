@@ -13,14 +13,20 @@ Page({
       addCar() {
         if (app.globalData.flag) {
       //加入购物车 数据发送到后端,发送请求
+          // var  openid=wx.getStorageSync("openid")
+          // var  shangping=this.data.details
+          // var da = encodeURIComponent(JSON.stringify(shangping))
+          // var ds = JSON.stringify(shangping)
       wx.request({
-        url: 'http://10.0.100.30:8082/ShoppingCar',
+        url: 'http://10.0.100.30:8089/spCar/ShoppingCar',
         data: {
-          shangping: this.data.details,
-          openid: wx.getStorageSync("openid")
+          openid: wx.getStorageSync("openid") + '/',
+          shangping: JSON.stringify(this.data.details),
+          
         },
+        method: 'POST', 
         header: {
-          'content-type': 'application/json'
+          "Content-Type": "application/x-www-form-urlencoded"
         },
         success(res) {}
       })
@@ -65,13 +71,14 @@ Page({
       if (!this.data.isClolected) {
         // 收藏
         wx.request({
-          url: 'http://10.0.100.30:8080/teaSc/insert',
+          url: 'http://10.0.100.30:8090/client/teaSc/insert',
           data: {
-            date: this.data.details,
+            date: JSON.stringify(this.data.details),
             openid: wx.getStorageSync("openid")
           },
+          method: 'POST',
           header: {
-            'content-type': 'application/json'
+            "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function(res) {
             console.log(res)
@@ -80,10 +87,14 @@ Page({
       } else {
         // 删除 
         wx.request({
-          url: 'http://10.0.100.30:8080/teaSc/delect',
+          url: 'http://10.0.100.30:8090/client/teaSc/delect',
           data: {
             openid: wx.getStorageSync("openid"),
             name: this.data.details.name,
+          },
+          method: 'POST',
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
           },
           success(res) {
             console.log(res.data)
