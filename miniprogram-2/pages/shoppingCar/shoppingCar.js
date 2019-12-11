@@ -20,35 +20,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    var that = this;
-    that.connect();
-  },
-  //连接websocket
-  connect() {
-    var myThis = this;
-    wx.connectSocket({
-      url: 'ws://10.0.100.30:8090/websocket/12'
-    })
-    wx.onSocketOpen(function(res) {
-      console.log("连接服务器成功")
-    })
-  },
-  //断开websocket
-  close() {
-    var myThis = this;
-    wx.closeSocket()
-    wx.onSocketClose(function(res) {
-      myThis.setData({
-        status: "websocket服务器已经断开"
-      })
-    })
-  },
+  // onLoad: function(options) {
+  //   var that = this;
+  // },
   //websocket发送信息
   send() {
     var count = 0;
     this.data.details.forEach((v, i) => v.isSelect ?count++ :"")
-    console.log("send:")
     console.log(app.globalData.order)
     if(count>0){
       var myThis = this;
@@ -57,7 +35,7 @@ Page({
       // console.log(this.data.details)
       var date = JSON.stringify(this.data.details)
       var year = myData.getFullYear() 
-      var month = myData.getMonth() 
+      var month = myData.getMonth()+1 
       var date = myData.getDate() 
       if(month<10){
         month="0"+month
@@ -68,65 +46,55 @@ Page({
       var hour = myData.getHours()
       var min = myData.getMinutes()
       var second = myData.getSeconds()
+      if (hour < 10) {
+        hour = "0" + hour
+      }
+      if (min < 10) {
+        min = "0" + min
+      }
+      if (second < 10) {
+        second = "0" + second
+      }
       var time =year+"-"+month+"-"+date+"  "+ hour + ":" + min + ":" + second
-      wx.sendSocketMessage({
-        data: date + time,
-        success: function (res) {
-          // console.log("发送信息")
-          myThis.setData({
-            totalMoney: 0,
-            isAllSelect: false,
-            time:time
-          }), 
-          wx.showModal({
-              title: '下单提示',
-              content: '商品下单成功，点击确定前往结算，点击取消返回主页',
-              success(res) {
-                if (res.confirm) {
-                  console.log('用户点击确定')
-                  wx.navigateTo({
-                    url: '../order/order?' + 'time=' + time,
-                  })
-                } else if (res.cancel) {
-                  console.log('用户点击取消')
-                  wx.switchTab({
-                    url: '../souye/souye',
-                  })
-                }
-              }
-            })
-          
-        },
-        fail: function (res) {
-          console.log("请连接服务器")
-        }
+      var foods = [];
+      var babFoods = [];
+      food.forEach((v, i) => v.isSelect ? babFoods.push(v) : foods.push(v))
+      myThis.setData({
+        details: foods,
+        totalMoney: 0,
+        isAllSelect: false
       })
-      console.log("linjian")
       wx.request({
         url: 'http://10.0.100.30:8089/spCar/delAll',
         data: {
           openid: wx.getStorageSync("openid"),
-          date: JSON.stringify(app.globalData.order)
+          date: JSON.stringify(babFoods)
         },
         method: 'POST',
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
         success: function (res) {
-          var foods = [];
-          food.forEach((v, i) => v.isSelect ? "":foods.push(v))
-          // for(var i =0;i<food.length;i++){
-          //   if(food[i].isSelect){
-          //     food.splice(i,1)
-          //     i--;
-          //   }
-          // }
-          myThis.setData({
-            details: foods
-          })
         },
         fail: function (res) { },
-        complete: function (res) { },
+        complete: function (res) {
+          wx.showModal({
+            title: '下单提示',
+            content: '商品下单成功，点击确定前往结算，点击取消返回主页',
+            success(res) {
+              wx.setStorageSync("time", time)
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '../order/order',
+                })
+              } else if (res.cancel) {
+                wx.switchTab({
+                  url: '../souye/souye',
+                })
+              }
+            }
+          })
+        },
       })
     }else{
       wx.showToast({

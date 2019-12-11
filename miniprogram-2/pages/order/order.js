@@ -7,9 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    flag:false,
     status: false,
     status1: false,
-    array: [],
     time: "",
     array: "",
     isFinish: "正在进行",
@@ -49,6 +49,32 @@ Page({
   },
   erweima: function() {
     if (!this.data.status) {
+      var newDate = []
+      var newArray={}
+      var liulei = this.data.order_list
+      liulei[0].list.forEach((v,i)=>true?newDate.push({
+        image:v.image,
+        isSelect:true,
+        name:v.name,
+        num:v.num,
+        price:v.price,
+        type:v.type
+      }):"")
+      liulei[0].list = newDate
+      var that = this
+      wx.sendSocketMessage({
+        data: JSON.stringify(this.data.order_list),
+        success: function (res) {
+          app.globalData.order=[]
+          that.setData({
+           order_list:[],
+           info:[]
+          })
+        },
+        fail: function (res) {
+          console.log("请连接服务器")
+        }
+      })
       this.data.status = true
       this.setData({
         status1: true
@@ -79,8 +105,9 @@ Page({
     }
   },
   addOrder: function() {
+    var openid = wx.getStorageSync("openid")
     var list2 = this.data.order_list
-    var orderL = 1974084011450001
+    var orderL = wx.getStorageSync("time")
     var house = "大厅"
     var appData = app.globalData.order
     console.log(appData)
@@ -130,11 +157,11 @@ Page({
         }
       }
     }
-    console.log(array)
     if (appData.length > 0) {
       list2.push(
         ({
           id: 0,
+          openid:openid,
           order_package: house,
           orderList: orderL,
           status: "正在进行",
@@ -148,17 +175,41 @@ Page({
       })
       this.jisuan("正在进行")
     }
-
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    if(!this.data.flag){
+      console.log(this.data.flag)
+      this.connect();
+    }
     this.orderRequest("正在进行")
     var up = "order[0].isSelect";
     this.setData({
       [up]: true,
-      time: options.time
+      time:wx.getStorageSync("time")
+    })
+  },
+  //连接websocket
+  connect() {
+    var myThis = this;
+    wx.connectSocket({
+      url: 'ws://10.0.100.30:8090/websocket/12'
+    })
+    wx.onSocketOpen(function (res) {
+      console.log("连接服务器成功")
+      myThis.data.flag=true
+    })
+  },
+  //断开websocket
+  close() {
+    var myThis = this;
+    wx.closeSocket()
+    wx.onSocketClose(function (res) {
+      myThis.setData({
+        status: "websocket服务器已经断开"
+      })
     })
   },
   showAll(e) {
