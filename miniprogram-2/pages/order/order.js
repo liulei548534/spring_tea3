@@ -180,15 +180,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if(!this.data.flag){
+    var flag = wx.getStorageSync("flag")
+    if(flag==""){
       console.log(this.data.flag)
       this.connect();
+      wx.setStorageSync("flag", true)
     }
     this.orderRequest("正在进行")
     var up = "order[0].isSelect";
     this.setData({
       [up]: true,
-      time:wx.getStorageSync("time")
+      time: wx.getStorageSync("time")
     })
   },
   //连接websocket
@@ -275,8 +277,9 @@ Page({
     var that = this
     var mythis = that
     wx.request({
-      url: 'http://10.0.100.30:8083/client/orderList/findAll',
+      url: 'http://10.0.100.30:8083/client/orderList/findUserAll',
       data: {
+
         date: index,
         openid: wx.getStorageSync("openid")
         // openid: "owcCm5PNHntgDyI3XxZazbv1Hkgc"
@@ -291,7 +294,8 @@ Page({
         console.log(res)
         if (res.data.list.length != 0) {
           for (var i = 0; i < res.data.list.length; i++) {
-            var list = JSON.parse(res.data.list[i].orderinfo)
+            
+            
             var list2 = that.data.order_list
             var classes = ""
             if (res.data.list[i].orderstatus == "已完成") {

@@ -20,7 +20,7 @@
       </view>
       <view class="infomation" wx:for="{{item.list}}" wx:key="id" wx:for-item="item1" wx:for-index="index1" wx:if="{{index1<count&item1.num!=0}}">
         <view class="img">
-          <image mode="widthFix" src="{{item1.image}}" />
+          <image src="{{item1.image}}" />
         </view>
         <view class="right">
           <view class="name">
