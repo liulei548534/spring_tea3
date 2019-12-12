@@ -294,8 +294,7 @@ Page({
         console.log(res)
         if (res.data.list.length != 0) {
           for (var i = 0; i < res.data.list.length; i++) {
-            
-            
+            var list = JSON.parse(res.data.list[i].orderinfo)
             var list2 = that.data.order_list
             var classes = ""
             if (res.data.list[i].orderstatus == "已完成") {

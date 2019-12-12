@@ -201,6 +201,7 @@ Page({
     this.setData({
       [up]: this.data.details[index.index].num++
     });
+
   },
   //减少商品数量
   delClick: function(event) {
@@ -216,6 +217,7 @@ Page({
     this.setData({
       [up]: this.data.details[index.index].num--
     });
+    
   },
   //勾选事件处理函数  
   switchSelect: function(e) {
