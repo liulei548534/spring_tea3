@@ -66,10 +66,10 @@ Page({
         data: JSON.stringify(this.data.order_list),
         success: function (res) {
           app.globalData.order=[]
-          that.setData({
-           order_list:[],
-           info:[]
-          })
+          // that.setData({
+          //  order_list:[],
+          //  info:[]
+          // })
         },
         fail: function (res) {
           console.log("请连接服务器")
