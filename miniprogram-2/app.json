@@ -4,8 +4,6 @@
     "pages/socket/socket",
     "pages/shoppingCar/shoppingCar",
     "pages/user/user",
-    "pages/teas/teas",
-    "pages/teaHouse/teaHouse",
     "pages/order/order",
     "pages/collection/collection",
     "pages/pingjia/pingjia",
@@ -14,7 +12,7 @@
     "pages/content/content",
     "pages/details/details",
     "pages/map/map",
-     "pages/search/search"
+    "pages/search/search"
       
   ],
   "permission": {

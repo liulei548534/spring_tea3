@@ -9,14 +9,11 @@ Page({
     details: {},
     isClolected: false,
     index: null,
+    count:'',
   },
       addCar() {
         if (app.globalData.flag) {
       //加入购物车 数据发送到后端,发送请求
-          // var  openid=wx.getStorageSync("openid")
-          // var  shangping=this.data.details
-          // var da = encodeURIComponent(JSON.stringify(shangping))
-          // var ds = JSON.stringify(shangping)
       wx.request({
         url: 'http://10.0.100.30:8089/spCar/ShoppingCar',
         data: {
@@ -32,7 +29,14 @@ Page({
       })
       wx.showModal({
         title: '购物车提示',
-        content: '商品成功添加到购物车',
+        content: '商品成功添加到购物车,点击确定前往购物车',
+        success(res) {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '../shoppingCar/shoppingCar',
+            })
+          } 
+        }
       })
     } else {
       wx.showModal({
@@ -81,7 +85,6 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function(res) {
-            console.log(res)
           }
         })
       } else {
@@ -97,7 +100,6 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           success(res) {
-            console.log(res.data)
           }
         })
       }
@@ -118,7 +120,6 @@ Page({
         id: index
       }
       let detailStorage = wx.getStorageSync("isClolected")
-      console.log(isClolected)
       if (detailStorage.length != 0) {
         if (isClolected) {
           var count = 0;
@@ -157,7 +158,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    console.log(this.data.details.name)
 
-
+    var that = this
+    wx.request({
+      url: 'http://10.0.100.30:8089/client/shoppingCar/selectCount/ByName',
+      data:{
+        name: this.data.details.name,
+      },
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          count:res.data
+        })
+      }
+    })
+    
   },
 })

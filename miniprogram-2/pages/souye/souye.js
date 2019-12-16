@@ -37,7 +37,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    var time =5
+    var time =1
     var inter = setInterval(function(){
      time = time-1
     if(time===0){

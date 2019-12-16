@@ -32,7 +32,6 @@ Page({
       var myThis = this;
       var food = this.data.details
       food.forEach((v, i) => v.isSelect ? app.globalData.order.push(v) : "")
-      // console.log(this.data.details)
       var date = JSON.stringify(this.data.details)
       var year = myData.getFullYear() 
       var month = myData.getMonth()+1 
@@ -133,7 +132,6 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       success(res) {
-        console.log(res)
         that.data.details = res.data.shoppingCarList
         //判断是否有值
         if (that.data.details.length > 0) {
@@ -277,12 +275,10 @@ Page({
     var num = e.currentTarget.dataset.index;
     var nums = num;
     var details = this.data.details;
-    console.log("num:" + num)
     var leng = details.length
     for (var i = 0; i < leng; i++) {
       console.log("leng:" + leng)
       if (i === num) {
-        console.log(details[i].name)
         wx.request({
           url: 'http://10.0.100.30:8089/spCar/delShoppingCar',
           data: {
@@ -300,7 +296,6 @@ Page({
         // 利用该方法来删除数组中元素（根据数据下标进行删除，1参数为删除几个）
         details.splice(i, 1)
         num = -1;
-        console.log(num)
       }
     }
     var indexs = this.data.indexs;
