@@ -50,6 +50,15 @@ Page({
       })
     }      
     },1000)
+    // if (wx.getStorageSync("orderList").length==0){
+    //   wx.request({
+    //     url: 'http://10.0.100.30:8083/customer/food/findAll',
+    //     success(data) {
+    //       console.log(data)
+    //       wx.setStorageSync("orderList", data.data)
+    //     }
+    //   })
+    // }
     var that = this;
     //判断是否有缓存
     // if (!wx.getStorageSync("orderList")) {
